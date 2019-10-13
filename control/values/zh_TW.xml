@@ -20,4 +20,8 @@
 <string name="incorrect_pin_code">PIN 碼不正確, 剩餘 %d 次機會, 請重新輸入 (4 ~ 8 位數, 10進制): </string>
 <string name="terminated_pin_code">使用者取消 PIN 碼驗證作業, 系統中止!</string>
 <string name="card_blocked">此張 USIM 卡已被鎖定, 系統中止!</string>
+<string name="auto_pin_verifing">找到 '%s' USIM 卡的 PIN 碼, 自動驗證中 ... </string>
+<string name="pass">成功</string>
+<string name="fail">失敗</string>
+
 </resource>

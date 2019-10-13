@@ -24,5 +24,8 @@
 <string name="incorrect_pin_code">Incorrect PIN code, %d remaining attempts, please try again (4 ~ 8 digits): </string>
 <string name="terminated_pin_code">User cancel PIN operation, system terminated!</string>
 <string name="card_blocked">The USIM card was blocked, system terminated!</string>
+<string name="auto_pin_verifing">Found the PIN of '%s' USIM card, auto verifing ... </string>
+<string name="pass">pass</string>
+<string name="fail">fail</string>
 
 </resource>

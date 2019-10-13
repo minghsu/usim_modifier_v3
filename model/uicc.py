@@ -9,7 +9,7 @@ from model.uiccconstants import UICC_FILE
 from model.library.uicc_sel_resp import uicc_sel_resp
 from model.library.fcp import EF_FILE_TYPE
 from model.library.convert import convert_bcd_to_string
-from control.constants import ERROR
+from control.constants import ERROR, PIN_TYPE
 
 class uicc:
     def __init__(self, arg_connection):
@@ -27,6 +27,11 @@ class uicc:
         read_resp = self.read_binary(UICC_FILE.ICCID)
         if read_resp != None:
             self.__iccid = convert_bcd_to_string(read_resp)
+            log.info(self.__class__.__name__, "ICCID: " + self.__iccid)
+
+    @property
+    def iccid(self):
+        return self.__iccid
 
     @property
     def pin_verified(self):
@@ -82,6 +87,12 @@ class uicc:
         ret_reamings = None
         apdu = verify_pin(arg_type, arg_code)
         resp, sw1, sw2 = self.__transmit(apdu)
+
+        if sw1 == 0x90:
+            if arg_type == PIN_TYPE.PIN1:
+                self.__pin_verified = True
+            elif arg_type == PIN_TYPE.ADM1:
+                self.__adm_verified = True
 
         if sw1 == 0x63:
             ret_reamings = sw2 & 0x0F

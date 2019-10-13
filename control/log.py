@@ -22,6 +22,9 @@ def log_enable():
 
     return False
 
+def info(arg_tag, arg_message):
+    if log_enable():
+        logging.getLogger(arg_tag).info(arg_message)
 
 def debug(arg_tag, arg_message):
     if log_enable():

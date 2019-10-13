@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 import os
-
+import control.log as log
 from lxml import etree
 
 CONFIG_XML_FILE = "usim_modifier.xml"
@@ -40,8 +40,26 @@ class configuration:
             tree.write(CONFIG_XML_FILE, pretty_print=True,
                        xml_declaration=True, encoding='utf-8')
         except:
+            log.critical(self.__class__.__name__, "save usim_modifier.xml file fail.")
             bRet = False
         return bRet
+
+    def query_pin_code(self, arg_iccid):
+        ret_pin = None
+
+        try:
+            xml = etree.parse(CONFIG_XML_FILE)
+            root = xml.getroot()
+
+            pin_node = root.xpath('//uicc[@iccid="' + arg_iccid + '"]/pin')
+            if len(pin_node) > 0:
+                return pin_node[0].text
+
+        except Exception as e:
+            pass
+
+
+        return ret_pin
 
     def load(self):
         bRet = True
@@ -59,6 +77,7 @@ class configuration:
             xml_node = root.xpath("configuration//adm")
             self.__adm = int(xml_node[0].text)
         except Exception as e:
+            log.critical(self.__class__.__name__, "load usim_modifier.xml file fail.")
             bRet = False
 
         return bRet

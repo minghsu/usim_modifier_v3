@@ -27,7 +27,6 @@ class statemachine:
             self.__state, self.__arguments = state_instance.execute(
                 self.__components, self.__arguments)
         except Exception as e:
-            keep_execute = False
             error_class = e.__class__.__name__
             reason = e.args[0]
             cl, exc, tb = sys.exc_info()
