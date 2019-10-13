@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<usim_modifier>
+    <configuration>
+        <!-- enable logging -->
+        <log>1</log>
+        <!-- enable localized language, zero for force English -->
+        <localized>1</localized>
+        <!-- auto pin cache -->
+        <pin>1</pin>
+        <!-- auto adm cache -->
+        <adm>1</adm>
+    </configuration>
+    <!--
+    <usim iccid="89860009191190000108">
+        <pin>1234</pin>
+        <adm>5555555555555555</adm>
+    </usim>
+    -->
+</usim_modifier>

@@ -1,0 +1,78 @@
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+import control.log as log
+
+from smartcard.util import toHexString
+
+from model.apdu import select, get_response, read_binary
+from model.uiccconstants import UICC_FILE
+from model.library.uicc_sel_resp import uicc_sel_resp
+from model.library.fcp import EF_FILE_TYPE
+from model.library.convert import convert_bcd_to_string
+
+
+class uicc:
+    def __init__(self, arg_connection):
+        self.__connection = arg_connection
+
+        # check pin status
+        self.__pin_verified = False
+        self.__adm_verified = False
+        self.__pin_enabled = False
+
+        uicc_resp = self.select(UICC_FILE.MF)
+        self.__pin_enabled = uicc_resp.pin
+
+        self.__iccid = None
+        read_resp = self.read_binary(UICC_FILE.ICCID)
+        if read_resp != None:
+            self.__iccid = convert_bcd_to_string(read_resp)
+
+    @property
+    def pin_verified(self):
+        return self.__pin_verified
+
+    @property
+    def pin_enabled(self):
+        return self.__pin_enabled
+
+    @property
+    def adm_verified(self):
+        return self.__adm_verified
+
+    def __transmit(self, arg_apdu_cmd):
+        log.debug(self.__class__.__name__,
+                  "TX: %s" % (toHexString(arg_apdu_cmd)))
+        response, sw1, sw2 = self.__connection.transmit(arg_apdu_cmd)
+        log.debug(self.__class__.__name__,
+                  "RX: %s, %02X %02X" % (toHexString(response), sw1, sw2))
+        return (response, sw1, sw2)
+
+    def select(self, arg_file_id):
+        resp = sw1 = sw2 = None
+
+        apdu = select(arg_file_id)
+        if apdu != None:
+            resp, sw1, sw2 = self.__transmit(apdu)
+
+            if sw1 == 0x61:
+                apdu = get_response(sw2)
+                resp, sw1, sw2 = self.__transmit(apdu)
+
+        return uicc_sel_resp(resp, sw1, sw2)
+
+    def read_binary(self, arg_file_id):
+
+        uicc_resp = self.select(arg_file_id)
+
+        if uicc_resp.sw1 != 0x90 or uicc_resp.ef_type != EF_FILE_TYPE.TRANSPARENT:
+            return None
+
+        apdu = read_binary(uicc_resp.length)
+        if apdu != None:
+            resp, sw1, sw2 = self.__transmit(apdu)
+
+            if sw1 == 0x90:
+                return resp
+
+        return None

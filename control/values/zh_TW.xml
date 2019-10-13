@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="string_not_defined">未定義的字串資源</string>
+<string name="app_name">USIM 修改員</string>
+<string name="version">版本</string>
+<string name="copyright">©Copyright 2019 許志銘</string>
+<string name="class_not_found">找不到 %s 類別</string>
+<string name="exception">
+<![CDATA[發生錯誤, 系統終止!!
+
+  檔案: {}
+  行數: {}
+  原因: {}]]></string>
+<string name="no_cardreader">錯誤!! 找不到 PC/SC 讀卡機 !!</string>
+<string name="no_card">錯誤!! 請插入 USIM 卡.</string>
+<string name="reader_connected">讀卡機 '%s' 已連接.</string>
+<string name="input_pin_code">SIM PIN 已啟用, 請輸入 PIN 碼 (4 ~ 8 位數, 10進制): </string>
+
+
+</resource>

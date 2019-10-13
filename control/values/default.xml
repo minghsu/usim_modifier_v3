@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<!-- Common -->
+<string name="app_version">3.0</string>
+
+<!-- en_US -->
+<string name="string_not_defined">This string was not defined</string>
+<string name="app_name">USIM Modifier</string>
+<string name="version">Version</string>
+<string name="copyright">©Copyright 2019 Ming Hsu</string>
+<string name="class_not_found">Can't found %s class.</string>
+<string name="exception">
+<![CDATA[Exception, System terminated!!
+
+  File: {}
+  Line: {}
+  Reason: {}]]></string>
+<string name="no_cardreader">Failed!! Can't found any PC/SC card reader!!</string>
+<string name="no_card">Failed!! Please insert the USIM card.</string>
+<string name="reader_connected">The '%s' was connected.</string>
+<string name="input_pin_code">SIM PIN Enabled, Please input PIN Code (4 ~ 8 digits, Decimal): </string>
+
+</resource>
