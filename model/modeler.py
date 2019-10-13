@@ -3,7 +3,7 @@
 
 from model.reader import reader
 from model.uicc import uicc
-
+from control.constants import ERROR
 
 class modeler:
     def __init__(self):
@@ -14,9 +14,15 @@ class modeler:
     def reader(self):
         return self.__reader
 
-    def uicc_initial(self):
-        self.__uicc = uicc(self.reader.connection)
-
     @property
     def uicc(self):
         return self.__uicc
+
+    def open(self):
+        ret_val = self.__reader.open()
+        if ret_val == ERROR.NONE:
+            self.__uicc = uicc(self.reader.connection)
+        return ret_val
+    
+    def close(self):
+        self.__reader.close()

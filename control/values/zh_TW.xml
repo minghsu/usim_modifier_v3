@@ -15,7 +15,9 @@
 <string name="no_cardreader">錯誤!! 找不到 PC/SC 讀卡機 !!</string>
 <string name="no_card">錯誤!! 請插入 USIM 卡.</string>
 <string name="reader_connected">讀卡機 '%s' 已連接.</string>
-<string name="input_pin_code">SIM PIN 已啟用, 請輸入 PIN 碼 (4 ~ 8 位數, 10進制): </string>
-
-
+<string name="input_pin_code">SIM PIN 已啟用, 請輸入 PIN 碼 (4 ~ 8 位數, 10 進制): </string>
+<string name="invalid_pin_code">PIN 碼格式錯誤, 請重新輸入 (4 ~ 8 位數, 10 進制): </string>
+<string name="incorrect_pin_code">PIN 碼不正確, 剩餘 %d 次機會, 請重新輸入 (4 ~ 8 位數, 10進制): </string>
+<string name="terminated_pin_code">使用者取消 PIN 碼驗證作業, 系統中止!</string>
+<string name="card_blocked">此張 USIM 卡已被鎖定, 系統中止!</string>
 </resource>

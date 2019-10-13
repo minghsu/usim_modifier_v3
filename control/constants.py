@@ -4,10 +4,18 @@
 import colorama
 
 
+class PIN_TYPE:
+    PIN1 = 0x01
+    PIN2 = 0x81
+    ADM1 = 0x0A
+
 class ERROR:
     NONE = 0
     CARD_ABSENT = 1
     INVALID_ARGUMENT = 2
+    INCORRECT_PIN = 3
+    INCORRECT_ADM = 4
+    UICC_BLOCKED = 5
 
 
 class STATE:

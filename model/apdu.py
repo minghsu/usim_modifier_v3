@@ -48,3 +48,17 @@ def read_binary(arg_length):
     ret_cmd[4] = arg_length  # Length
 
     return ret_cmd
+
+
+def verify_pin(arg_type, arg_key):
+    ret_cmd = [0xFF] * (5 + 8)
+
+    ret_cmd[0] = 0x00  # CLA
+    ret_cmd[1] = 0x20  # INS
+    ret_cmd[2] = 0x00  # P1
+    ret_cmd[3] = arg_type  # P2
+    ret_cmd[4] = 0x08  # Length
+    for i in range(len(arg_key)):
+        ret_cmd[i+5] = arg_key[i]
+
+    return ret_cmd

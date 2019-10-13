@@ -13,7 +13,6 @@ class exit():
     def execute(self, arg_components: components, arg_arguments):
         log.debug(self.__class__.__name__, "execute")
 
-        if arg_components.modeler.reader.connection != None:
-            arg_components.modeler.reader.close()
+        arg_components.modeler.close()
 
         return (STATE.NONE, None)

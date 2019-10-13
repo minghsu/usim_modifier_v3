@@ -20,13 +20,12 @@ class initial():
             ret_arguments = arg_components.resource.get_string(
                 "no_cardreader")
         else:
-            ret = arg_components.modeler.reader.open()
+            ret = arg_components.modeler.open()
             if ret == ERROR.CARD_ABSENT:
                 ret_state = STATE.ERROR
                 ret_arguments = arg_components.resource.get_string(
                     "no_card")
             else:
-                arg_components.modeler.uicc_initial()
                 ret_state = STATE.PIN
                 layout = arg_components.resource.get_string(
                     "reader_connected") % (arg_components.modeler.reader.name)
