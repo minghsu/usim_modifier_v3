@@ -8,13 +8,13 @@
     </configuration>
 
     <uicc iccid="89860009191190000108">
-        <pin>2234</pin>
+        <pin>1234</pin>
         <adm>5555555555555555</adm>
     </uicc>
 
-    <uicc iccid="89860009191190000109">
-        <pin>2234</pin>
-        <adm>6666666666666666</adm>
+    <uicc iccid="89014105276609441303">
+        <pin>1234</pin>
+        <adm>5555555555555555</adm>
     </uicc>
 
 </usim_modifier>
