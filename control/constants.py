@@ -9,6 +9,7 @@ class PIN_TYPE:
     PIN2 = 0x81
     ADM1 = 0x0A
 
+
 class ERROR:
     NONE = 0
     CARD_ABSENT = 1
@@ -27,6 +28,7 @@ class STATE:
     EXCEPTION = 'exception'
     ERROR = 'error'
     EXIT = 'exit'
+    PLUGIN = 'plugin'
 
 
 class LAYOUT:

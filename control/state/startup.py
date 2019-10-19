@@ -12,16 +12,17 @@ class startup():
         pass
 
     def execute(self, arg_components: components, arg_arguments):
-        log.debug(self.__class__.__name__, "execute")
+        log.debug(self.__class__.__name__, "ENTER")
 
-        layout = arg_components.viewer.get_layout(LAYOUT.STARTUP,
-                                                  arg_name=arg_components.resource.get_string(
-                                                      'app_name'),
-                                                  arg_version=arg_components.resource.get_string(
-                                                      'app_version'),
-                                                  arg_copyright=arg_components.resource.get_string(
-                                                      'copyright'))
+        out_msg = arg_components.viewer.get_layout(LAYOUT.STARTUP,
+                                                   arg_name=arg_components.resource.get_string(
+                                                       'app_name'),
+                                                   arg_version=arg_components.resource.get_string(
+                                                       'app_version'),
+                                                   arg_copyright=arg_components.resource.get_string(
+                                                       'copyright'))
 
-        print(layout)
+        print(out_msg)
 
+        log.debug(self.__class__.__name__, "EXIT")
         return (STATE.INITIAL, None)

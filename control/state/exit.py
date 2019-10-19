@@ -11,8 +11,10 @@ class exit():
         pass
 
     def execute(self, arg_components: components, arg_arguments):
-        log.debug(self.__class__.__name__, "execute")
+        log.debug(self.__class__.__name__, "ENTER")
 
         arg_components.modeler.close()
+
+        log.debug(self.__class__.__name__, "EXIT")
 
         return (STATE.NONE, None)

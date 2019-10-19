@@ -11,11 +11,12 @@ class exception():
         pass
 
     def execute(self, arg_components: components, arg_arguments):
-        log.debug(self.__class__.__name__, "execute")
+        log.debug(self.__class__.__name__, "ENTER")
 
-        layout = arg_components.viewer.get_layout(
+        out_msg = arg_components.viewer.get_layout(
             LAYOUT.EXCEPTION, arg_string=arg_arguments)
 
-        print(layout)
+        print(out_msg)
 
+        log.debug(self.__class__.__name__, "EXIT")
         return (STATE.EXIT, None)

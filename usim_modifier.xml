@@ -1,20 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <usim_modifier>
-    <configuration>
-        <log>1</log>
-        <localized>1</localized>
-        <pin>1</pin>
-        <adm>1</adm>
-    </configuration>
-
-    <uicc iccid="89860009191190000108">
-        <pin>1234</pin>
-        <adm>5555555555555555</adm>
-    </uicc>
-
-    <uicc iccid="89014105276609441303">
-        <pin>1234</pin>
-        <adm>5555555555555555</adm>
-    </uicc>
-
+  <configuration>
+    <log>1</log>
+    <localized>1</localized>
+    <pin>1</pin>
+    <adm>1</adm>
+  </configuration>
+  <uicc iccid="89860009191190000108">
+    <pin>1234</pin>
+    <adm>5555555555555555</adm>
+  </uicc>
 </usim_modifier>

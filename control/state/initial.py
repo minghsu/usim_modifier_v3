@@ -11,10 +11,10 @@ class initial():
         pass
 
     def execute(self, arg_components: components, arg_arguments):
+        log.debug(self.__class__.__name__, "ENTER")
+
         ret_state = STATE.EXIT
         ret_arguments = None
-        log.debug(self.__class__.__name__, "execute")
-
         if arg_components.modeler.reader.name == None:
             ret_state = STATE.ERROR
             ret_arguments = arg_components.resource.get_string(
@@ -27,10 +27,11 @@ class initial():
                     "no_card")
             else:
                 ret_state = STATE.PIN
-                layout = arg_components.resource.get_string(
+                out_msg = arg_components.resource.get_string(
                     "reader_connected") % (arg_components.modeler.reader.name)
-                layout = arg_components.viewer.get_layout(
-                    LAYOUT.ONELINE, arg_string=layout)
-                print(layout)
+                out_msg = arg_components.viewer.get_layout(
+                    LAYOUT.ONELINE, arg_string=out_msg)
+                print(out_msg)
 
+        log.debug(self.__class__.__name__, "EXIT")
         return (ret_state, ret_arguments)

@@ -19,13 +19,18 @@
 <string name="no_cardreader">Failed!! Can't found any PC/SC card reader!!</string>
 <string name="no_card">Failed!! Please insert the USIM card.</string>
 <string name="reader_connected">The '%s' was connected.</string>
-<string name="input_pin_code">SIM PIN Enabled, please input PIN Code (4 ~ 8 digits): </string>
+<string name="input_pin_code">SIM PIN Enabled, please input PIN code (4 ~ 8 digits): </string>
 <string name="invalid_pin_code">Invalid PIN code, please try again (4 ~ 8 digits): </string>
 <string name="incorrect_pin_code">Incorrect PIN code, %d remaining attempts, please try again (4 ~ 8 digits): </string>
 <string name="terminated_pin_code">User cancel PIN operation, system terminated!</string>
 <string name="card_blocked">The USIM card was blocked, system terminated!</string>
 <string name="auto_pin_verifing">Found the PIN of '%s' USIM card, auto verifing ... </string>
-<string name="pass">pass</string>
-<string name="fail">fail</string>
-
+<string name="pass">Pass</string>
+<string name="fail">Fail</string>
+<string name="input_adm_code">Please input ADM code (16 digits, Hexadecimal): </string>
+<string name="invalid_adm_code">Invalid ADM code, please try again (16 digits, Hexadecimal): </string>
+<string name="incorrect_adm_code">Incorrect ADM code, %d remaining attempts, please try again (16 digits, Hexadecimal): </string>
+<string name="terminated_adm_code">User cancel ADM operation, some features will be limited!</string>
+<string name="auto_adm_verifing">Found the ADM of '%s' USIM card, auto verifing ... </string>
+<string name="adm_blocked">Note! The ADM verify count is ZERO, some features will be limited!!</string>
 </resource>

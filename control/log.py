@@ -17,14 +17,19 @@ def init(arg_enable=0):
 
 
 def log_enable():
-    if os.environ["USIM_MODIFIER_LOG"] == "1":
-        return True
+    try:
+        if os.environ["USIM_MODIFIER_LOG"] == "1":
+            return True
+    except:
+        pass
 
     return False
+
 
 def info(arg_tag, arg_message):
     if log_enable():
         logging.getLogger(arg_tag).info(arg_message)
+
 
 def debug(arg_tag, arg_message):
     if log_enable():
