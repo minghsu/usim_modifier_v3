@@ -31,4 +31,7 @@
 <string name="auto_adm_verifing">找到 '%s' USIM 卡的 ADM 碼, 啟用自動驗證作業 ... </string>
 <string name="adm_blocked">注意, ADM 驗證次數已歸零, 部份功能將受到限制!</string>
 
+<string name="plugin_loading">正在載入 plugin 套件中 ... </string>
+<string name="plugin_loaded">共找到 %d 個</string>
+
 </resource>

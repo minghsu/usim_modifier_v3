@@ -3,8 +3,7 @@
 
 from smartcard.util import toBytes
 
-from control.constants import ERROR
-from model.uiccconstants import UICC_FILE
+from control.constants import ERROR, UICC_FILE
 
 
 def select(arg_field):

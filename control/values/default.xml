@@ -33,4 +33,8 @@
 <string name="terminated_adm_code">User cancel ADM operation, some features will be limited!</string>
 <string name="auto_adm_verifing">Found the ADM of '%s' USIM card, auto verifing ... </string>
 <string name="adm_blocked">Note! The ADM verify count is ZERO, some features will be limited!!</string>
+<string name="plugin_loading">Loading the plugin ... </string>
+<string name="plugin_loaded">%d found</string>
+
+
 </resource>

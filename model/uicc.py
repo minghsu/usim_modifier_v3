@@ -5,11 +5,11 @@ import control.log as log
 from smartcard.util import toHexString
 
 from model.apdu import select, get_response, read_binary, verify_pin
-from model.uiccconstants import UICC_FILE
 from model.library.uicc_sel_resp import uicc_sel_resp
 from model.library.fcp import EF_FILE_TYPE
 from model.library.convert import convert_bcd_to_string
-from control.constants import ERROR, PIN_TYPE
+from control.constants import ERROR, PIN_TYPE, UICC_FILE
+
 
 class uicc:
     def __init__(self, arg_connection):
@@ -98,7 +98,7 @@ class uicc:
             ret_reamings = sw2 & 0x0F
             if ret_reamings == 0:
                 ret_result = ERROR.UICC_BLOCKED
-            else:            
+            else:
                 ret_result = ERROR.INCORRECT_PIN
 
         return (ret_result, ret_reamings)

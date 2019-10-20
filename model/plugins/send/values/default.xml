@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">Send the 'APDU' to USIM card directly.</string>
+<string name="help">
+<![CDATA[Usage (Example of 'SELECT MF'):
+
+  USIM modifier$ send 00A40004023F00
+
+    , 61 1F]]></string>
+
+</resource>

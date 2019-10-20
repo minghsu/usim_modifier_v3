@@ -35,7 +35,7 @@ class adm():
             else:
                 print(arg_arguments, end='')
 
-            adm_code = input().strip()
+            adm_code = input().strip().upper()
 
             if len(adm_code) == 0:
                 out_msg = arg_components.viewer.get_layout(

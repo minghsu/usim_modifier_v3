@@ -7,7 +7,6 @@ import importlib
 
 class viewer:
     def __init__(self):
-
         self.__layout = {}
         layout_list = os.listdir("./view/layout")
         for filename in layout_list:

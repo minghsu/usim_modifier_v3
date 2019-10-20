@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">直接傳送 APDU 指令給 USIM 卡.</string>
+<string name="help">
+<![CDATA[使用方式 (以 SELECT MF 為例):
+
+  USIM modifier$ send 00A40004023F00
+
+    , 61 1F]]></string>
+
+</resource>

@@ -2,7 +2,7 @@
 <usim_modifier>
   <configuration>
     <log>1</log>
-    <localized>1</localized>
+    <localized>0</localized>
     <pin>1</pin>
     <adm>1</adm>
   </configuration>
