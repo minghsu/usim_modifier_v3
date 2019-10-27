@@ -5,7 +5,6 @@
 <string name="app_version">3.0</string>
 
 <!-- en_US -->
-<string name="string_not_defined">This string was not defined</string>
 <string name="app_name">USIM Modifier</string>
 <string name="version">Version</string>
 <string name="copyright">©Copyright 2019 Ming Hsu</string>
@@ -35,6 +34,6 @@
 <string name="adm_blocked">Note! The ADM verify count is ZERO, some features will be limited!!</string>
 <string name="plugin_loading">Loading the plugin ... </string>
 <string name="plugin_loaded">%d found</string>
-
+<string name="error_plugin_not_def_summary_res">Error! The '%s' plugin not defined 'summary' string resource, ignored.</string>
 
 </resource>

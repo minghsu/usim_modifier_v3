@@ -6,6 +6,7 @@ import importlib
 from control.components import components
 from control.constants import LAYOUT, STATE
 import control.log as log
+import control.resource as res
 
 
 class plugin():
@@ -15,7 +16,7 @@ class plugin():
     def execute(self, arg_components: components, arg_arguments):
         log.debug(self.__class__.__name__, "ENTER")
 
-        print(arg_components.resource.get_string(
+        print(res.get_string(
             "plugin_loading"), end='')
         plugin_count = 0
 
@@ -29,15 +30,19 @@ class plugin():
 
                     res_files = [os.path.join(r, file) for r, d, f in os.walk(
                         './model/plugins/%s/values' % (name)) for file in f]
-                    arg_components.resource.add_resource(name, res_files)
+                    res.add_resource(name, res_files)
 
                     instance_class = getattr(plugin_class, name)()
-                    plugin_count += 1
+
+                    if instance_class.summary() == None:
+                        print (res.get_string("error_plugin_not_def_summary_res") % (name))
+                    else:
+                        plugin_count += 1
                 except:
                     log.debug(self.__class__.__name__,
                               "Error to import '%s' plugin." % (name))
 
-        print(arg_components.resource.get_string(
+        print(res.get_string(
             "plugin_loaded") % (plugin_count))
 
         log.debug(self.__class__.__name__, "EXIT")

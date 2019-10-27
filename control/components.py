@@ -4,17 +4,17 @@
 
 from model.modeler import modeler
 from view.viewer import viewer
-from control.resource import resource
 from control.configuration import configuration
+
 import control.log as log
+import control.resource as res
 
 
 class components:
     def __init__(self):
         self.__viewer = viewer()
         self.__config = configuration()
-        self.__resource = resource(
-            arg_localized=self.__config.localized)
+        res.init(arg_localized=self.__config.localized)
         self.__modeler = modeler()
 
         log.init(arg_enable=self.__config.log)

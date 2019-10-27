@@ -5,6 +5,7 @@ import os
 import sys
 import traceback
 import control.log as log
+import control.resource as res
 
 from control.components import components
 from control.constants import LAYOUT, STATE
@@ -35,7 +36,7 @@ class statemachine:
             lineNum = lastCallStack[1]
             # funcName = lastCallStack[2]
 
-            errMsg = self.__components.resource.get_string("exception").format(
+            errMsg = res.get_string("exception").format(
                 os.path.basename(fileName), lineNum, reason)
 
             self.__state = STATE.EXCEPTION

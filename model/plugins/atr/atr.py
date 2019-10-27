@@ -2,18 +2,16 @@
 # -*- coding:utf-8 -*-
 
 import os
+import control.log as log
+import control.resource as res
 
 from smartcard.util import toHexString
 from model.plugins.base_plugin import base_plugin
-import control.log as log
 
 
 class atr(base_plugin):
     def __init__(self):
         pass
-
-    def summary(self):
-        return "Displayed the value of Answer To Reset (ATR)."
 
     def version(self):
         return "1.00"

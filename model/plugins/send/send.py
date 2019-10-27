@@ -3,6 +3,7 @@
 
 import os
 import control.log as log
+import control.resource as res
 
 from smartcard.util import toHexString, toBytes
 from model.plugins.base_plugin import base_plugin
@@ -11,9 +12,6 @@ from model.plugins.base_plugin import base_plugin
 class send(base_plugin):
     def __init__(self):
         pass
-
-    def summary(self):
-        return "Send the APDU command to USIM directly"
 
     def version(self):
         return "1.00"

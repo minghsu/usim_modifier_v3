@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 import os
 import control.log as log
+import control.resource as res
 
 from smartcard.util import toASCIIBytes
 
@@ -26,12 +27,12 @@ class pin():
             pin_code = arg_components.config.query_pin_code(
                 arg_components.modeler.uicc.iccid)
             if arg_arguments == None and pin_code != None and is_valid_pin_code(pin_code):
-                print(arg_components.resource.get_string(
+                print(res.get_string(
                     "auto_pin_verifing") % (arg_components.modeler.uicc.iccid), end='')
                 auto_verify = True
             else:
                 if arg_arguments == None:
-                    print(arg_components.resource.get_string(
+                    print(res.get_string(
                         "input_pin_code"), end='')
                 else:
                     print(arg_arguments, end='')
@@ -40,11 +41,11 @@ class pin():
 
                 if len(pin_code) == 0:
                     ret_state = STATE.ERROR
-                    ret_arg = arg_components.resource.get_string(
+                    ret_arg = res.get_string(
                         "terminated_pin_code")
                 elif not is_valid_pin_code(pin_code):
                     ret_state = STATE.PIN
-                    ret_arg = arg_components.resource.get_string(
+                    ret_arg = res.get_string(
                         "invalid_pin_code")
 
             if ret_arg == None:
@@ -53,9 +54,9 @@ class pin():
 
                 if auto_verify == True:
                     if verify_result == ERROR.NONE:
-                        print(arg_components.resource.get_string("pass"))
+                        print(res.get_string("pass"))
                     else:
-                        print(arg_components.resource.get_string("fail"))
+                        print(res.get_string("fail"))
 
                 # If enabled 'configuration.pin', store the pin code for auto verify
                 if verify_result == ERROR.NONE and auto_verify != True:
@@ -66,11 +67,11 @@ class pin():
                 if verify_result != ERROR.NONE:
                     if reamings == 0:
                         ret_state = STATE.ERROR
-                        ret_arg = arg_components.resource.get_string(
+                        ret_arg = res.get_string(
                             "card_blocked")
                     else:
                         ret_state = STATE.PIN
-                        ret_arg = arg_components.resource.get_string(
+                        ret_arg = res.get_string(
                             "incorrect_pin_code") % (reamings)
 
         log.debug(self.__class__.__name__, "EXIT")

@@ -3,7 +3,9 @@
 
 from control.components import components
 from control.constants import LAYOUT, STATE, ERROR
+
 import control.log as log
+import control.resource as res
 
 
 class initial():
@@ -17,17 +19,15 @@ class initial():
         ret_arguments = None
         if arg_components.modeler.reader.name == None:
             ret_state = STATE.ERROR
-            ret_arguments = arg_components.resource.get_string(
-                "no_cardreader")
+            ret_arguments = res.get_string("no_cardreader")
         else:
             ret = arg_components.modeler.open()
             if ret == ERROR.CARD_ABSENT:
                 ret_state = STATE.ERROR
-                ret_arguments = arg_components.resource.get_string(
-                    "no_card")
+                ret_arguments = res.get_string("no_card")
             else:
                 ret_state = STATE.PIN
-                out_msg = arg_components.resource.get_string(
+                out_msg = res.get_string(
                     "reader_connected") % (arg_components.modeler.reader.name)
                 out_msg = arg_components.viewer.get_layout(
                     LAYOUT.ONELINE, arg_string=out_msg)

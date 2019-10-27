@@ -5,6 +5,7 @@ import os
 from control.components import components
 from control.constants import LAYOUT, STATE
 import control.log as log
+import control.resource as res
 
 
 class startup():
@@ -15,11 +16,11 @@ class startup():
         log.debug(self.__class__.__name__, "ENTER")
 
         out_msg = arg_components.viewer.get_layout(LAYOUT.STARTUP,
-                                                   arg_name=arg_components.resource.get_string(
+                                                   arg_name=res.get_string(
                                                        'app_name'),
-                                                   arg_version=arg_components.resource.get_string(
+                                                   arg_version=res.get_string(
                                                        'app_version'),
-                                                   arg_copyright=arg_components.resource.get_string(
+                                                   arg_copyright=res.get_string(
                                                        'copyright'))
 
         print(out_msg)
