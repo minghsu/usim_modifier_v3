@@ -31,8 +31,7 @@ class adm():
             auto_verify = True
         else:
             if arg_arguments == None:
-                print(res.get_string(
-                    "input_adm_code"), end='')
+                print(res.get_string("input_adm_code"), end='')
             else:
                 print(arg_arguments, end='')
 
@@ -45,8 +44,7 @@ class adm():
                 print(out_msg)
             elif not is_valid_adm_code(adm_code):
                 ret_state = STATE.ADM
-                ret_arg = res.get_string(
-                    "invalid_adm_code")
+                ret_arg = res.get_string("invalid_adm_code")
 
         if len(adm_code) != 0 and ret_arg == None:
             verify_result, reamings = arg_components.modeler.uicc.verify_pin(
@@ -72,8 +70,7 @@ class adm():
                     print(out_msg)
                 else:
                     ret_state = STATE.ADM
-                    ret_arg = res.get_string(
-                        "incorrect_adm_code") % (reamings)
+                    ret_arg = res.get_string("incorrect_adm_code") % (reamings)
 
         log.debug(self.__class__.__name__, "EXIT")
         return (ret_state, ret_arg)

@@ -32,8 +32,7 @@ class pin():
                 auto_verify = True
             else:
                 if arg_arguments == None:
-                    print(res.get_string(
-                        "input_pin_code"), end='')
+                    print(res.get_string("input_pin_code"), end='')
                 else:
                     print(arg_arguments, end='')
 
@@ -41,12 +40,10 @@ class pin():
 
                 if len(pin_code) == 0:
                     ret_state = STATE.ERROR
-                    ret_arg = res.get_string(
-                        "terminated_pin_code")
+                    ret_arg = res.get_string("terminated_pin_code")
                 elif not is_valid_pin_code(pin_code):
                     ret_state = STATE.PIN
-                    ret_arg = res.get_string(
-                        "invalid_pin_code")
+                    ret_arg = res.get_string("invalid_pin_code")
 
             if ret_arg == None:
                 verify_result, reamings = arg_components.modeler.uicc.verify_pin(
@@ -67,8 +64,7 @@ class pin():
                 if verify_result != ERROR.NONE:
                     if reamings == 0:
                         ret_state = STATE.ERROR
-                        ret_arg = res.get_string(
-                            "card_blocked")
+                        ret_arg = res.get_string("card_blocked")
                     else:
                         ret_state = STATE.PIN
                         ret_arg = res.get_string(

@@ -36,6 +36,7 @@ class LAYOUT:
     EXCEPTION = 'exception'
     STARTUP = 'startup'
     ERROR = 'error'
+    PLUGIN_INFO = 'plugin_info'
 
 
 class UICC_FILE:

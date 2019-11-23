@@ -16,8 +16,17 @@ class components:
         self.__config = configuration()
         res.init(arg_localized=self.__config.localized)
         self.__modeler = modeler()
+        self.__plugin = []
 
         log.init(arg_enable=self.__config.log)
+
+    @property
+    def plugin(self):
+        return self.__plugin
+
+    @plugin.setter
+    def plugin(self, plugin):
+        self.__plugin = plugin
 
     @property
     def modeler(self):
