@@ -8,7 +8,7 @@ import view.layout.oneline as oneline
 import control.resource as res
 
 '''
-  '[plugin name]' loaded, version: V1.0, summary: Get and show the ATR value.
+  >>     '[plugin name]' loaded, version: V1.0, summary: Get and show the ATR value.
 '''
 
 

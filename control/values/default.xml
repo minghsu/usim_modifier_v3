@@ -34,7 +34,7 @@
 <string name="adm_blocked">Note! The ADM verify count is ZERO, some features will be limited!!</string>
 <string name="plugin_loading">Loading the plugin ...</string>
 <string name="plugin_loaded">Found %d plugin ...</string>
-<string name="plugin_found">%10s plugin loaded, version: %s, summary: %s</string>
+<string name="plugin_found">'%10s' loaded, V%s, summary: %s</string>
 <string name="error_plugin_not_def_summary_res">Error! The '%s' plugin not defined 'summary' string resource, ignored.</string>
 
 </resource>

@@ -16,6 +16,7 @@ class plugin():
     def execute(self, arg_components: components, arg_arguments):
         log.debug(self.__class__.__name__, "ENTER")
 
+        print('')
         print(res.get_string("plugin_loading"))
         plugin_count = 0
         plugin = []
@@ -52,6 +53,7 @@ class plugin():
                               "Error to import '%s' plugin." % (name))
 
         print(res.get_string("plugin_loaded") % (plugin_count))
+        print('')
         arg_components.plugin = plugin
         log.debug(self.__class__.__name__, "EXIT")
-        return (STATE.EXIT, None)
+        return (STATE.CLI, None)

@@ -29,6 +29,7 @@ class STATE:
     ERROR = 'error'
     EXIT = 'exit'
     PLUGIN = 'plugin'
+    CLI = 'cli'
 
 
 class LAYOUT:
@@ -37,6 +38,7 @@ class LAYOUT:
     STARTUP = 'startup'
     ERROR = 'error'
     PLUGIN_INFO = 'plugin_info'
+    CLI_PREFIX = 'cli_prefix'
 
 
 class UICC_FILE:
