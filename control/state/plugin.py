@@ -56,4 +56,4 @@ class plugin():
         print('')
         arg_components.plugin = plugin
         log.debug(self.__class__.__name__, "EXIT")
-        return (STATE.CLI, None)
+        return (STATE.HELP, None)

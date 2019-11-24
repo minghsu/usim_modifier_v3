@@ -14,7 +14,7 @@ USIM modifier$
 
 def layout(arg_prefix=''):
 
-    ret_layout = arg_prefix + '$'
+    ret_layout = arg_prefix + '$ '
 
     ret_layout = oneline.layout(
         arg_string=ret_layout, arg_style=STYLE.BRIGHT, arg_fore=COLOR_FORE.YELLOW)

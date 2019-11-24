@@ -34,7 +34,15 @@
 <string name="adm_blocked">Note! The ADM verify count is ZERO, some features will be limited!!</string>
 <string name="plugin_loading">Loading the plugin ...</string>
 <string name="plugin_loaded">Found %d plugin ...</string>
-<string name="plugin_found">'%10s' loaded, V%s, summary: %s</string>
+<string name="plugin_found">'%10s', V%s, summary: %s</string>
 <string name="error_plugin_not_def_summary_res">Error! The '%s' plugin not defined 'summary' string resource, ignored.</string>
+
+<string name="help">
+<![CDATA[Usage: 
+  help: show this help
+  exit: exit the program
+  plugin: show all available plugins
+  [plugin name]: execute the plugin
+  [plugin name] help: show the plugin help]]></string>
 
 </resource>

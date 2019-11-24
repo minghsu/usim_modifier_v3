@@ -30,6 +30,8 @@ class STATE:
     EXIT = 'exit'
     PLUGIN = 'plugin'
     CLI = 'cli'
+    HELP = 'help'
+    PLUGIN_LIST = 'plugin_list'
 
 
 class LAYOUT:
