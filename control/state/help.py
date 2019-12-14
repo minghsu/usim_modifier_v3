@@ -16,6 +16,7 @@ class help():
     def execute(self, arg_components: components, arg_arguments):
         log.debug(self.__class__.__name__, "ENTER")
 
+        print('')
         print(res.get_string('help') + os.linesep)
 
         log.debug(self.__class__.__name__, "EXIT")

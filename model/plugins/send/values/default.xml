@@ -3,7 +3,7 @@
 
 <string name="summary">Send the 'APDU' to USIM directly</string>
 <string name="help">
-<![CDATA[Usage (Example of 'SELECT MF'):
+<![CDATA[Usage (Example by 'SELECT MF'):
 
   USIM modifier$ send 00A40004023F00
 

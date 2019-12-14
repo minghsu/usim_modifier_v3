@@ -32,6 +32,8 @@ class STATE:
     CLI = 'cli'
     HELP = 'help'
     PLUGIN_LIST = 'plugin_list'
+    EXECUTE = 'execute'
+    DISPATCH = 'dispatch'
 
 
 class LAYOUT:
@@ -41,6 +43,7 @@ class LAYOUT:
     ERROR = 'error'
     PLUGIN_INFO = 'plugin_info'
     CLI_PREFIX = 'cli_prefix'
+    PLUGIN_HELP = 'plugin_help'
 
 
 class UICC_FILE:

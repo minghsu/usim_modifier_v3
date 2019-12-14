@@ -53,7 +53,6 @@ class plugin():
                               "Error to import '%s' plugin." % (name))
 
         print(res.get_string("plugin_loaded") % (plugin_count))
-        print('')
         arg_components.plugin = plugin
         log.debug(self.__class__.__name__, "EXIT")
         return (STATE.HELP, None)

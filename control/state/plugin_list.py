@@ -16,6 +16,7 @@ class plugin_list():
     def execute(self, arg_components: components, arg_arguments):
         log.debug(self.__class__.__name__, "ENTER")
 
+        print('')
         print(res.get_string("plugin_loaded") %
               (len(arg_components.plugin)))
 
@@ -24,5 +25,7 @@ class plugin_list():
                                                    arg_name=plugin[0],
                                                    arg_version=plugin[1],
                                                    arg_summary=plugin[2]))
+        print('')
+
         log.debug(self.__class__.__name__, "EXIT")
         return (STATE.CLI, None)
