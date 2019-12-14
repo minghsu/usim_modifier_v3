@@ -7,6 +7,8 @@ import control.resource as res
 
 from smartcard.util import toHexString, toBytes
 from model.plugins.base_plugin import base_plugin
+from control.components import components
+from model.uicc import uicc
 
 
 class send(base_plugin):
@@ -17,18 +19,21 @@ class send(base_plugin):
         return "1.00"
 
     def help(self):
-        return ("Usage:\n"
-                "  - send XXXXXX\n"
-                "\n"
-                "Example of 'SELECT MF':\n"
-                "  - send 00A40004023F00\n"
-                " > , 61 1F")
+        ret_help = res.get_string("help", self.__class__.__name__)
+        return ret_help % res.get_string("app_name")
 
     @property
     def auto_execute(self):
         return False
 
-    def execute(self):
+    def execute(self, arg_components: components, arg_arguments=''):
         log.debug(self.__class__.__name__, "ENTER")
+
+        uicc: uicc = arg_components.modeler.uicc
+        if len(arg_arguments) != 0 and len(arg_arguments) % 2 != 1:
+            print("TX: %s" % (toHexString(toBytes(arg_arguments))))
+            response, sw1, sw2 = uicc.send(toBytes(arg_arguments))
+            rx_resp = "%s %02X %02X" % (toHexString(response), sw1, sw2)
+            print("RX: " + rx_resp.strip())
 
         log.debug(self.__class__.__name__, "EXIT")

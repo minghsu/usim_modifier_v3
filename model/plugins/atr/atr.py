@@ -7,6 +7,8 @@ import control.resource as res
 
 from smartcard.util import toHexString
 from model.plugins.base_plugin import base_plugin
+from control.components import components
+from model.uicc import uicc
 
 
 class atr(base_plugin):
@@ -20,7 +22,11 @@ class atr(base_plugin):
     def auto_execute(self):
         return False
 
-    def execute(self, arg_connection, arg_parameter=""):
+    def execute(self, arg_components: components, arg_arguments=''):
         log.debug(self.__class__.__name__, "ENTER")
+
+        uicc: uicc = arg_components.modeler.uicc
+
+        print("ATR: %s" % (toHexString(arg_components.modeler.uicc.atr())))
 
         log.debug(self.__class__.__name__, "EXIT")

@@ -53,6 +53,12 @@ class uicc:
                   "RX: %s, %02X %02X" % (toHexString(response), sw1, sw2))
         return (response, sw1, sw2)
 
+    def atr(self):
+        return self.__connection.getATR()
+
+    def send(self, arg_apdu_cmd):
+        return self.__transmit(arg_apdu_cmd)
+
     def select(self, arg_file_id):
         resp = sw1 = sw2 = None
 

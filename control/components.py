@@ -37,10 +37,6 @@ class components:
         return self.__viewer
 
     @property
-    def resource(self):
-        return self.__resource
-
-    @property
     def config(self):
         return self.__config
 
