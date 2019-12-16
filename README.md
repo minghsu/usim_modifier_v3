@@ -1,6 +1,6 @@
 # USIM Modifier Version 3.0
 
-I just finished the system architecture, and decide to publish this repositorie. 
+I just finished the system architecture, and decide to publish this repositorie first.
 
 # New features
 
