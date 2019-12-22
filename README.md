@@ -2,9 +2,9 @@
 
 I just finished the system architecture, and decide to publish this repositorie first.
 
-Current version only supportted few plugins due to I found some design issue, especially as 'layout'. 
-I will focus to fix 'layout' part fisrt, then implement 'imsi', 'mccmnc', 'gid' & 'spn' plugins.
-In my experience, the above 5 plugins should be covered most customization conditions
+Current version only supportted few plugins due to I found some design issue, especially as 'layout'.  
+I will focus to fix 'layout' part fisrt, then implement 'imsi', 'mccmnc', 'gid' & 'spn' plugins.  
+In my experience, the above 5 plugins should be covered most customization conditions.  
 
 # New features
 
