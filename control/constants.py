@@ -17,6 +17,7 @@ class ERROR:
     INCORRECT_PIN = 3
     INCORRECT_ADM = 4
     UICC_BLOCKED = 5
+    UNKNOWN = 0x7F
 
 
 class STATE:

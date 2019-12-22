@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">Query or modify the value of ICCID.</string>
+<string name="help"><![CDATA[Usage:
+  
+  %s $ iccid [set=iccid] [format=raw]
+  
+  Example:
+    Original: 89860009191190000108
+    - iccid
+      ICCID: 89860009191190000108 (98 68 00 90 91 11 09 00 10 80)
+    - iccid set=1234
+      ICCID: 89860009191190000108 (98 68 00 90 91 11 09 00 10 80)
+      ICCID updated: 12340009191190000108 (21 43 00 90 91 11 09 00 10 80)]]></string>
+<string name="read_error">Error! Can't read ICCID correctly</string>
+<string name="update_error">Error! Can't update ICCID successfully</string>
+<string name="updated">ICCID updated:</string>
+
+</resource>

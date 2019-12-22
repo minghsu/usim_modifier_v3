@@ -17,6 +17,7 @@ class dispatch():
         ret_arguments = None
 
         log.debug(self.__class__.__name__, "ENTER")
+        log.info(self.__class__.__name__, arg_arguments)
 
         if (arg_arguments == 'plugin'):
             ret_state = STATE.PLUGIN_LIST

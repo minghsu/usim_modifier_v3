@@ -10,4 +10,12 @@
     <pin>1234</pin>
     <adm>5555555555555555</adm>
   </uicc>
+  <uicc iccid="89670009191190000108">
+    <pin>1234</pin>
+    <adm>5555555555555555</adm>
+  </uicc>
+  <uicc iccid="12340009191190000108">
+    <pin>1234</pin>
+    <adm>5555555555555555</adm>
+  </uicc>
 </usim_modifier>

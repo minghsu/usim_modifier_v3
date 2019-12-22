@@ -4,7 +4,7 @@ import control.log as log
 
 from smartcard.util import toHexString
 
-from model.apdu import select, get_response, read_binary, verify_pin
+from model.apdu import select, get_response, read_binary, verify_pin, update_binary
 from model.library.uicc_sel_resp import uicc_sel_resp
 from model.library.fcp import EF_FILE_TYPE
 from model.library.convert import convert_bcd_to_string
@@ -72,8 +72,17 @@ class uicc:
 
         return uicc_sel_resp(resp, sw1, sw2)
 
-    def read_binary(self, arg_file_id):
+    def update_binary(self, arg_content):
+        apdu = update_binary(arg_content)
+        if apdu != None:
+            resp, sw1, sw2 = self.__transmit(apdu)
 
+            if sw1 == 0x90:
+                return ERROR.NONE
+
+        return ERROR.UNKNOWN
+
+    def read_binary(self, arg_file_id):
         uicc_resp = self.select(arg_file_id)
 
         if uicc_resp.sw1 != 0x90 or uicc_resp.ef_type != EF_FILE_TYPE.TRANSPARENT:

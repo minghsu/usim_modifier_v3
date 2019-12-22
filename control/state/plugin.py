@@ -24,7 +24,7 @@ class plugin():
         plugins_list = os.listdir("./model/plugins")
         for filename in plugins_list:
             name, ext = os.path.splitext(filename)
-            if ext != '.py' and name != '__pycache__':
+            if ext != '.py' and name != '__pycache__' and name != '.DS_Store':
                 try:
                     plugin_class = __import__("model.plugins.%s.%s" %
                                               (name, name), fromlist=[name])

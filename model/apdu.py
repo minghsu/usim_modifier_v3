@@ -49,6 +49,20 @@ def read_binary(arg_length):
     return ret_cmd
 
 
+def update_binary(arg_content):
+    ret_cmd = [0x00] * 5
+
+    ret_cmd[0] = 0x00  # CLA
+    ret_cmd[1] = 0xD6  # INS
+    ret_cmd[2] = 0x00  # P1
+    ret_cmd[3] = 0x00  # P2
+    ret_cmd[4] = len(arg_content)  # Length
+
+    ret_cmd += arg_content
+
+    return ret_cmd
+
+
 def verify_pin(arg_type, arg_key):
     ret_cmd = [0xFF] * (5 + 8)
 
