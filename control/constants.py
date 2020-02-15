@@ -35,15 +35,6 @@ class STATE:
     PLUGIN_LIST = 'plugin_list'
     EXECUTE = 'execute'
     DISPATCH = 'dispatch'
-
-
-class LAYOUT:
-    ONELINE = 'oneline'
-    EXCEPTION = 'exception'
-    STARTUP = 'startup'
-    ERROR = 'error'
-    PLUGIN_INFO = 'plugin_info'
-    CLI_PREFIX = 'cli_prefix'
     PLUGIN_HELP = 'plugin_help'
 
 

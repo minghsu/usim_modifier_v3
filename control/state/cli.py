@@ -3,9 +3,10 @@
 
 import os
 from control.components import components
-from control.constants import LAYOUT, STATE
+from control.constants import STATE
 import control.log as log
 import control.resource as res
+import view.layout.state.cli as layout_cli
 
 
 class cli():
@@ -18,8 +19,8 @@ class cli():
 
         log.debug(self.__class__.__name__, "ENTER")
 
-        print(arg_components.viewer.get_layout(LAYOUT.CLI_PREFIX,
-                                               arg_prefix=res.get_string('app_name')), end='')
+        out_msg = layout_cli.layout(arg_prefix=res.get_string('app_name'))
+        print(out_msg, end='')
         ret_arguments = input().strip().lower()
 
         log.debug(self.__class__.__name__, "EXIT")

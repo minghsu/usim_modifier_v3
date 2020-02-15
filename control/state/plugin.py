@@ -4,9 +4,10 @@
 import os
 import importlib
 from control.components import components
-from control.constants import LAYOUT, STATE
+from control.constants import STATE
 import control.log as log
 import control.resource as res
+import view.layout.state.plugin as layout_plugin
 
 
 class plugin():
@@ -16,8 +17,6 @@ class plugin():
     def execute(self, arg_components: components, arg_arguments):
         log.debug(self.__class__.__name__, "ENTER")
 
-        print('')
-        print(res.get_string("plugin_loading"))
         plugin_count = 0
         plugin = []
 
@@ -35,24 +34,20 @@ class plugin():
 
                     instance_class = getattr(plugin_class, name)()
 
-                    if instance_class.summary() == None:
-                        print(res.get_string(
-                            "error_plugin_not_def_summary_res") % (name))
-                    else:
+                    if instance_class.summary() != None:
                         plugin_count += 1
                         plugin.append([name,
                                        instance_class.version(),
                                        instance_class.summary(),
                                        instance_class.auto_execute])
-                        print(arg_components.viewer.get_layout(LAYOUT.PLUGIN_INFO,
-                                                               arg_name=name,
-                                                               arg_version=instance_class.version(),
-                                                               arg_summary=instance_class.summary()))
+
                 except:
                     log.debug(self.__class__.__name__,
                               "Error to import '%s' plugin." % (name))
 
-        print(res.get_string("plugin_loaded") % (plugin_count))
         arg_components.plugin = plugin
+        out_msg = layout_plugin.layout(arg_format=res.get_string("plugin_loaded"),
+                                       arg_count=plugin_count)
+        print(out_msg)
         log.debug(self.__class__.__name__, "EXIT")
         return (STATE.HELP, None)

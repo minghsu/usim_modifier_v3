@@ -3,7 +3,6 @@
 # -*- coding:utf-8 -*-
 
 from model.modeler import modeler
-from view.viewer import viewer
 from control.configuration import configuration
 
 import control.log as log
@@ -12,7 +11,6 @@ import control.resource as res
 
 class components:
     def __init__(self):
-        self.__viewer = viewer()
         self.__config = configuration()
         res.init(arg_localized=self.__config.localized)
         self.__modeler = modeler()
@@ -31,10 +29,6 @@ class components:
     @property
     def modeler(self):
         return self.__modeler
-
-    @property
-    def viewer(self):
-        return self.__viewer
 
     @property
     def config(self):

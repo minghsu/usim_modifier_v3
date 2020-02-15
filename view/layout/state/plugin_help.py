@@ -4,8 +4,8 @@
 import os
 
 from control.constants import STYLE, COLOR_FORE
-import view.layout.oneline as oneline
 import control.resource as res
+import view.layout.system.oneline as layout_oneline
 
 '''
 
@@ -20,16 +20,15 @@ Help info of 'send' plugin
 '''
 
 
-def layout(arg_name='', arg_help=''):
+def layout(arg_format='', arg_name='', arg_help=''):
 
     ret_layout = os.linesep
-    ret_layout += res.get_string('plugin_help_header') % (arg_name) + \
-        os.linesep
+    ret_layout += arg_format % (arg_name) + os.linesep
     ret_layout += os.linesep
 
     lst_string = arg_help.split(os.linesep)
     for string in lst_string:
-        ret_layout += oneline.layout(
+        ret_layout += layout_oneline.layout(
             arg_string=string, arg_padding=2) + os.linesep
 
     return ret_layout

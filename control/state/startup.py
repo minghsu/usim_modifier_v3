@@ -3,9 +3,10 @@
 
 import os
 from control.components import components
-from control.constants import LAYOUT, STATE
+from control.constants import STATE
 import control.log as log
 import control.resource as res
+import view.layout.state.startup as layout_startup
 
 
 class startup():
@@ -15,13 +16,12 @@ class startup():
     def execute(self, arg_components: components, arg_arguments):
         log.debug(self.__class__.__name__, "ENTER")
 
-        out_msg = arg_components.viewer.get_layout(LAYOUT.STARTUP,
-                                                   arg_name=res.get_string(
-                                                       'app_name'),
-                                                   arg_version=res.get_string(
-                                                       'app_version'),
-                                                   arg_copyright=res.get_string(
-                                                       'copyright'))
+        out_msg = layout_startup.layout(arg_name=res.get_string(
+                                        'app_name'),
+                                        arg_version=res.get_string(
+                                        'app_version'),
+                                        arg_copyright=res.get_string(
+                                        'copyright'))
 
         print(out_msg)
 

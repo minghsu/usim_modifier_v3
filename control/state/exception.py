@@ -2,8 +2,9 @@
 # -*- coding:utf-8 -*-
 
 from control.components import components
-from control.constants import LAYOUT, STATE
+from control.constants import STATE
 import control.log as log
+import view.layout.state.exception as layout_exception
 
 
 class exception():
@@ -13,9 +14,7 @@ class exception():
     def execute(self, arg_components: components, arg_arguments):
         log.debug(self.__class__.__name__, "ENTER")
 
-        out_msg = arg_components.viewer.get_layout(
-            LAYOUT.EXCEPTION, arg_string=arg_arguments)
-
+        out_msg = layout_exception.layout(arg_string=arg_arguments)
         print(out_msg)
 
         log.debug(self.__class__.__name__, "EXIT")

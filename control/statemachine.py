@@ -8,7 +8,7 @@ import control.log as log
 import control.resource as res
 
 from control.components import components
-from control.constants import LAYOUT, STATE
+from control.constants import STATE
 
 
 class statemachine:

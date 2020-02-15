@@ -7,7 +7,7 @@ import control.resource as res
 from smartcard.util import toASCIIBytes
 
 from control.components import components
-from control.constants import STATE, LAYOUT, ERROR, PIN_TYPE
+from control.constants import STATE, ERROR, PIN_TYPE
 from model.library.input_check import is_valid_pin_code
 
 

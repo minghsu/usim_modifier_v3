@@ -2,10 +2,11 @@
 # -*- coding:utf-8 -*-
 
 from control.components import components
-from control.constants import LAYOUT, STATE, ERROR
+from control.constants import STATE, ERROR
 
 import control.log as log
 import control.resource as res
+import view.layout.state.initial as layout_initial
 
 
 class initial():
@@ -27,10 +28,8 @@ class initial():
                 ret_arguments = res.get_string("no_card")
             else:
                 ret_state = STATE.PIN
-                out_msg = res.get_string(
-                    "reader_connected") % (arg_components.modeler.reader.name)
-                out_msg = arg_components.viewer.get_layout(
-                    LAYOUT.ONELINE, arg_string=out_msg)
+                out_msg = layout_initial.layout(res.get_string("reader_connected"),
+                                                arg_components.modeler.reader.name)
                 print(out_msg)
 
         log.debug(self.__class__.__name__, "EXIT")

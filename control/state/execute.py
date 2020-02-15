@@ -3,7 +3,7 @@
 
 import os
 from control.components import components
-from control.constants import LAYOUT, STATE
+from control.constants import STATE
 import control.log as log
 import control.resource as res
 
@@ -26,9 +26,8 @@ class execute():
 
                 instance_class = getattr(plugin_class, plugin[0])()
                 if (len(cmd_list) > 1 and 'help' == cmd_list[1]):
-                    print(arg_components.viewer.get_layout(LAYOUT.PLUGIN_HELP,
-                                                           arg_name=cmd_list[0],
-                                                           arg_help=instance_class.help()))
+                    ret_state = STATE.PLUGIN_HELP
+                    ret_arguments = [cmd_list[0], instance_class.help()]
                     break
                 else:
                     instance_class.execute(
