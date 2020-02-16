@@ -47,10 +47,10 @@ class uicc:
 
     def __transmit(self, arg_apdu_cmd):
         log.debug(self.__class__.__name__,
-                  "TX: %s" % (toHexString(arg_apdu_cmd)))
+                  "TX> %s" % (toHexString(arg_apdu_cmd)))
         response, sw1, sw2 = self.__connection.transmit(arg_apdu_cmd)
         log.debug(self.__class__.__name__,
-                  "RX: %s, %02X %02X" % (toHexString(response), sw1, sw2))
+                  "RX< %s, %02X %02X" % (toHexString(response), sw1, sw2))
         return (response, sw1, sw2)
 
     def atr(self):

@@ -61,8 +61,9 @@ class configuration:
         else:
             pin_node = pin_node[0]
 
-        pin_node.text = arg_pin
-        self.save()
+        if (pin_node.text != arg_pin):
+            pin_node.text = arg_pin
+            self.save()
 
     def query_pin_code(self, arg_iccid):
         ret_pin = None
@@ -92,8 +93,9 @@ class configuration:
         else:
             adm_node = adm_node[0]
 
-        adm_node.text = arg_adm
-        self.save()
+        if (adm_node.text != arg_adm):
+            adm_node.text = arg_adm
+            self.save()
 
     def query_adm_code(self, arg_iccid):
         ret_adm = None

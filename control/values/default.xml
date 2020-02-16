@@ -29,7 +29,7 @@
 <string name="input_adm_code">Please input ADM code (16 digits, Hexadecimal): </string>
 <string name="invalid_adm_code">Invalid ADM code, please try again (16 digits, Hexadecimal): </string>
 <string name="incorrect_adm_code">Incorrect ADM code, %d remaining attempts, please try again (16 digits, Hexadecimal): </string>
-<string name="terminated_adm_code">User cancel ADM operation, some features will be limited!</string>
+<string name="terminated_adm_code">User cancel ADM operation, system terminated!</string>
 <string name="auto_adm_verifing">Found the ADM of '%s' USIM card, auto verifing ... </string>
 <string name="adm_blocked">Note! The ADM verify count is ZERO, some features will be limited!!</string>
 <string name="plugin_loading">Loading the plugin ...</string>
