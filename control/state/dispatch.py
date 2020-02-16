@@ -29,8 +29,12 @@ class dispatch():
             cmd_list = arg_arguments.split(' ')
             for plugin in arg_components.plugin:
                 if (plugin[0] == cmd_list[0]):
-                    ret_state = STATE.EXECUTE
-                    ret_arguments = arg_arguments
+                    if (len(cmd_list) > 1 and 'help' == cmd_list[1]):
+                        ret_state = STATE.PLUGIN_HELP
+                        ret_arguments = cmd_list[0]
+                    else:
+                        ret_state = STATE.EXECUTE
+                        ret_arguments = arg_arguments
                     break
 
         log.debug(self.__class__.__name__, "EXIT")

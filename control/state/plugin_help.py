@@ -15,9 +15,12 @@ class plugin_help():
     def execute(self, arg_components: components, arg_arguments):
         log.debug(self.__class__.__name__, "ENTER")
 
+        plugin_class = __import__("model.plugins.%s.%s" %
+                                  (arg_arguments, arg_arguments), fromlist=[arg_arguments])
+        instance_class = getattr(plugin_class, arg_arguments)()
         out_msg = layout_plugin_help.layout(arg_format=res.get_string('plugin_help_header'),
-                                            arg_name=arg_arguments[0],
-                                            arg_help=arg_arguments[1])
+                                            arg_name=arg_arguments,
+                                            arg_help=instance_class.help())
 
         print(out_msg)
         log.debug(self.__class__.__name__, "EXIT")
