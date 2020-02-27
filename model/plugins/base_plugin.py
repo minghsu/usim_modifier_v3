@@ -5,6 +5,8 @@ import abc
 from importlib import util
 
 import control.resource as res
+from control.components import components
+
 
 class base_plugin(abc.ABC):
     def summary(self):
@@ -13,7 +15,7 @@ class base_plugin(abc.ABC):
         If resource not defined 'help' key, will return 'None', and ignore that.
         '''
         ret_summary = res.get_string("summary", self.__class__.__name__)
-        
+
         return ret_summary
 
     def help(self):
@@ -33,7 +35,7 @@ class base_plugin(abc.ABC):
         return NotImplemented
 
     @abc.abstractmethod
-    def execute(self, arg_connection):
+    def execute(self, arg_components: components, arg_arguments=''):
         return NotImplemented
 
     @property
@@ -43,6 +45,9 @@ class base_plugin(abc.ABC):
     @property
     def sort_index(self):
         return 0xFFFF
+
+    def get_plugin_res(self, arg_resid):
+        return res.get_string(arg_resid, self.__class__.__name__)
 
     def execute_plugin(self, arg_plugin_name, arg_connection, arg_parameter=""):
 

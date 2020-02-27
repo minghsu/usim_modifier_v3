@@ -21,8 +21,11 @@ class iccid(base_plugin):
         return "1.00"
 
     def help(self):
-        ret_help = res.get_string("help", self.__class__.__name__)
+        ret_help = self.get_res("help")
         return ret_help % res.get_string("app_name")
+
+    def get_res(self, arg_resid):
+        return super(self.__class__, self).get_plugin_res(arg_resid)
 
     @property
     def auto_execute(self):
@@ -43,21 +46,22 @@ class iccid(base_plugin):
 
         read_resp = uicc.read_binary(UICC_FILE.ICCID)
         if read_resp != None:
-            print("ICCID: %s (%s)" % (convert_bcd_to_string(
-                read_resp), toHexString(read_resp)))
+            print(self.get_res("original") %
+                  (convert_bcd_to_string(read_resp),
+                   toHexString(read_resp)))
 
             if update_iccid:
                 original = convert_bcd_to_string(read_resp)
                 update_content = set_content + original[len(set_content):]
 
                 if uicc.update_binary(convert_string_to_bcd(update_content)) == ERROR.NONE:
-                    print("%s %s (%s)" % (res.get_string("updated", self.__class__.__name__),
-                                          update_content,
-                                          toHexString(convert_string_to_bcd(update_content))))
+                    print(self.get_res("updated") %
+                          (update_content,
+                           toHexString(convert_string_to_bcd(update_content))))
                 else:
-                    print(res.get_string("update_error", self.__class__.__name__))
+                    print(self.get_res("update_error"))
 
         else:
-            print(res.get_string("read_error", self.__class__.__name__))
+            print(self.get_res("read_error"))
 
         log.debug(self.__class__.__name__, "EXIT")

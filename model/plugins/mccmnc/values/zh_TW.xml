@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">查詢或是編輯 MCC/MNC 碼</string>
+<string name="help"><![CDATA[使用方式:
+  
+  %s $ mccmnc [mcc=xxx] [mnc=xxx]
+  
+  範例:
+    - mccmnc
+      > MCC/MNC: 466/92
+    - mccmnc mcc=320
+      > MCC/MNC: 320/92
+    - mccmnc mnc=01
+      > MCC/MNC: 466/01
+    - mccmnc mcc=001 mnc=01
+      > MCC/MNC: 001/01]]></string>
+<string name="read_error">錯誤! 無法讀取 MCC/MNC!</string>
+<string name="update_error">錯誤! 無法更新 MCC/MNC!</string>
+<string name="original">原始 MCC/MNC:</string>
+<string name="updated">更新 MCC/MNC:</string>
+<string name="invalid_mcc">MCC 長度不正確!</string>
+<string name="invalid_mnc">MNC 長度不正確!</string>
+</resource>
