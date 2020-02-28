@@ -43,6 +43,7 @@ class STATE:
 class UICC_FILE:
     MF = "3F00"
     ICCID = "2FE2"
+    DIR = "2F00"
     ADF = "7FFF"
     IMSI = "6F07"
     AD = "6FAD"

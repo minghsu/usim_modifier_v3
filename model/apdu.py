@@ -14,10 +14,7 @@ def select(arg_field):
 
     ret_cmd[0] = 0x00  # CLA
     ret_cmd[1] = 0xA4  # INS
-    if arg_field == UICC_FILE.MF or arg_field == UICC_FILE.ADF:
-        ret_cmd[2] = 0x00  # P1, Select by File ID
-    else:
-        ret_cmd[2] = 0x08  # P1, Select from MF
+    ret_cmd[2] = 0x00  # P1, Select by File ID
     ret_cmd[3] = 0x04  # P2, return FCP
     ret_cmd[4] = int(len(arg_field) / 2)  # LC
     ret_cmd[5:] = toBytes(arg_field.upper())
@@ -73,5 +70,17 @@ def verify_pin(arg_type, arg_key):
     ret_cmd[4] = 0x08  # Length
     for i in range(len(arg_key)):
         ret_cmd[i+5] = arg_key[i]
+
+    return ret_cmd
+
+
+def read_record(arg_idx, arg_length):
+    ret_cmd = [0x00] * 5
+
+    ret_cmd[0] = 0x00  # CLA
+    ret_cmd[1] = 0xB2  # INS
+    ret_cmd[2] = arg_idx  # arg_idx
+    ret_cmd[3] = 0x04  # P2
+    ret_cmd[4] = arg_length  # Length
 
     return ret_cmd

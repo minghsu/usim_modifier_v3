@@ -2,13 +2,13 @@
 # -*- coding:utf-8 -*-
 import control.log as log
 
-from smartcard.util import toHexString
-
-from model.apdu import select, get_response, read_binary, verify_pin, update_binary
+from smartcard.util import toHexString, PACK
+from model.apdu import *
 from model.library.uicc_sel_resp import uicc_sel_resp
 from model.library.fcp import EF_FILE_TYPE
 from model.library.convert import convert_bcd_to_string
 from control.constants import ERROR, PIN_TYPE, UICC_FILE
+from model.library.fcp import search_fcp_content, TLV_TAG
 
 
 class uicc:
@@ -28,6 +28,25 @@ class uicc:
         if read_resp != None:
             self.__iccid = convert_bcd_to_string(read_resp)
             log.info(self.__class__.__name__, "ICCID: " + self.__iccid)
+
+        # select AID for '7FFF'
+        self.__aid = self.__init_aid()
+
+    def __init_aid(self):
+        read_resp: uicc_sel_resp = self.select(UICC_FILE.DIR)
+        if read_resp.sw1 == 0x90:
+            dir_record = read_record(1, read_resp.length)
+            response, sw1, sw2 = self.__transmit(dir_record)
+            if sw1 == 0x90:
+                aid_content = search_fcp_content(
+                    response, TLV_TAG.APPLICATION_IDENTIFIER)
+                aid = toHexString(aid_content[2:], format=PACK)
+                select_aid_apdu = select(aid)
+                select_aid_apdu[2] = 0x04
+                response, sw1, sw2 = self.__transmit(select_aid_apdu)
+                return aid
+
+        return None
 
     @property
     def iccid(self):
@@ -71,6 +90,9 @@ class uicc:
                 resp, sw1, sw2 = self.__transmit(apdu)
 
         return uicc_sel_resp(resp, sw1, sw2)
+
+    def read_record(self, arg_file_id, arg_idx):
+        pass
 
     def update_binary(self, arg_content):
         apdu = update_binary(arg_content)

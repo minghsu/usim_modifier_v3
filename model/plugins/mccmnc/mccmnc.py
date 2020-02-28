@@ -74,7 +74,8 @@ class mccmnc(base_plugin):
         if update_mnc and len(set_mnc) != mnc_length:
             mnc_length = len(set_mnc)
             efad_data_response[3] = mnc_length
-            if uicc.update_binary(convert_string_to_bcd(efad_data_response)) != ERROR.NONE:
+
+            if uicc.update_binary(efad_data_response) != ERROR.NONE:
                 print(self.get_res("update_error"))
                 return
 
@@ -111,7 +112,7 @@ class mccmnc(base_plugin):
                     update_imsi[4] = (
                         update_imsi[4] & 0xF0) + (int(set_mnc[2]))
 
-            if uicc.update_binary(convert_string_to_bcd(update_imsi)) != ERROR.NONE:
+            if uicc.update_binary(update_imsi) != ERROR.NONE:
                 print(self.get_res("update_error"))
                 return
 
