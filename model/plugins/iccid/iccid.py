@@ -36,13 +36,11 @@ class iccid(base_plugin):
 
         uicc:uicc = arg_components.modeler.uicc
 
-        update_iccid = False
-        set_content = ""
+        set_content = None
         dict_args = convert_arguments_to_dict(arg_arguments)
         for key, value in dict_args.items():
             if key == "set":
                 set_content = value
-                update_iccid = True
 
         uicc_resp:uicc_sel_resp = uicc.select(UICC_FILE.ICCID, arg_type = UICC_SELECT_TYPE.FROM_MF)
         read_resp = uicc.read_binary(uicc_resp)
@@ -51,7 +49,7 @@ class iccid(base_plugin):
                   (convert_bcd_to_string(read_resp),
                    toHexString(read_resp)))
 
-            if update_iccid:
+            if set_content != None:
                 original = convert_bcd_to_string(read_resp)
                 update_content = set_content + original[len(set_content):]
 

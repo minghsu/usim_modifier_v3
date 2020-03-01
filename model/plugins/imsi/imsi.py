@@ -39,14 +39,12 @@ class imsi(base_plugin):
 
         uicc = arg_components.modeler.uicc
 
-        set_content = ""
-        update_imsi = False
+        set_content = None
 
         dict_args = convert_arguments_to_dict(arg_arguments)
         for key, value in dict_args.items():
             if key == "set":
                 set_content = value
-                update_imsi = True
 
         # read EF_IMSI
         uicc_resp = uicc.select(UICC_FILE.IMSI, arg_type = UICC_SELECT_TYPE.FROM_MF)
@@ -61,7 +59,7 @@ class imsi(base_plugin):
         # Ignore 1st char, and just use '001010123456789'
         print(self.get_res("original") % (convert_bcd_to_string(read_resp[1:])[1:], toHexString(read_resp)))
 
-        if update_imsi:
+        if set_content != None:
             imsi_update_content = read_resp[:]
 
             for i in range(len(set_content)):

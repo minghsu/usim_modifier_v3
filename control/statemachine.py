@@ -34,10 +34,10 @@ class statemachine:
             lastCallStack = traceback.extract_tb(tb)[-1]
             fileName = lastCallStack[0]
             lineNum = lastCallStack[1]
-            # funcName = lastCallStack[2]
+            funcName = lastCallStack[2]
 
             errMsg = res.get_string("exception").format(
-                os.path.basename(fileName), lineNum, reason)
+                os.path.basename(fileName), lineNum, funcName, reason)
 
             self.__state = STATE.EXCEPTION
             self.__arguments = errMsg

@@ -14,6 +14,7 @@
 
   File: {}
   Line: {}
+  Func: {}
   Reason: {}]]></string>
 <string name="no_cardreader">Failed!! Can't found any PC/SC card reader!!</string>
 <string name="no_card">Failed!! Please insert the USIM card.</string>

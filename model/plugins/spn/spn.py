@@ -36,13 +36,11 @@ class spn(base_plugin):
 
         uicc:uicc = arg_components.modeler.uicc
 
-        update_spn = False
-        set_content = ""
+        set_content = None
         dict_args = convert_arguments_to_dict(arg_arguments)
         for key, value in dict_args.items():
             if key == "set":
                 set_content = value
-                update_spn = True
 
         uicc_resp:uicc_sel_resp = uicc.select(UICC_FILE.SPN, arg_type = UICC_SELECT_TYPE.FROM_MF)
         read_resp = uicc.read_binary(uicc_resp)
@@ -56,7 +54,7 @@ class spn(base_plugin):
                    uicc_resp.length - 1, 
                    toHexString(read_resp)))
 
-            if update_spn:
+            if set_content != None:
                 update_len = len(set_content)
                 if update_len > (uicc_resp.length - 1):
                     update_len = (uicc_resp.length - 1)
