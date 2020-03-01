@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resource>
 
-<string name="summary">Query or modify the value of ICCID.</string>
+<string name="summary">Query or modify the value of IMSI.</string>
 <string name="help"><![CDATA[Usage:
   
   %s $ iccid [set=iccid]

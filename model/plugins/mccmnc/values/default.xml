@@ -8,16 +8,13 @@
 
   Example:
     - mccmnc
-      > MCC/MNC: 466/92
-    - mccmnc mcc=320
-      > MCC/MNC: 320/92
-    - mccmnc mnc=01
-      > MCC/MNC: 466/01
-    - mccmnc mcc=001 mnc=01
-      > MCC/MNC: 001/01]]></string>
+      Original MCC/MNC: 466/92
+    - mccmnc mcc=320 mnc=310
+      Original MCC/MNC: 466/92
+      Updated MCC/MNC: 320/310]]></string>
 <string name="read_error">Error! Can't read MCC/MNC correctly!</string>
 <string name="update_error">Error! Can't update MCC/MNC successfully!</string>
-<string name="original">Original MCC/MNC %s/%s:</string>
+<string name="original">Original MCC/MNC: %s/%s</string>
 <string name="updated">Updated MCC/MNC: %s/%s</string>
 <string name="invalid_mcc">Invalid length of MCC!</string>
 <string name="invalid_mnc">Invalid length of MNC!</string>

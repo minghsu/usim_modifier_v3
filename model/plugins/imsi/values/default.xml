@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">Query or modify the value of IMSI.</string>
+<string name="help"><![CDATA[Usage:
+
+  %s $ imsi [set=imsi]
+
+  Example:
+    - imsi
+      Origianl IMSI: 001010123456789 (08 09 10 10 10 32 54 76 98)
+    - imsi set=466979876543210
+      Origianl IMSI: 001010123456789 (08 09 10 10 10 32 54 76 98)
+      Updated IMSI: 466979876543210 (08 49 66 79 89 67 45 23 01)]]></string>
+<string name="read_error">Error! Can't read IMSI correctly!</string>
+<string name="update_error">Error! Can't update IMSI successfully!</string>
+<string name="original">Original IMSI: %s (%S)</string>
+<string name="updated">Updated IMSI: %s (%S)</string>
+</resource>
