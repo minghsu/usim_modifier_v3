@@ -1,20 +1,54 @@
 # USIM Modifier Version 3.0
 
-I just finished the system architecture, and decide to publish this repositorie first.
+I re-factor the software architecture and finished some popular plugins for USIM customization.
+Please notice the customization feature is for 'TEST USIM', not comerical USIM.
 
-Current version only supportted few plugins due to I found some design issue, especially as 'layout'.  
-I will focus to fix 'layout' part fisrt, then implement 'imsi', 'mccmnc', 'gid' & 'spn' plugins.  
-In my experience, the above 5 plugins should be covered most customization conditions.  
+# Requirement Packages
 
-# New features
+- [colorama](https://pypi.org/project/colorama/)
+- [pyscard](https://pyscard.sourceforge.io/)  
+- [lxml](https://lxml.de/)  
 
-- Supported multi-language on 'plugin' layer
-- Configurable for below features
-> - Auto store 'pin' & 'adm' code by ICCID
-> - Force UI to use 'English' language 
-> - Disable the logging 
+# Prepare the environment
+
+## Linux
+> linux@ubuntu:/$ pip3 install colorama  
+> linux@ubuntu:/$ sudo apt-get install swig  
+> linux@ubuntu:/$ sudo apt-get install libpcsclite-dev  
+> linux@ubuntu:/$ sudo pip3 install pyscard
+
+## MAC OSX
+> Pre-condition: “HomeBrew” must be installed.  
+  
+> mac@osx:/$ pip3 install colorama  
+> mac@osx:/$ pip3 install lxml  
+> mac@osx:/$ brew install swig  (PS. install “swig” by homebrew)  
+> mac@osx:/$ pip3 install pyscard  
+
+# Install "USIM modifier"
+
+git clone https://github.com/minghsu/usim_modifier_v3.git
+
+# Features
+
+- Command Line Interface
+- Multi-language with extendable architecture (plugin supported)
+- Flexible plugin mechanism
+- Auto store 'pin' & 'adm' code by ICCID
+
+# Supported Pugins
+
+> - iccid: Display or modify the value of ICCID.
+> - spn: Display or modify the value of SPN.
+> - send: Send the APDU command to USIM directly
+> - mccmnc: Display or modify the value of MCC/MNC.
+> - atr: Displayed the value of Answer To Reset (ATR).
+> - gid: Display or modify the value of GID1/GID2.
+> - imsi: Display or modify the value of IMSI.
+
+![plugin](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/plugin.png)
 
 # Misc
 
-- Old 'plugin' can't compatible with 'USIM modifier V3'.
-- Only support 'atr', 'iccid' & 'send' plugins
+- The plugin is not back incompatible
+- Will release 'user guide' & 'tech note' soon
