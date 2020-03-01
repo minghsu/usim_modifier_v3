@@ -13,6 +13,7 @@ from model.library.convert import convert_arguments_to_dict, convert_bcd_to_stri
 from control.constants import ERROR, UICC_FILE, UICC_SELECT_TYPE
 from model.library.uicc_sel_resp import uicc_sel_resp
 
+
 class imsi(base_plugin):
     def __init__(self):
         pass
@@ -34,8 +35,8 @@ class imsi(base_plugin):
     def execute(self, arg_components: components, arg_arguments=''):
         log.debug(self.__class__.__name__, "ENTER")
 
-        uicc_resp:uicc_sel_resp = None
-        uicc:uicc = None
+        uicc_resp: uicc_sel_resp = None
+        uicc: uicc = None
 
         uicc = arg_components.modeler.uicc
 
@@ -47,7 +48,8 @@ class imsi(base_plugin):
                 set_content = value
 
         # read EF_IMSI
-        uicc_resp = uicc.select(UICC_FILE.IMSI, arg_type = UICC_SELECT_TYPE.FROM_MF)
+        uicc_resp = uicc.select(
+            UICC_FILE.IMSI, arg_type=UICC_SELECT_TYPE.FROM_MF)
         read_resp = uicc.read_binary(uicc_resp)
         if read_resp == None:
             print(self.get_res("read_error"))
@@ -57,7 +59,8 @@ class imsi(base_plugin):
         #              -  --------------------
         # Convert 09 10 10 10 32 54 76 98 => 9001010123456789
         # Ignore 1st char, and just use '001010123456789'
-        print(self.get_res("original") % (convert_bcd_to_string(read_resp[1:])[1:], toHexString(read_resp)))
+        print(self.get_res("original") % (convert_bcd_to_string(
+            read_resp[1:])[1:], toHexString(read_resp)))
 
         if set_content != None:
             imsi_update_content = read_resp[:]
@@ -73,12 +76,13 @@ class imsi(base_plugin):
                         imsi_update_content[Idx_of_PayLoad] & 0x0F) + (int(set_content[i]) << 4)
                 else:
                     imsi_update_content[Idx_of_PayLoad] = (
-                        imsi_update_content[Idx_of_PayLoad] & 0xF0) + int(set_content[i])            
+                        imsi_update_content[Idx_of_PayLoad] & 0xF0) + int(set_content[i])
 
             if uicc.update_binary(imsi_update_content) != ERROR.NONE:
                 print(self.get_res("update_error"))
                 return
 
-            print(self.get_res("updated") % (convert_bcd_to_string(imsi_update_content[1:])[1:], toHexString(imsi_update_content)))
+            print(self.get_res("updated") % (convert_bcd_to_string(
+                imsi_update_content[1:])[1:], toHexString(imsi_update_content)))
 
         log.debug(self.__class__.__name__, "EXIT")
