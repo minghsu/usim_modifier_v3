@@ -1,6 +1,6 @@
 # USIM Modifier Version 3.0
 
-I re-factor the software architecture and finished some popular plugins for USIM customization.
+I re-factor the software architecture and finished some popular plugins for USIM customization.  
 Please notice the customization feature is for 'TEST USIM', not comerical USIM.
 
 # Requirement Packages
