@@ -17,6 +17,7 @@ class ERROR:
     INCORRECT_PIN = 3
     INCORRECT_ADM = 4
     UICC_BLOCKED = 5
+    CARD_INVALID = 6
     UNKNOWN = 0x7F
 
 
@@ -45,13 +46,17 @@ class UICC_FILE:
     ICCID = "2FE2"
     DIR = "2F00"
     ADF = "7FFF"
-    IMSI = "6F07"
-    AD = "6FAD"
+    IMSI = "7FFF6F07"
+    AD = "7FFF6FAD"
     GID1 = "6F3E"
     GID2 = "6F3F"
     MSISDN = "6F40"
     SPN = "6F46"
 
+class UICC_SELECT_TYPE:
+    FILE_ID = 0x00
+    DF_NAME = 0x04
+    FROM_MF = 0x08
 
 class ALIGN:
     LEFT = 0

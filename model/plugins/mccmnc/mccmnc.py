@@ -10,8 +10,8 @@ from model.plugins.base_plugin import base_plugin
 from control.components import components
 from model.uicc import uicc
 from model.library.convert import convert_arguments_to_dict, convert_bcd_to_string, convert_string_to_bcd
-from control.constants import ERROR, UICC_FILE
-
+from control.constants import ERROR, UICC_FILE, UICC_SELECT_TYPE
+from model.library.uicc_sel_resp import uicc_sel_resp
 
 class mccmnc(base_plugin):
     def __init__(self):
@@ -34,7 +34,10 @@ class mccmnc(base_plugin):
     def execute(self, arg_components: components, arg_arguments=''):
         log.debug(self.__class__.__name__, "ENTER")
 
-        uicc: uicc = arg_components.modeler.uicc
+        uicc_resp:uicc_sel_resp = None
+        uicc:uicc = None
+
+        uicc = arg_components.modeler.uicc
 
         ori_mnc_length = None
         mnc_length = None
@@ -63,7 +66,8 @@ class mccmnc(base_plugin):
             return
 
         # read mnc length from EF_AD
-        read_resp = uicc.read_binary(UICC_FILE.AD)
+        uicc_resp = uicc.select(UICC_FILE.AD, arg_type = UICC_SELECT_TYPE.FROM_MF)
+        read_resp = uicc.read_binary(uicc_resp)
         if read_resp == None:
             print(self.get_res("read_error"))
             return
@@ -80,7 +84,8 @@ class mccmnc(base_plugin):
                 return
 
         # read EF_IMSI
-        read_resp = uicc.read_binary(UICC_FILE.IMSI)
+        uicc_resp = uicc.select(UICC_FILE.IMSI, arg_type = UICC_SELECT_TYPE.FROM_MF)
+        read_resp = uicc.read_binary(uicc_resp)
         if read_resp == None:
             print(self.get_res("read_error"))
             return

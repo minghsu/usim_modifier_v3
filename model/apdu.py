@@ -3,10 +3,10 @@
 
 from smartcard.util import toBytes
 
-from control.constants import ERROR, UICC_FILE
+from control.constants import ERROR, UICC_FILE, UICC_SELECT_TYPE
 
 
-def select(arg_field):
+def select(arg_field, arg_type = UICC_SELECT_TYPE.FILE_ID):
     if len(arg_field) % 2:
         return None
 
@@ -14,7 +14,7 @@ def select(arg_field):
 
     ret_cmd[0] = 0x00  # CLA
     ret_cmd[1] = 0xA4  # INS
-    ret_cmd[2] = 0x00  # P1, Select by File ID
+    ret_cmd[2] = arg_type  # P1
     ret_cmd[3] = 0x04  # P2, return FCP
     ret_cmd[4] = int(len(arg_field) / 2)  # LC
     ret_cmd[5:] = toBytes(arg_field.upper())

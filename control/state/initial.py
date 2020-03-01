@@ -26,6 +26,9 @@ class initial():
             if ret == ERROR.CARD_ABSENT:
                 ret_state = STATE.ERROR
                 ret_arguments = res.get_string("no_card")
+            elif ret == ERROR.CARD_INVALID:
+                ret_state = STATE.ERROR
+                ret_arguments = res.get_string("invalid_card")
             else:
                 ret_state = STATE.PIN
                 out_msg = layout_initial.layout(res.get_string("reader_connected"),

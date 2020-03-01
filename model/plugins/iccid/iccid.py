@@ -10,8 +10,8 @@ from model.plugins.base_plugin import base_plugin
 from control.components import components
 from model.uicc import uicc
 from model.library.convert import convert_arguments_to_dict, convert_bcd_to_string, convert_string_to_bcd
-from control.constants import ERROR, UICC_FILE
-
+from control.constants import ERROR, UICC_FILE, UICC_SELECT_TYPE
+from model.library.uicc_sel_resp import uicc_sel_resp
 
 class iccid(base_plugin):
     def __init__(self):
@@ -34,7 +34,7 @@ class iccid(base_plugin):
     def execute(self, arg_components: components, arg_arguments=''):
         log.debug(self.__class__.__name__, "ENTER")
 
-        uicc: uicc = arg_components.modeler.uicc
+        uicc:uicc = arg_components.modeler.uicc
 
         update_iccid = False
         set_content = ""
@@ -44,7 +44,8 @@ class iccid(base_plugin):
                 set_content = value
                 update_iccid = True
 
-        read_resp = uicc.read_binary(UICC_FILE.ICCID)
+        uicc_resp:uicc_sel_resp = uicc.select(UICC_FILE.ICCID, arg_type = UICC_SELECT_TYPE.FROM_MF)
+        read_resp = uicc.read_binary(uicc_resp)
         if read_resp != None:
             print(self.get_res("original") %
                   (convert_bcd_to_string(read_resp),

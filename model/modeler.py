@@ -22,6 +22,8 @@ class modeler:
         ret_val = self.__reader.open()
         if ret_val == ERROR.NONE:
             self.__uicc = uicc(self.reader.connection)
+            if self.__uicc.initialed == False:
+                ret_val = ERROR.CARD_INVALID
         return ret_val
     
     def close(self):
