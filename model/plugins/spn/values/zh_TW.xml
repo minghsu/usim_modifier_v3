@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">查詢或是編輯 SPN</string>
+<string name="help"><![CDATA[使用方式:
+  
+  %s $ spn [set=spn]
+  
+  範例:
+    - spn
+      原始 SPN: MING, 16 位元組 (01 4D 49 4E 47 FF FF FF FF FF FF FF FF FF FF FF FF)
+    - spn set=SIMCARD
+      原始 SPN: MING, 16 位元組 (01 4D 49 4E 47 FF FF FF FF FF FF FF FF FF FF FF FF)
+      更新 SPN: SIMCARD, 16 位元組 (01 53 49 4D 43 41 52 44 FF FF FF FF FF FF FF FF FF)]]></string>
+<string name="read_error">錯誤! 無法讀取 SPN</string>
+<string name="update_error">錯誤! 無法更新 SPN</string>
+<string name="original">原始 SPN: %s, %d 位元組 (%s)</string>
+<string name="updated">更新 SPN: %s, %d 位元組 (%s)</string>
+
+</resource>

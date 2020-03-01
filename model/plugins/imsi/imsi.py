@@ -39,13 +39,13 @@ class imsi(base_plugin):
 
         uicc = arg_components.modeler.uicc
 
-        set_imsi = ""
+        set_content = ""
         update_imsi = False
 
         dict_args = convert_arguments_to_dict(arg_arguments)
         for key, value in dict_args.items():
             if key == "set":
-                set_imsi = value
+                set_content = value
                 update_imsi = True
 
         # read EF_IMSI
@@ -64,7 +64,7 @@ class imsi(base_plugin):
         if update_imsi:
             imsi_update_content = read_resp[:]
 
-            for i in range(len(set_imsi)):
+            for i in range(len(set_content)):
                 if i == 15:
                     break
                 Idx_of_PayLoad = int(((i + 1) / 2) + 1)
@@ -72,10 +72,10 @@ class imsi(base_plugin):
 
                 if Mod_Value == 0:
                     imsi_update_content[Idx_of_PayLoad] = (
-                        imsi_update_content[Idx_of_PayLoad] & 0x0F) + (int(set_imsi[i]) << 4)
+                        imsi_update_content[Idx_of_PayLoad] & 0x0F) + (int(set_content[i]) << 4)
                 else:
                     imsi_update_content[Idx_of_PayLoad] = (
-                        imsi_update_content[Idx_of_PayLoad] & 0xF0) + int(set_imsi[i])            
+                        imsi_update_content[Idx_of_PayLoad] & 0xF0) + int(set_content[i])            
 
             if uicc.update_binary(imsi_update_content) != ERROR.NONE:
                 print(self.get_res("update_error"))

@@ -17,6 +17,7 @@ class execute():
         ret_arguments = None
 
         log.debug(self.__class__.__name__, "ENTER")
+        log.info(self.__class__.__name__, arg_arguments)
 
         cmd_list = arg_arguments.split(" ")
         for plugin in arg_components.plugin:

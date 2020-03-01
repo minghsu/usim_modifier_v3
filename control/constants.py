@@ -48,10 +48,10 @@ class UICC_FILE:
     ADF = "7FFF"
     IMSI = "7FFF6F07"
     AD = "7FFF6FAD"
-    GID1 = "6F3E"
-    GID2 = "6F3F"
-    MSISDN = "6F40"
-    SPN = "6F46"
+    GID1 = "7FFF6F3E"
+    GID2 = "7FFF6F3F"
+    MSISDN = "7FFF6F40"
+    SPN = "7FFF6F46"
 
 class UICC_SELECT_TYPE:
     FILE_ID = 0x00

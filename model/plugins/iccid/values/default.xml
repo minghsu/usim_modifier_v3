@@ -7,7 +7,6 @@
   %s $ iccid [set=iccid]
   
   Example:
-    Original: 89860009191190000108
     - iccid
       Original ICCID: 89860009191190000108 (98 68 00 90 91 11 09 00 10 80)
     - iccid set=1234

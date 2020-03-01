@@ -21,7 +21,7 @@ class cli():
 
         out_msg = layout_cli.layout(arg_prefix=res.get_string('app_name'))
         print(out_msg, end='')
-        ret_arguments = input().strip().lower()
+        ret_arguments = input().strip()
 
         log.debug(self.__class__.__name__, "EXIT")
         return (ret_state, ret_arguments)
