@@ -1,7 +1,8 @@
 # USIM Modifier Version 3.0
 
-I re-factor the software architecture and finished some popular plugins for USIM customization.  
-Please notice the customization feature is for 'TEST USIM', not comerical USIM.
+The 'usim midifier v3.0' is designed for modification your 'TEST USIM CARD', you can modify some data of USIM fileds with PC/SC card reader on multi-platform (Windows/MAC/Linux).  
+  
+Hope this tool can hlep you easy to create specific TEST USIM for test.
 
 # Requirement Packages
 
@@ -33,18 +34,20 @@ git clone https://github.com/minghsu/usim_modifier_v3.git
 
 - Command Line Interface
 - Multi-language with extendable architecture (plugin supported)
-- Flexible plugin mechanism
-- Auto store 'pin' & 'adm' code by ICCID
+- Flexible plugin mechanism (you can implement that by self and planned to release tech note for develop)
+- Auto store 'pin' & 'adm' code by ICCID (configurable)
+- Logging support (configurable)
 
 # Supported Pugins
 
-> - iccid: Display or modify the value of ICCID.
-> - spn: Display or modify the value of SPN.
-> - send: Send the APDU command to USIM directly
-> - mccmnc: Display or modify the value of MCC/MNC.
-> - atr: Displayed the value of Answer To Reset (ATR).
-> - gid: Display or modify the value of GID1/GID2.
-> - imsi: Display or modify the value of IMSI.
+- > gid: Query or modify the value of GID1/GID2.
+- > mccmnc: Query or modify the value of MCC/MNC.
+- > imsi: Query or modify the value of IMSI.
+- > spn: Query or modify the value of SPN.
+- > atr: Get and show the ATR value.
+- > iccid: Query or modify the value of IMSI.
+- > msisdn: Query or modify the value of MSISDN
+- > send: Send the 'APDU' to USIM directly
 
 ![plugin](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/plugin.png)
 
