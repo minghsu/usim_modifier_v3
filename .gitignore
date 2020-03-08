@@ -107,6 +107,5 @@ venv.bak/
 .vscode/
 
 # customization
-log_file
-cache_file
+logs
 .DS_Store

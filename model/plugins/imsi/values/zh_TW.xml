@@ -4,7 +4,7 @@
 <string name="summary">查詢或是編輯 IMSI 碼</string>
 <string name="help"><![CDATA[使用方式:
   
-  %s $ imsi [set=imsi]
+  %s$ imsi [set=imsi]
   
   範例:
     - imsi

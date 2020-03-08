@@ -4,7 +4,7 @@
 <string name="summary">查詢或是編輯 ICCID</string>
 <string name="help"><![CDATA[使用方式:
   
-  %s $ iccid [set=iccid]
+  %s$ iccid [set=iccid]
   
   範例:
     - iccid

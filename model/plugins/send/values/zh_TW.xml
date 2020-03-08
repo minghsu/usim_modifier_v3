@@ -2,10 +2,13 @@
 <resource>
 
 <string name="summary">直接傳送 APDU 指令給 USIM 卡</string>
-<string name="help"><![CDATA[使用方式 (以 SELECT MF 為例):
+<string name="help"><![CDATA[使用方式:
 
-  %s $ send 00A40004023F00
-  TX: 00 A4 00 04 02 3F 00
-  RX: 61 1F]]></string>
+  %s$ send [XXXXXXXXXX]
+
+  範例(以 SELECT MF 為例):
+    - send 00A40004023F00
+      TX: 00 A4 00 04 02 3F 00
+      RX: 61 1F]]></string>
   
 </resource>

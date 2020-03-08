@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">查詢或是編輯 MSISDN</string>
+<string name="help"><![CDATA[使用方式:
+  
+  %s$ msisdn [id=xx] [name=xxxx] [num=xxxx]
+  
+  範例:
+    - msisdn
+      原始 MSISDN 資料:
+      > #1: 名稱: NULL           (14 位元組), 號碼: 0928000000
+        (FF FF FF FF FF FF FF FF FF FF FF FF FF FF 06 81 90 82 00 00 00 FF FF FF FF FF FF FF)
+      > #2: 名稱:                (14 位元組), 號碼:
+        (FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF)
+    - msisdn id=2 name=Orange num=+886919001122
+      原始 MSISDN 資料:
+      > #1: 名稱: NULL           (14 位元組), 號碼: 0928000000
+        (FF FF FF FF FF FF FF FF FF FF FF FF FF FF 06 81 90 82 00 00 00 FF FF FF FF FF FF FF)
+      > #2: 名稱:                (14 位元組), 號碼:
+        (FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF)
+      更新 MSISDN 資料:
+      > #2: 名稱: Orange         (14 位元組), 號碼: +886900111222
+        (4F 72 61 6E 67 65 FF FF FF FF FF FF FF FF 08 91 88 96 00 11 21 22 FF FF FF FF FF FF)
+  
+  PS. 
+     1. 在更新作業下, 'id' 參數為必要條件
+     2. 在更新作業下, 一次僅能修改一筆資料]]></string>
+<string name="read_error">錯誤! 無法讀取 MSISDN!</string>
+<string name="update_error">錯誤! 無法更新 MSISDN!</string>
+<string name="original">原始 MSISDN 資料:</string>
+<string name="updated">更新 MSISDN 資料:</string>
+<string name="invalid_id">錯誤! 不正確的編號</string>
+<string name="record">> #%02d 名稱: %s (%d 位元組), 號碼: %s)</string>
+<string name="raw_record">  (%s)</string>
+</resource>

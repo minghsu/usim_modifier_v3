@@ -2,5 +2,12 @@
 <resource>
 
 <string name="summary">Get and show the ATR value.</string>
+<string name="help"><![CDATA[Usage:
+  
+  %s$ atr 
+  
+  Example:
+    - atr
+      ATR: 3B 9F 94 80 1F C7 80 31 E0 73 FE 21 13 57 86 85 03 86 98 42 18 AE]]></string>
 
 </resource>

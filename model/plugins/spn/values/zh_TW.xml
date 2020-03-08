@@ -4,7 +4,7 @@
 <string name="summary">查詢或是編輯 SPN</string>
 <string name="help"><![CDATA[使用方式:
   
-  %s $ spn [set=spn]
+  %s$ spn [set=spn]
   
   範例:
     - spn

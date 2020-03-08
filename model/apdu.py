@@ -6,7 +6,7 @@ from smartcard.util import toBytes
 from control.constants import ERROR, UICC_FILE, UICC_SELECT_TYPE
 
 
-def select(arg_field, arg_type = UICC_SELECT_TYPE.FILE_ID):
+def select(arg_field, arg_type=UICC_SELECT_TYPE.FILE_ID):
     if len(arg_field) % 2:
         return None
 
@@ -82,5 +82,19 @@ def read_record(arg_idx, arg_length):
     ret_cmd[2] = arg_idx  # arg_idx
     ret_cmd[3] = 0x04  # P2
     ret_cmd[4] = arg_length  # Length
+
+    return ret_cmd
+
+
+def update_record(arg_idx, arg_content):
+    ret_cmd = [0x00] * 5
+
+    ret_cmd[0] = 0x00  # CLA
+    ret_cmd[1] = 0xDC  # INS
+    ret_cmd[2] = arg_idx  # P1
+    ret_cmd[3] = 0x04  # P2
+    ret_cmd[4] = len(arg_content)  # Length
+
+    ret_cmd += arg_content
 
     return ret_cmd

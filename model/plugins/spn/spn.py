@@ -13,19 +13,13 @@ from model.library.convert import convert_arguments_to_dict, convert_bcd_to_stri
 from control.constants import ERROR, UICC_FILE, UICC_SELECT_TYPE
 from model.library.uicc_sel_resp import uicc_sel_resp
 
+
 class spn(base_plugin):
     def __init__(self):
         pass
 
     def version(self):
         return "1.00"
-
-    def help(self):
-        ret_help = self.get_res("help")
-        return ret_help % res.get_string("app_name")
-
-    def get_res(self, arg_resid):
-        return super(self.__class__, self).get_plugin_res(arg_resid)
 
     @property
     def auto_execute(self):
@@ -34,7 +28,7 @@ class spn(base_plugin):
     def execute(self, arg_components: components, arg_arguments=''):
         log.debug(self.__class__.__name__, "ENTER")
 
-        uicc:uicc = arg_components.modeler.uicc
+        uicc: uicc = arg_components.modeler.uicc
 
         set_content = None
         dict_args = convert_arguments_to_dict(arg_arguments)
@@ -42,7 +36,8 @@ class spn(base_plugin):
             if key == "set":
                 set_content = value
 
-        uicc_resp:uicc_sel_resp = uicc.select(UICC_FILE.SPN, arg_type = UICC_SELECT_TYPE.FROM_MF)
+        uicc_resp: uicc_sel_resp = uicc.select(
+            UICC_FILE.SPN, arg_type=UICC_SELECT_TYPE.FROM_MF)
         read_resp = uicc.read_binary(uicc_resp)
         if read_resp != None:
 
@@ -50,8 +45,8 @@ class spn(base_plugin):
             # First byte is 'display condition'
             # 2 to 17 is 'service provider name'
             print(self.get_res("original") %
-                  (convert_alpha_to_string(read_resp[1:]), 
-                   uicc_resp.length - 1, 
+                  (convert_alpha_to_string(read_resp[1:]),
+                   uicc_resp.length - 1,
                    toHexString(read_resp)))
 
             if set_content != None:
@@ -66,9 +61,9 @@ class spn(base_plugin):
 
                 if uicc.update_binary(update_content) == ERROR.NONE:
                     print(self.get_res("updated") %
-                        (convert_alpha_to_string(update_content[1:]), 
-                        uicc_resp.length - 1, 
-                        toHexString(update_content)))
+                          (convert_alpha_to_string(update_content[1:]),
+                           uicc_resp.length - 1,
+                           toHexString(update_content)))
                 else:
                     print(self.get_res("update_error"))
 

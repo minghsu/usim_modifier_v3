@@ -4,7 +4,7 @@
 <string name="summary">Query or modify the value of IMSI.</string>
 <string name="help"><![CDATA[Usage:
   
-  %s $ iccid [set=iccid]
+  %s$ iccid [set=iccid]
   
   Example:
     - iccid

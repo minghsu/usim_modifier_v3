@@ -23,11 +23,14 @@ class base_plugin(abc.ABC):
         Returns a help string by 'help' resource key.
         If resource not defined 'help' key, will call 'summary()' to instead it.
         '''
+
+    def help(self):
         ret_help = res.get_string("help", self.__class__.__name__)
 
         if ret_help == None:
             ret_help = self.summary()
-
+        else:
+            ret_help = ret_help % res.get_string("app_name")
         return ret_help
 
     @abc.abstractmethod
@@ -46,7 +49,7 @@ class base_plugin(abc.ABC):
     def sort_index(self):
         return 0xFFFF
 
-    def get_plugin_res(self, arg_resid):
+    def get_res(self, arg_resid):
         return res.get_string(arg_resid, self.__class__.__name__)
 
     def execute_plugin(self, arg_plugin_name, arg_connection, arg_parameter=""):

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">Query or modify the value of MSISDN</string>
+<string name="help"><![CDATA[Usage:
+  
+  %s$ msisdn [id=xx] [name=xxxx] [num=xxxx]
+  
+  Example:
+    - msisdn
+      Oringal MSISDN records:
+      > #1: Name: NULL           (14 Bytes), Num: 0928000000
+        (FF FF FF FF FF FF FF FF FF FF FF FF FF FF 06 81 90 82 00 00 00 FF FF FF FF FF FF FF)
+      > #2: Name:                (14 Bytes), Num:
+        (FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF)
+    - msisdn id=2 name=Orange num=+886919001122
+      Oringal MSISDN records:
+      > #1: Name: NULL           (14 Bytes), Num: 0928000000
+        (FF FF FF FF FF FF FF FF FF FF FF FF FF FF 06 81 90 82 00 00 00 FF FF FF FF FF FF FF)
+      > #2: Name:                (14 Bytes), Num:
+        (FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF)
+      Updated MSISDN records:
+      > #2: Name: Orange         (14 Bytes), Num: +886900111222
+        (4F 72 61 6E 67 65 FF FF FF FF FF FF FF FF 08 91 88 96 00 11 21 22 FF FF FF FF FF FF)
+  
+  PS. 
+     1. In update operation, the 'id' parameter is mandatory.
+     2. In update operation, only one record can be modification.]]></string>
+<string name="read_error">Error! Can't read MSISDN correctly!</string>
+<string name="update_error">Error! Can't update MSISDN successfully!</string>
+<string name="original">Original MSISDN records:</string>
+<string name="updated">Updated MSISDN records:</string>
+<string name="invalid_id">Error! Invalid ID.</string>
+<string name="record">#%02d Name: %s (%d Bytes), Num: %s)</string>
+<string name="raw_record">(%s)</string>
+</resource>

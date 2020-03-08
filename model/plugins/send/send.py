@@ -18,13 +18,6 @@ class send(base_plugin):
     def version(self):
         return "1.00"
 
-    def help(self):
-        ret_help = self.get_res("help")
-        return ret_help % res.get_string("app_name")
-
-    def get_res(self, arg_resid):
-        return super(self.__class__, self).get_plugin_res(arg_resid)
-
     @property
     def auto_execute(self):
         return False

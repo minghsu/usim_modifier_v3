@@ -25,7 +25,7 @@ class uicc:
         self.__pin_enabled = uicc_resp.pin
 
         self.__iccid = None
-        uicc_resp:uicc_sel_resp = self.select(UICC_FILE.ICCID)
+        uicc_resp: uicc_sel_resp = self.select(UICC_FILE.ICCID)
         read_resp = self.read_binary(uicc_resp)
         if read_resp != None:
             self.__iccid = convert_bcd_to_string(read_resp)
@@ -34,21 +34,22 @@ class uicc:
         # select AID for '7FFF'
         self.__aid = None
         self.__aid = self.__init_aid()
-        
+
         if self.__aid != None and self.__iccid != None:
             self.initialed = True
 
     def __init_aid(self):
         read_resp: uicc_sel_resp = self.select(UICC_FILE.DIR)
-        if read_resp.sw1 == 0x90:
-            dir_record = read_record(1, read_resp.length)
-            response, sw1, sw2 = self.__transmit(dir_record)
-            if sw1 == 0x90:
-                aid_content = search_fcp_content(
-                    response, TLV_TAG.APPLICATION_IDENTIFIER)
-                aid = toHexString(aid_content[2:], format=PACK)
-                select_aid_apdu = select(aid, arg_type= UICC_SELECT_TYPE.DF_NAME)
-                response, sw1, sw2 = self.__transmit(select_aid_apdu)
+
+        resp = self.read_record(1, read_resp)
+        if resp != None:
+            aid_content = search_fcp_content(
+                resp, TLV_TAG.APPLICATION_IDENTIFIER)
+            aid = toHexString(aid_content[2:], format=PACK)
+            sel_aid_resp: uicc_sel_resp = self.select(
+                aid, arg_type=UICC_SELECT_TYPE.DF_NAME)
+
+            if sel_aid_resp.sw1 == 0x90:
                 return aid
 
         return None
@@ -83,10 +84,10 @@ class uicc:
     def send(self, arg_apdu_cmd):
         return self.__transmit(arg_apdu_cmd)
 
-    def select(self, arg_file_id, arg_type = UICC_SELECT_TYPE.FILE_ID):
+    def select(self, arg_file_id, arg_type=UICC_SELECT_TYPE.FILE_ID):
         resp = sw1 = sw2 = None
 
-        apdu = select(arg_file_id, arg_type = arg_type)
+        apdu = select(arg_file_id, arg_type=arg_type)
         if apdu != None:
             resp, sw1, sw2 = self.__transmit(apdu)
 
@@ -96,25 +97,39 @@ class uicc:
 
         return uicc_sel_resp(resp, sw1, sw2)
 
-    def read_record(self, arg_file_id, arg_idx):
-        pass
+    def read_record(self, arg_idx, arg_uicc_resp: uicc_sel_resp):
+        if arg_uicc_resp.sw1 == 0x90 and arg_uicc_resp.ef_type != EF_FILE_TYPE.TRANSPARENT:
+            apdu = read_record(arg_idx, arg_uicc_resp.length)
+            if apdu != None:
+                resp, sw1, sw2 = self.__transmit(apdu)
+                if sw1 == 0x90:
+                    return resp
 
-    def update_binary(self, arg_content):
-        apdu = update_binary(arg_content)
+        return None
+
+    def update_record(self, arg_idx, arg_content):
+        apdu = update_record(arg_idx, arg_content)
         if apdu != None:
             resp, sw1, sw2 = self.__transmit(apdu)
-
             if sw1 == 0x90:
                 return ERROR.NONE
 
         return ERROR.UNKNOWN
 
-    def read_binary(self, arg_uicc_resp:uicc_sel_resp):
+    def update_binary(self, arg_content):
+        apdu = update_binary(arg_content)
+        if apdu != None:
+            resp, sw1, sw2 = self.__transmit(apdu)
+            if sw1 == 0x90:
+                return ERROR.NONE
+
+        return ERROR.UNKNOWN
+
+    def read_binary(self, arg_uicc_resp: uicc_sel_resp):
         if arg_uicc_resp.sw1 == 0x90 and arg_uicc_resp.ef_type == EF_FILE_TYPE.TRANSPARENT:
             apdu = read_binary(arg_uicc_resp.length)
             if apdu != None:
                 resp, sw1, sw2 = self.__transmit(apdu)
-
                 if sw1 == 0x90:
                     return resp
         return None

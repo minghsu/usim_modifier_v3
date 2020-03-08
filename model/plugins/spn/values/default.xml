@@ -4,7 +4,7 @@
 <string name="summary">Query or modify the value of SPN.</string>
 <string name="help"><![CDATA[Usage:
   
-  %s $ spn [set=spn]
+  %s$ spn [set=spn]
   
   Example:
     - spn
