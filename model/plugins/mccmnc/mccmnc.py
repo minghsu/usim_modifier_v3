@@ -21,17 +21,11 @@ class mccmnc(base_plugin):
     def version(self):
         return "1.00"
 
-    @property
-    def auto_execute(self):
-        return False
-
     def execute(self, arg_components: components, arg_arguments=''):
         log.debug(self.__class__.__name__, "ENTER")
 
         uicc_resp: uicc_sel_resp = None
-        uicc: uicc = None
-
-        uicc = arg_components.modeler.uicc
+        uicc: uicc = arg_components.modeler.uicc
 
         ori_mnc_length = None
         mnc_length = None
@@ -90,7 +84,7 @@ class mccmnc(base_plugin):
         mnc = convert_bcd_to_string(read_resp[1:])[4:4+ori_mnc_length]
         print(self.get_res("original") % (mcc, mnc))
 
-        if update_mcc or update_mnc:
+        if (update_mcc or update_mnc) and self.is_update_require_adm == uicc.adm_verified:
             update_imsi = read_resp[:]
 
             # prepare MCC

@@ -21,10 +21,6 @@ class gid(base_plugin):
     def version(self):
         return "1.00"
 
-    @property
-    def auto_execute(self):
-        return False
-
     def execute(self, arg_components: components, arg_arguments=''):
         log.debug(self.__class__.__name__, "ENTER")
 
@@ -51,7 +47,7 @@ class gid(base_plugin):
                       (gid_working_list[i][0],
                        toHexString(read_resp)))
 
-                if gid_working_list[i][2] != None:
+                if gid_working_list[i][2] != None and self.is_update_require_adm == uicc.adm_verified:
                     update_content = read_resp[:]
 
                     update_len = len(gid_working_list[i][2])

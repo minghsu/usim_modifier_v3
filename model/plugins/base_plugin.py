@@ -41,9 +41,10 @@ class base_plugin(abc.ABC):
     def execute(self, arg_components: components, arg_arguments=''):
         return NotImplemented
 
+    # is update content need ADM verified
     @property
-    def auto_execute(self):
-        return False
+    def is_update_require_adm(self):
+        return True
 
     @property
     def sort_index(self):

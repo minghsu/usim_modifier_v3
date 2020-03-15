@@ -21,10 +21,6 @@ class spn(base_plugin):
     def version(self):
         return "1.00"
 
-    @property
-    def auto_execute(self):
-        return False
-
     def execute(self, arg_components: components, arg_arguments=''):
         log.debug(self.__class__.__name__, "ENTER")
 
@@ -49,7 +45,7 @@ class spn(base_plugin):
                    uicc_resp.length - 1,
                    toHexString(read_resp)))
 
-            if set_content != None:
+            if set_content != None and self.is_update_require_adm == uicc.adm_verified:
                 update_len = len(set_content)
                 if update_len > (uicc_resp.length - 1):
                     update_len = (uicc_resp.length - 1)

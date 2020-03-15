@@ -62,6 +62,10 @@ class uicc:
     def pin_verified(self):
         return self.__pin_verified
 
+    @pin_verified.setter
+    def pin_verified(self, arg_verified):
+        self.__pin_verified = arg_verified
+
     @property
     def pin_enabled(self):
         return self.__pin_enabled
@@ -69,6 +73,10 @@ class uicc:
     @property
     def adm_verified(self):
         return self.__adm_verified
+
+    @adm_verified.setter
+    def adm_verified(self, arg_verified):
+        self.__adm_verified = arg_verified
 
     def __transmit(self, arg_apdu_cmd):
         log.debug(self.__class__.__name__,

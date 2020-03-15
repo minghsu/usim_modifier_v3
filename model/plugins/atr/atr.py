@@ -19,7 +19,7 @@ class atr(base_plugin):
         return "1.00"
 
     @property
-    def auto_execute(self):
+    def is_update_require_adm(self):
         return False
 
     def execute(self, arg_components: components, arg_arguments=''):

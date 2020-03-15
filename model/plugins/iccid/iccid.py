@@ -21,10 +21,6 @@ class iccid(base_plugin):
     def version(self):
         return "1.00"
 
-    @property
-    def auto_execute(self):
-        return False
-
     def execute(self, arg_components: components, arg_arguments=''):
         log.debug(self.__class__.__name__, "ENTER")
 
@@ -44,7 +40,7 @@ class iccid(base_plugin):
                   (convert_bcd_to_string(read_resp),
                    toHexString(read_resp)))
 
-            if set_content != None:
+            if set_content != None and self.is_update_require_adm == uicc.adm_verified:
                 original = convert_bcd_to_string(read_resp)
                 update_content = set_content + original[len(set_content):]
 

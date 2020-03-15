@@ -21,17 +21,11 @@ class imsi(base_plugin):
     def version(self):
         return "1.00"
 
-    @property
-    def auto_execute(self):
-        return False
-
     def execute(self, arg_components: components, arg_arguments=''):
         log.debug(self.__class__.__name__, "ENTER")
 
         uicc_resp: uicc_sel_resp = None
-        uicc: uicc = None
-
-        uicc = arg_components.modeler.uicc
+        uicc: uicc = arg_components.modeler.uicc
 
         set_content = None
 
@@ -55,7 +49,7 @@ class imsi(base_plugin):
         print(self.get_res("original") % (convert_bcd_to_string(
             read_resp[1:])[1:], toHexString(read_resp)))
 
-        if set_content != None:
+        if set_content != None and self.is_update_require_adm == uicc.adm_verified:
             imsi_update_content = read_resp[:]
 
             for i in range(len(set_content)):

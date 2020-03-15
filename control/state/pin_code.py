@@ -9,7 +9,7 @@ from smartcard.util import toASCIIBytes
 from control.components import components
 from control.constants import STATE, ERROR, PIN_TYPE
 from model.library.input_check import is_valid_pin_code
-import view.layout.state.pin as layout_pin
+import view.layout.state.pin_code as layout_pin_code
 
 
 class pin_code():
@@ -32,7 +32,7 @@ class pin_code():
                     out_msg = res.get_string("input_pin_code")
                 else:
                     out_msg = arg_arguments
-                print(layout_pin.layout(arg_msg=out_msg), end='')
+                print(layout_pin_code.layout(arg_msg=out_msg), end='')
                 pin_code = input().strip()
 
             if len(pin_code) == 0:

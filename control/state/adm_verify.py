@@ -27,6 +27,7 @@ class adm_verify():
 
         # If enabled 'configuration.adm', store the adm code for auto verify
         if verify_result == ERROR.NONE:
+            arg_components.modeler.uicc.adm_verified = True
             if arg_components.config.adm == 1:
                 arg_components.config.update_adm_code(
                     arg_components.modeler.uicc.iccid, arg_arguments)

@@ -22,7 +22,7 @@ class msisdn(base_plugin):
         return "1.00"
 
     @property
-    def auto_execute(self):
+    def is_update_require_adm(self):
         return False
 
     def show_record(self, arg_idx, arg_resp, arg_name_len):

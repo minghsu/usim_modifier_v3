@@ -39,7 +39,7 @@ class plugin():
                         plugin.append([name,
                                        instance_class.version(),
                                        instance_class.summary(),
-                                       instance_class.auto_execute])
+                                       instance_class.is_update_require_adm])
 
                 except:
                     log.debug(self.__class__.__name__,
