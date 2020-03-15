@@ -20,7 +20,7 @@ class send(base_plugin):
 
     @property
     def is_update_require_adm(self):
-        return False
+        return None
 
     def execute(self, arg_components: components, arg_arguments=''):
         log.debug(self.__class__.__name__, "ENTER")

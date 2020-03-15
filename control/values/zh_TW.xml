@@ -32,7 +32,12 @@
 <string name="adm_blocked">注意, ADM 驗證次數已歸零, 部份功能將受到限制!</string>
 <string name="plugin_loading">正在載入 plugin 套件 ...</string>
 <string name="plugin_loaded">共載入 %d 個 plugin 套件 ...</string>
-<string name="plugin_found">%10s 套件, 版本: %s, 摘要: %s</string>
+<string name="plugin_head">{:14}    {:6}    {:^4}    {}</string>
+<string name="plugin_item">{:16}    {:8}    {:^6}    {}</string>
+<string name="plugin_name">套件</string>
+<string name="plugin_version">版本</string>
+<string name="plugin_update">更新</string>
+<string name="plugin_summary">摘要</string>
 <string name="error_plugin_not_def_summary_res">錯誤! '%s' plugin 未定義 'summary' 字串資源, 將忽略此 plugin</string>
 <string name="help"><![CDATA[使用方式: 
   help: 顯示此求助訊息

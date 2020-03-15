@@ -8,5 +8,6 @@
   </configuration>
   <uicc iccid="89860009191190000108">
     <pin>1234</pin>
+    <adm>5555555555555555</adm>
   </uicc>
 </usim_modifier>
