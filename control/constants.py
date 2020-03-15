@@ -25,9 +25,9 @@ class STATE:
     NONE = 'none'
     STARTUP = 'startup'
     INITIAL = 'initial'
-    PIN = 'pin'
+    PIN_CODE = 'pin_code'
     PIN_VERIFY = 'pin_verify'
-    ADM = 'adm'
+    ADM_CODE = 'adm_code'
     ADM_VERIFY = 'adm_verify'
     EXCEPTION = 'exception'
     ERROR = 'error'
@@ -53,10 +53,12 @@ class UICC_FILE:
     MSISDN = "7FFF6F40"
     SPN = "7FFF6F46"
 
+
 class UICC_SELECT_TYPE:
     FILE_ID = 0x00
     DF_NAME = 0x04
     FROM_MF = 0x08
+
 
 class ALIGN:
     LEFT = 0

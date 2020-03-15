@@ -12,7 +12,7 @@ from model.library.input_check import is_valid_adm_code
 import view.layout.state.adm as layout_adm
 
 
-class adm():
+class adm_code():
     def __init__(self):
         pass
 
@@ -38,7 +38,7 @@ class adm():
                 ret_state = STATE.ERROR
                 ret_arg = res.get_string("terminated_adm_code")
             elif not is_valid_adm_code(adm_code):
-                ret_state = STATE.ADM
+                ret_state = STATE.ADM_CODE
                 ret_arg = res.get_string("invalid_adm_code")
 
         if ret_state == STATE.ADM_VERIFY:

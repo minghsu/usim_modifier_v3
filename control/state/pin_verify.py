@@ -18,7 +18,7 @@ class pin_verify():
     def execute(self, arg_components: components, arg_arguments):
         log.debug(self.__class__.__name__, "ENTER")
 
-        ret_state = STATE.ADM
+        ret_state = STATE.ADM_CODE
         ret_arg = None
 
         verify_result, reamings = arg_components.modeler.uicc.verify_pin(
@@ -34,7 +34,7 @@ class pin_verify():
                 ret_state = STATE.ERROR
                 ret_arg = res.get_string("card_blocked")
             else:
-                ret_state = STATE.PIN
+                ret_state = STATE.PIN_CODE
                 ret_arg = res.get_string(
                     "incorrect_pin_code") % (reamings)
 

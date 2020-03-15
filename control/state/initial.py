@@ -30,7 +30,7 @@ class initial():
                 ret_state = STATE.ERROR
                 ret_arguments = res.get_string("invalid_card")
             else:
-                ret_state = STATE.PIN
+                ret_state = STATE.PIN_CODE
                 out_msg = layout_initial.layout(res.get_string("reader_connected"),
                                                 arg_components.modeler.reader.name)
                 print(out_msg)

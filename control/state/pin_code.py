@@ -12,7 +12,7 @@ from model.library.input_check import is_valid_pin_code
 import view.layout.state.pin as layout_pin
 
 
-class pin():
+class pin_code():
     def __init__(self):
         pass
 
@@ -39,7 +39,7 @@ class pin():
                 ret_state = STATE.ERROR
                 ret_arg = res.get_string("terminated_pin_code")
             elif not is_valid_pin_code(pin_code):
-                ret_state = STATE.PIN
+                ret_state = STATE.PIN_CODE
                 ret_arg = res.get_string("invalid_pin_code")
 
             if ret_state == STATE.PIN_VERIFY:

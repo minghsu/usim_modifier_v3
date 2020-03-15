@@ -35,7 +35,7 @@ class adm_verify():
                 ret_state = STATE.ERROR
                 ret_arg = res.get_string("adm_blocked")
             else:
-                ret_state = STATE.ADM
+                ret_state = STATE.ADM_CODE
                 ret_arg = res.get_string("incorrect_adm_code") % (reamings)
 
         log.debug(self.__class__.__name__, "EXIT")
