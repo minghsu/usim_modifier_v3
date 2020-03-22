@@ -29,7 +29,7 @@ Hope this tool can hlep you easy to create specific TEST USIM for test.
 
 ## Windows
 
-N/A (Lost the install sequence, but 'usim_modifier v3 can works property on Windows platform, just need to install 'colorama' & 'pyscard' packages.
+N/A (I lost the install sequence, but 'usim_modifier v3' can works property on Windows platform, just need to install 'colorama' & 'pyscard' packages).
 
 # Install "USIM modifier"
 
