@@ -43,7 +43,7 @@
   help: 顯示此求助訊息
   exit: 結束
   plugin: 顯示所有已載入的 plugin
-  [plugin name]: 執行 plugin
+  [plugin name] <參數>: 執行 plugin
   [plugin name] help: 顯示 plung 的求助訊息]]></string>
 <string name="plugin_help_header">'%s' 套件求助訊息</string>
 </resource>

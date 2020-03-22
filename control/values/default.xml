@@ -47,7 +47,7 @@
   help: show this help
   exit: exit the program
   plugin: show all available plugins
-  [plugin name]: execute the plugin
+  [plugin name] <arguments>: execute the plugin
   [plugin name] help: show help msg of this plugin]]></string>
 <string name="plugin_help_header">Help info of '%s' plugin</string>
 
