@@ -1,8 +1,8 @@
 # USIM Modifier Version 3.0
 
-The 'usim midifier v3.0' is designed for modification your 'TEST USIM CARD', you can modify some data of USIM fileds with PC/SC card reader on multi-platform (Windows/MAC/Linux).  
+The 'usim midifier v3.0' is for modify your 'TEST USIM' card, you can modify the content of USIM card with PC/SC card reader on multi-platform (Windows/MAC/Linux).  
   
-Hope this tool can hlep you easy to create specific TEST USIM for test.
+Hope this tool can hlep you easy to prepare specific TEST USIM card for test.
 
 # Requirement Packages
 
