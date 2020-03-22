@@ -73,7 +73,7 @@ If you enabled the 'pin' or 'adm' auto store feature, it will store to 'usim_mod
 
 ![config](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/config.png)
 
-# start to use 'usim_modifier_v3'
+# Start to using 'usim_modifier_v3'
 
 On 'Linux/Mac' OS, just type './usim_modifier.py' command.  
 For 'Windows' OS, please type 'python3 usim_modifer.py' command.
