@@ -6,6 +6,7 @@ Hope this tool can hlep you easy to create specific TEST USIM for test.
 
 # Requirement Packages
 
+- [python3](https://www.python.org/)
 - [colorama](https://pypi.org/project/colorama/)
 - [pyscard](https://pyscard.sourceforge.io/)  
 - [lxml](https://lxml.de/)  
@@ -26,15 +27,20 @@ Hope this tool can hlep you easy to create specific TEST USIM for test.
 > mac@osx:/$ brew install swig  (PS. install “swig” by homebrew)  
 > mac@osx:/$ pip3 install pyscard  
 
+## Windows
+
+N/A (Lost the install sequence, but 'usim_modifier v3 can works property on Windows platform, just need to install 'colorama' & 'pyscard' packages.
+
 # Install "USIM modifier"
 
 git clone https://github.com/minghsu/usim_modifier_v3.git
 
 # Features
 
-- Command Line Interface
-- Multi-language with extendable architecture (plugin supported)
-- Flexible plugin mechanism (you can implement that by self and planned to release tech note for develop)
+- Multiple platform supported (Windows/MAC/Linux)
+- Multi-language with extendable architecture
+- Flexible plugin mechanism
+- Dedicated language resource for 'plugin' 
 - Auto verify 'pin' & 'adm' code (from usim_modifier.xml file)
 - Auto store 'pin' & 'adm' code by ICCID (configurable)
 - Logging support (configurable)
@@ -50,6 +56,8 @@ git clone https://github.com/minghsu/usim_modifier_v3.git
 - msisdn: Query or modify the value of MSISDN
 - send: Send the 'APDU' to USIM directly
 
+You can type 'plugin' command to get all plugin info, the 'Update' column mean is able to modify in current session or not.  
+
 ![plugin](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/plugin.png)
 
 # Configure XML file
@@ -57,10 +65,22 @@ git clone https://github.com/minghsu/usim_modifier_v3.git
 We can configure below items by 'usim_modifier.xml' file, you can use any text editor to enable/disable(1/0).
 
 - log: turn on or turn off the loggin mechanism
-- localized: force to use 'en_US' langueae resource
+- localized: force to use 'en_US' language resource
 - pin: enable/disable auto store the 'pin code' to config file
 - adm: enable/disable auto store the 'adm code' to config file
 
 If you enabled the 'pin' or 'adm' auto store feature, it will store to 'usim_modifier.xml' file by plain text and support mutliple ICCID.
 
-![plugin](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/config.png)
+![config](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/config.png)
+
+# start to use 'usim_modifier_v3'
+
+On 'Linux/Mac' OS, just type './usim_modifier.py' command.  
+For 'Windows' OS, please type 'python3 usim_modifer.py' command.
+
+The 1st step, if the USIM enabled the PIN code, you must nput correct 'pin code' to verify for future operation.  
+For next step, you can type 'adm code' to verification 'adm', you can press 'ENTER' key to skip if you didn't have the 'adm code', but some 'plugin' may not updatable.  
+
+PS. If the 'pin' & 'adm' verify success, we will store the 'pin' & 'adm' code to 'usim_modifier.xml' file automatically(can disable by 'usim_modifier.xml' file), and auto verification from next operation.
+
+![startup](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/startup.png)
