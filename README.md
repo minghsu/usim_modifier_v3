@@ -5,7 +5,7 @@ The 'usim midifier v3.0' is for modify your 'TEST USIM' card, you can modify the
 You can use this tool to do:
 - Modify iccid/imsi/mccmnc/gid/spn for specific test
 - Update msisdn to easy identify the USIM (Ex: Chunwau Telecom, FET NET, etc)
-- Implement new plugin for your specific test (Such as 'Orange' plugin, you can easy configure 'TEST USIM' for Orange test case)
+- Implement new plugin for your specific test (Such as 'Orange' plugin, you can configure 'TEST USIM' for Orange test case)
 
 # Requirement Packages
 
