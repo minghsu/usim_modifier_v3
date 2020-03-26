@@ -44,6 +44,8 @@ class pin_code():
 
             if ret_state == STATE.PIN_VERIFY:
                 ret_arg = pin_code
+        else:
+            ret_state = STATE.ADM_CODE
 
         log.debug(self.__class__.__name__, "EXIT")
         return (ret_state, ret_arg)
