@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resource>
 
-<string name="summary">取得並顯示 ATR 的值</string>
+<string name="summary">顯示較常用的 USIM 卡資訊</string>
 <string name="help"><![CDATA[使用方式:
   
   {}$ {}]]></string>
