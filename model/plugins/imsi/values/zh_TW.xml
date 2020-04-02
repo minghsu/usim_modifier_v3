@@ -15,6 +15,6 @@
       更新 IMSI: 466979876543210 (08 49 66 79 89 67 45 23 01)]]></string>
 <string name="read_error">錯誤! 無法讀取 IMSI!</string>
 <string name="update_error">錯誤! 無法更新 IMSI!</string>
-<string name="original">原始 IMSI: %s (%s)</string>
-<string name="updated">更新 IMSI: %s (%s)</string>
+<string name="original">原始 IMSI: {} ({})</string>
+<string name="updated">更新 IMSI: {} ({})</string>
 </resource>

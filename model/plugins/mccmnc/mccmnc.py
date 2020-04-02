@@ -82,7 +82,7 @@ class mccmnc(base_plugin):
 
         mcc = convert_bcd_to_string(read_resp[1:])[1:4]
         mnc = convert_bcd_to_string(read_resp[1:])[4:4+ori_mnc_length]
-        print(self.get_res("original") % (mcc, mnc))
+        print(self.get_res("original").format(mcc, mnc))
 
         if (update_mcc or update_mnc) and self.is_update_require_adm == uicc.adm_verified:
             update_imsi = read_resp[:]
@@ -113,6 +113,6 @@ class mccmnc(base_plugin):
 
             mcc = convert_bcd_to_string(update_imsi[1:])[1:4]
             mnc = convert_bcd_to_string(update_imsi[1:])[4:4+mnc_length]
-            print(self.get_res("updated") % (mcc, mnc))
+            print(self.get_res("updated").format(mcc, mnc))
 
         log.debug(self.__class__.__name__, "EXIT")

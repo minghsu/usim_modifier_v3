@@ -15,7 +15,7 @@
       Updated SPN: SIMCARD, 16 bytes (01 53 49 4D 43 41 52 44 FF FF FF FF FF FF FF FF FF)]]></string>
 <string name="read_error">Error! Can't read SPN correctly</string>
 <string name="update_error">Error! Can't update SPN successfully</string>
-<string name="original">Original SPN: %s, %d bytes (%s)</string>
-<string name="updated">Updated SPN: %s, %d bytes (%s)</string>
+<string name="original">Original SPN: {}, {} bytes ({})</string>
+<string name="updated">Updated SPN: {}, {} bytes ({})</string>
 
 </resource>

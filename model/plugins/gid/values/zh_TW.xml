@@ -15,10 +15,10 @@
       原始 GID1: FF FF FF FF FF FF FF FF
       更新 GID1: 12 FF FF FF FF FF FF FF
       原始 GID2: FF FF FF FF FF FF FF FF]]></string>
-<string name="read_error">錯誤! 無法讀取 %s</string>
-<string name="update_error">錯誤! 無法更新 %s</string>
-<string name="original">原始 %s: %s</string>
-<string name="updated">更新 %s: %s</string>
-<string name="not_exist">%s 不存在</string>
+<string name="read_error">錯誤! 無法讀取 {}</string>
+<string name="update_error">錯誤! 無法更新 {}</string>
+<string name="original">原始 {}: {}</string>
+<string name="updated">更新 {}: {}</string>
+<string name="not_exist">{} 不存在</string>
 
 </resource>

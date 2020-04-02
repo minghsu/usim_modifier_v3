@@ -17,7 +17,7 @@
   PS. 'ICCID' 有使用 Luhn algorithm, 請參照 https://planetcalc.com/2464/]]></string>
 <string name="read_error">錯誤! 無法讀取 ICCID</string>
 <string name="update_error">錯誤! 無法更新 ICCID</string>
-<string name="original">原始 ICCID: %s (%s)</string>
-<string name="updated">更新 ICCID: %s (%s)</string>
+<string name="original">原始 ICCID: {} ({})</string>
+<string name="updated">更新 ICCID: {} ({})</string>
 
 </resource>

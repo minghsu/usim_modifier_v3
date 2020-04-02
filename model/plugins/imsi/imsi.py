@@ -46,8 +46,7 @@ class imsi(base_plugin):
         #              -  --------------------
         # Convert 09 10 10 10 32 54 76 98 => 9001010123456789
         # Ignore 1st char, and just use '001010123456789'
-        print(self.get_res("original") % (convert_bcd_to_string(
-            read_resp[1:])[1:], toHexString(read_resp)))
+        print(self.get_res("original").format(convert_bcd_to_string(read_resp[1:])[1:], toHexString(read_resp)))
 
         if set_content != None and self.is_update_require_adm == uicc.adm_verified:
             imsi_update_content = read_resp[:]
@@ -69,7 +68,7 @@ class imsi(base_plugin):
                 print(self.get_res("update_error"))
                 return
 
-            print(self.get_res("updated") % (convert_bcd_to_string(
+            print(self.get_res("updated").format(convert_bcd_to_string(
                 imsi_update_content[1:])[1:], toHexString(imsi_update_content)))
 
         log.debug(self.__class__.__name__, "EXIT")

@@ -32,6 +32,6 @@
 <string name="original">Original MSISDN records:</string>
 <string name="updated">Updated MSISDN records:</string>
 <string name="invalid_id">Error! Invalid ID.</string>
-<string name="record">#%02d Name: %s (%d Bytes), Num: %s)</string>
-<string name="raw_record">(%s)</string>
+<string name="record"><![CDATA[> #{:0>2d} Name: {} ({} Bytes), Num: {}
+  ({})]]></string>
 </resource>

@@ -36,18 +36,14 @@ class iccid(base_plugin):
             UICC_FILE.ICCID, arg_type=UICC_SELECT_TYPE.FROM_MF)
         read_resp = uicc.read_binary(uicc_resp)
         if read_resp != None:
-            print(self.get_res("original") %
-                  (convert_bcd_to_string(read_resp),
-                   toHexString(read_resp)))
+            print(self.get_res("original").format(convert_bcd_to_string(read_resp), toHexString(read_resp)))
 
             if set_content != None and self.is_update_require_adm == uicc.adm_verified:
                 original = convert_bcd_to_string(read_resp)
                 update_content = set_content + original[len(set_content):]
 
                 if uicc.update_binary(convert_string_to_bcd(update_content)) == ERROR.NONE:
-                    print(self.get_res("updated") %
-                          (update_content,
-                           toHexString(convert_string_to_bcd(update_content))))
+                    print(self.get_res("updated").format(update_content, toHexString(convert_string_to_bcd(update_content))))
                 else:
                     print(self.get_res("update_error"))
 

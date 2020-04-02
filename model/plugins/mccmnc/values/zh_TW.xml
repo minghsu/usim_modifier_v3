@@ -15,8 +15,8 @@
       更新 MCC/MNC: 320/310]]></string>
 <string name="read_error">錯誤! 無法讀取 MCC/MNC!</string>
 <string name="update_error">錯誤! 無法更新 MCC/MNC!</string>
-<string name="original">原始 MCC/MNC: %s/%s</string>
-<string name="updated">更新 MCC/MNC: %s/%s</string>
+<string name="original">原始 MCC/MNC: {}/{}</string>
+<string name="updated">更新 MCC/MNC: {}/{}</string>
 <string name="invalid_mcc">MCC 長度不正確!</string>
 <string name="invalid_mnc">MNC 長度不正確!</string>
 </resource>

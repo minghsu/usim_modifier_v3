@@ -15,9 +15,9 @@
       Original GID1: FF FF FF FF FF FF FF FF
       Updated GID1: 12 FF FF FF FF FF FF FF
       Original GID2: FF FF FF FF FF FF FF FF]]></string>
-<string name="read_error">Error! Can't read %s correctly</string>
-<string name="update_error">Error! Can't update %s successfully</string>
-<string name="original">Original %s: %s</string>
-<string name="updated">Updated %s: %s</string>
-<string name="not_exist">The %s is not exist!</string>
+<string name="read_error">Error! Can't read {} correctly</string>
+<string name="update_error">Error! Can't update {} successfully</string>
+<string name="original">Original {}: {}</string>
+<string name="updated">Updated {}: {}</string>
+<string name="not_exist">The {} is not exist!</string>
 </resource>

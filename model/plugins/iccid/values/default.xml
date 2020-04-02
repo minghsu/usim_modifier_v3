@@ -17,7 +17,7 @@
   PS. The 'ICCID' is using Luhn algorithm, please refer https://planetcalc.com/2464/]]></string>
 <string name="read_error">Error! Can't read ICCID correctly</string>
 <string name="update_error">Error! Can't update ICCID successfully</string>
-<string name="original">Original ICCID: %s (%s)</string>
-<string name="updated">Updated ICCID: %s (%s)</string>
+<string name="original">Original ICCID: {} ({})</string>
+<string name="updated">Updated ICCID: {} ({})</string>
 
 </resource>

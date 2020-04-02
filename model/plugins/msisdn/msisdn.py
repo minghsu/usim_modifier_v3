@@ -26,6 +26,10 @@ class msisdn(base_plugin):
         return False
 
     def show_record(self, arg_idx, arg_resp, arg_name_len):
+
+        '''
+        The length of the 'name' should not a fixed, so ...
+        '''
         name_str = convert_alpha_to_string(arg_resp[:arg_name_len])
         name_str += " " * (arg_name_len - len(name_str))
 
@@ -33,9 +37,7 @@ class msisdn(base_plugin):
             arg_resp[arg_name_len+1:arg_name_len+1+11])
         num_str += " " * (21 - len(num_str))
 
-        print(self.get_res("record") %
-              (arg_idx, name_str, arg_name_len, num_str))
-        print(self.get_res("raw_record") % (toHexString(arg_resp)))
+        print(self.get_res("record").format(arg_idx, name_str, arg_name_len, num_str, toHexString(arg_resp)))
         print("")
 
     def execute(self, arg_components: components, arg_arguments=''):
