@@ -4,7 +4,7 @@
 <string name="summary">Get and show the ATR value.</string>
 <string name="help"><![CDATA[Usage:
   
-  %s$ atr 
+  {}$ {} 
   
   Example:
     - atr

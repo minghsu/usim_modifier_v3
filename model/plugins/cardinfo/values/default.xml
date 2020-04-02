@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">Show the popular info of USIM card.</string>
+<string name="help"><![CDATA[Usage:
+  
+  {}$ {}]]></string>
+
+</resource>

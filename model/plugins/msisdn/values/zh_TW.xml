@@ -4,7 +4,7 @@
 <string name="summary">查詢或是編輯 MSISDN</string>
 <string name="help"><![CDATA[使用方式:
   
-  %s$ msisdn [id=xx] [name=xxxx] [num=xxxx]
+  {}$ {} [id=xx] [name=xxxx] [num=xxxx]
   
   範例:
     - msisdn
@@ -13,6 +13,7 @@
         (FF FF FF FF FF FF FF FF FF FF FF FF FF FF 06 81 90 82 00 00 00 FF FF FF FF FF FF FF)
       > #2: 名稱:                (14 位元組), 號碼:
         (FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF)
+
     - msisdn id=2 name=Orange num=+886919001122
       原始 MSISDN 資料:
       > #1: 名稱: NULL           (14 位元組), 號碼: 0928000000

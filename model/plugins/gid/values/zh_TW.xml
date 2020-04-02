@@ -4,12 +4,13 @@
 <string name="summary">查詢或是編輯 GID1/GID2</string>
 <string name="help"><![CDATA[使用方式:
   
-  %s$ gid [gid1=xxxxxx] [gid2=xxxxxx]
+  {}$ {} [gid1=xxxxxx] [gid2=xxxxxx]
   
   範例:
     - gid
       原始 GID1: FF FF FF FF FF FF FF FF
       原始 GID2: FF FF FF FF FF FF FF FF
+    
     - gid1 gid1=12
       原始 GID1: FF FF FF FF FF FF FF FF
       更新 GID1: 12 FF FF FF FF FF FF FF

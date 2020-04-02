@@ -4,14 +4,17 @@
 <string name="summary">查詢或是編輯 ICCID</string>
 <string name="help"><![CDATA[使用方式:
   
-  %s$ iccid [set=iccid]
+  {}$ {} [set=iccid]
   
   範例:
     - iccid
       原始 ICCID: 89860009191190000108 (98 68 00 90 91 11 09 00 10 80)
+    
     - iccid set=1234
       原始 ICCID: 89860009191190000108 (98 68 00 90 91 11 09 00 10 80)
-      更新 ICCID: 12340009191190000108 (21 43 00 90 91 11 09 00 10 80)]]></string>
+      更新 ICCID: 12340009191190000108 (21 43 00 90 91 11 09 00 10 80)
+      
+  PS. 'ICCID' 有使用 Luhn algorithm, 請參照 https://planetcalc.com/2464/]]></string>
 <string name="read_error">錯誤! 無法讀取 ICCID</string>
 <string name="update_error">錯誤! 無法更新 ICCID</string>
 <string name="original">原始 ICCID: %s (%s)</string>

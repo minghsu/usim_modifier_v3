@@ -4,11 +4,12 @@
 <string name="summary">查詢或是編輯 IMSI 碼</string>
 <string name="help"><![CDATA[使用方式:
   
-  %s$ imsi [set=imsi]
+  {}$ {} [set=imsi]
   
   範例:
     - imsi
       原始 IMSI: 001010123456789 (08 09 10 10 10 32 54 76 98)
+
     - imsi set=466979876543210
       原始 IMSI: 001010123456789 (08 09 10 10 10 32 54 76 98)
       更新 IMSI: 466979876543210 (08 49 66 79 89 67 45 23 01)]]></string>

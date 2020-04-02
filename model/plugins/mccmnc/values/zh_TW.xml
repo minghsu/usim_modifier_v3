@@ -4,11 +4,12 @@
 <string name="summary">查詢或是編輯 MCC/MNC 碼</string>
 <string name="help"><![CDATA[使用方式:
   
-  %s$ mccmnc [mcc=xxx] [mnc=xxx]
+  {}$ {} [mcc=xxx] [mnc=xxx]
   
   範例:
     - mccmnc
       原始 MCC/MNC: 466/92
+      
     - mccmnc mcc=320 mnc=310
       原始 MCC/MNC: 466/92
       更新 MCC/MNC: 320/310]]></string>

@@ -7,7 +7,6 @@ from importlib import util
 import control.resource as res
 from control.components import components
 
-
 class base_plugin(abc.ABC):
     def summary(self):
         '''
@@ -23,14 +22,12 @@ class base_plugin(abc.ABC):
         Returns a help string by 'help' resource key.
         If resource not defined 'help' key, will call 'summary()' to instead it.
         '''
-
-    def help(self):
         ret_help = res.get_string("help", self.__class__.__name__)
 
         if ret_help == None:
             ret_help = self.summary()
         else:
-            ret_help = ret_help % res.get_string("app_name")
+            ret_help = ret_help.format(res.get_string("app_name"), self.__class__.__name__)
         return ret_help
 
     @abc.abstractmethod
@@ -53,15 +50,11 @@ class base_plugin(abc.ABC):
     def get_res(self, arg_resid):
         return res.get_string(arg_resid, self.__class__.__name__)
 
-    def execute_plugin(self, arg_plugin_name, arg_connection, arg_parameter=""):
-
-        ret_content = None
+    def execute_plugin(self, arg_plugin_name, arg_components: components, arg_parameter=""):
         try:
             plugin_class = __import__("model.plugins.%s.%s" %
                                       (arg_plugin_name, arg_plugin_name), fromlist=[arg_plugin_name])
             instance_class = getattr(plugin_class, arg_plugin_name)()
-            ret_content = instance_class.execute(arg_connection, arg_parameter)
+            instance_class.execute(arg_components, arg_parameter)
         except:
             pass
-
-        return ret_content

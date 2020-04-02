@@ -4,12 +4,13 @@
 <string name="summary">Query or modify the value of GID1/GID2.</string>
 <string name="help"><![CDATA[Usage:
   
-  %s$ gid [gid1=xxxxxx] [gid2=xxxxxx]
+  {}$ {} [gid1=xxxxxx] [gid2=xxxxxx]
   
   Example:
     - gid
       Original GID1: FF FF FF FF FF FF FF FF
       Original GID2: FF FF FF FF FF FF FF FF
+    
     - gid1 gid1=12
       Original GID1: FF FF FF FF FF FF FF FF
       Updated GID1: 12 FF FF FF FF FF FF FF

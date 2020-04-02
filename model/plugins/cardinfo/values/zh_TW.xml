@@ -4,10 +4,6 @@
 <string name="summary">取得並顯示 ATR 的值</string>
 <string name="help"><![CDATA[使用方式:
   
-  {}$ {} 
-  
-  範例:
-    - atr
-      ATR: 3B 9F 94 80 1F C7 80 31 E0 73 FE 21 13 57 86 85 03 86 98 42 18 AE]]></string>
+  {}$ {}]]></string>
 
 </resource>

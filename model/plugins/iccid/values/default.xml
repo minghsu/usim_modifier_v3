@@ -4,14 +4,17 @@
 <string name="summary">Query or modify the value of IMSI.</string>
 <string name="help"><![CDATA[Usage:
   
-  %s$ iccid [set=iccid]
+  {}$ {} [set=iccid]
   
   Example:
     - iccid
       Original ICCID: 89860009191190000108 (98 68 00 90 91 11 09 00 10 80)
+    
     - iccid set=1234
       Original ICCID: 89860009191190000108 (98 68 00 90 91 11 09 00 10 80)
-      Updated ICCID: 12340009191190000108 (21 43 00 90 91 11 09 00 10 80)]]></string>
+      Updated ICCID: 12340009191190000108 (21 43 00 90 91 11 09 00 10 80)
+      
+  PS. The 'ICCID' is using Luhn algorithm, please refer https://planetcalc.com/2464/]]></string>
 <string name="read_error">Error! Can't read ICCID correctly</string>
 <string name="update_error">Error! Can't update ICCID successfully</string>
 <string name="original">Original ICCID: %s (%s)</string>

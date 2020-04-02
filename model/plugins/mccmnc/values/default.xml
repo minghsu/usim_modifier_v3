@@ -4,11 +4,12 @@
 <string name="summary">Query or modify the value of MCC/MNC.</string>
 <string name="help"><![CDATA[Usage:
 
-  %s$ mccmnc [mcc=xxx] [mnc=xxx]
+  {}$ {} [mcc=xxx] [mnc=xxx]
 
   Example:
     - mccmnc
       Original MCC/MNC: 466/92
+      
     - mccmnc mcc=320 mnc=310
       Original MCC/MNC: 466/92
       Updated MCC/MNC: 320/310]]></string>

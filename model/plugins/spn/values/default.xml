@@ -4,11 +4,12 @@
 <string name="summary">Query or modify the value of SPN.</string>
 <string name="help"><![CDATA[Usage:
   
-  %s$ spn [set=spn]
+  {}$ {} [set=spn]
   
   Example:
     - spn
       Original SPN: MING, 16 bytes (01 4D 49 4E 47 FF FF FF FF FF FF FF FF FF FF FF FF)
+
     - spn set=SIMCARD
       Original SPN: MING, 16 bytes (01 4D 49 4E 47 FF FF FF FF FF FF FF FF FF FF FF FF)
       Updated SPN: SIMCARD, 16 bytes (01 53 49 4D 43 41 52 44 FF FF FF FF FF FF FF FF FF)]]></string>

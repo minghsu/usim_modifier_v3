@@ -4,7 +4,7 @@
 <string name="summary">Query or modify the value of MSISDN</string>
 <string name="help"><![CDATA[Usage:
   
-  %s$ msisdn [id=xx] [name=xxxx] [num=xxxx]
+  {}$ {} [id=xx] [name=xxxx] [num=xxxx]
   
   Example:
     - msisdn
@@ -13,6 +13,7 @@
         (FF FF FF FF FF FF FF FF FF FF FF FF FF FF 06 81 90 82 00 00 00 FF FF FF FF FF FF FF)
       > #2: Name:                (14 Bytes), Num:
         (FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF)
+    
     - msisdn id=2 name=Orange num=+886919001122
       Oringal MSISDN records:
       > #1: Name: NULL           (14 Bytes), Num: 0928000000

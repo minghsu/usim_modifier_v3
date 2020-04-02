@@ -4,7 +4,7 @@
 <string name="summary">Send the 'APDU' to USIM directly</string>
 <string name="help"><![CDATA[Usage:
 
-  %s$ send [XXXXXXXXXX]
+  {}$ {} [XXXXXXXXXX]
 
   Example (by 'SELECT MF' case):
     - send 00A40004023F00
