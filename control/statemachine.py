@@ -35,9 +35,10 @@ class statemachine:
             fileName = lastCallStack[0]
             lineNum = lastCallStack[1]
             funcName = lastCallStack[2]
+            callstack = os.linesep.join([line.strip() for line in traceback.format_exc(limit=5).splitlines()[1:-1]])
 
             errMsg = res.get_string("exception").format(
-                os.path.basename(fileName), lineNum, funcName, reason)
+                os.path.basename(fileName), lineNum, funcName, reason, callstack)
 
             self.__state = STATE.EXCEPTION
             self.__arguments = errMsg

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">Show the PIN/ADM status and enable or disable PIN1.</string>
+<string name="help"><![CDATA[Usage:
+  
+  {}$ {} 
+  
+  Example:
+    - pin
+      PIN1 Enabled: Yes
+      PIN1 Verified: Yes
+      ADM Verified: Yes
+      PIN1 Retries: 3
+      ADM Retries: 10
+
+    - pin pin1=1234
+      PIN1 disabled success
+
+      PIN1 Enabled: No
+      PIN1 Verified: N/A
+      ADM Verified: Yes
+      PIN1 Retries: 3
+      ADM Retries: 10]]></string>
+<string name="pin1">PIN1 {}: {}</string>
+<string name="adm">ADM {}: {}</string>
+<string name="verify">Verified</string>
+<string name="enable">Enabled</string>
+<string name="retries">Retries</string>
+<string name="enable_ok">PIN1 enable success</string>
+<string name="enable_fail">PIN1 enable fail</string>
+<string name="disable_ok">PIN1 disable success</string>
+<string name="disable_fail">PIN1 disable fial</string>
+<string name="invalid_pin">Invalid PIN1 code, ignore enable/disable PIN1 operation.</string>
+</resource>

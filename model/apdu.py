@@ -59,15 +59,26 @@ def update_binary(arg_content):
 
     return ret_cmd
 
-
+'''
+if the length of arg_key is zero,
+means just want to check retry count
+'''
 def verify_pin(arg_type, arg_key):
-    ret_cmd = [0xFF] * (5 + 8)
+    key_len = len(arg_key)
+
+    if (key_len == 0):
+        ret_cmd = [0xFF] * (5)
+    else:
+        ret_cmd = [0xFF] * (5 + 8)
 
     ret_cmd[0] = 0x00  # CLA
     ret_cmd[1] = 0x20  # INS
     ret_cmd[2] = 0x00  # P1
     ret_cmd[3] = arg_type  # P2
-    ret_cmd[4] = 0x08  # Length
+    if (key_len == 0):
+        ret_cmd[4] = 0x00  # Length
+    else:
+        ret_cmd[4] = 0x08  # Length
     for i in range(len(arg_key)):
         ret_cmd[i+5] = arg_key[i]
 
@@ -96,5 +107,31 @@ def update_record(arg_idx, arg_content):
     ret_cmd[4] = len(arg_content)  # Length
 
     ret_cmd += arg_content
+
+    return ret_cmd
+
+def disable_pin(arg_key):
+    ret_cmd = [0xFF] * (5 + 8)
+
+    ret_cmd[0] = 0x00  # CLA
+    ret_cmd[1] = 0x26  # INS
+    ret_cmd[2] = 0x00  # P1
+    ret_cmd[3] = 0x01  # P2
+    ret_cmd[4] = 0x08  # Length
+    for i in range(len(arg_key)):
+        ret_cmd[i+5] = arg_key[i]
+
+    return ret_cmd
+
+def enable_pin(arg_key):
+    ret_cmd = [0xFF] * (5 + 8)
+
+    ret_cmd[0] = 0x00  # CLA
+    ret_cmd[1] = 0x28  # INS
+    ret_cmd[2] = 0x00  # P1
+    ret_cmd[3] = 0x01  # P2
+    ret_cmd[4] = 0x08  # Length
+    for i in range(len(arg_key)):
+        ret_cmd[i+5] = arg_key[i]
 
     return ret_cmd

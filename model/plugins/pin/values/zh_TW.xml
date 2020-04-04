@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">顯示 PIN/ADM 狀態, "啟用" 或 "停用" PIN1.</string>
+<string name="help"><![CDATA[Usage:
+  
+  {}$ {} 
+  
+  Example:
+    - pin
+      PIN1 啟用: 是
+      PIN1 驗證: 是
+      ADM 驗證: 是
+      PIN1 剩餘次數: 3
+      ADM 剩餘次數: 10
+
+    - pin pin1=1234
+      PIN1 停用成功
+
+      PIN1 啟用: 否
+      PIN1 驗證: 無
+      ADM 驗證: 是
+      PIN1 剩餘次數: 3
+      ADM 剩餘次數: 10]]></string>
+<string name="pin1">PIN1 {}: {}</string>
+<string name="adm">ADM {}: {}</string>
+<string name="verify">驗證</string>
+<string name="enable">啟用</string>
+<string name="retries">剩餘次數</string>
+<string name="enable_ok">PIN1 啟用成功</string>
+<string name="enable_fail">PIN1 啟用失敗</string>
+<string name="disable_ok">PIN1 停用成功</string>
+<string name="disable_fail">PIN1 停用失敗</string>
+<string name="invalid_pin">PIN1 碼格式錯誤, 取消 "啟用/停用" PIN1 動作</string>
+</resource>
