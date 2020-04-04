@@ -39,6 +39,7 @@ class STATE:
     EXECUTE = 'execute'
     DISPATCH = 'dispatch'
     PLUGIN_HELP = 'plugin_help'
+    AUTO_EXEC = 'auto_exec'
 
 
 class UICC_FILE:

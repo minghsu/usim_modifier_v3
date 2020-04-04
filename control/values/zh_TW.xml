@@ -4,7 +4,6 @@
 <string name="app_name">USIM 修改員</string>
 <string name="version">版本</string>
 <string name="copyright">©Copyright 2019 許啊銘</string>
-<string name="class_not_found">找不到 %s 類別</string>
 <string name="exception">
 <![CDATA[發生錯誤, 系統終止!!
 
@@ -15,35 +14,36 @@
 <string name="no_cardreader">錯誤!! 找不到 PC/SC 讀卡機 !!</string>
 <string name="no_card">錯誤!! 請插入 USIM 卡.</string>
 <string name="invalid_card">錯誤!! 無法初始化 USIM 卡.</string>
-<string name="reader_connected">讀卡機 '%s' 已連接.</string>
+<string name="reader_connected">讀卡機 '{}' 已連接.</string>
 <string name="input_pin_code">SIM PIN 已啟用, 請輸入 PIN 碼 (4 ~ 8 位數, 10 進制): </string>
 <string name="invalid_pin_code">PIN 碼格式錯誤, 請重新輸入 (4 ~ 8 位數, 10 進制): </string>
-<string name="incorrect_pin_code">PIN 碼不正確, 剩餘 %d 次機會, 請重新輸入 (4 ~ 8 位數, 10進制): </string>
+<string name="incorrect_pin_code">PIN 碼不正確, 剩餘 {} 次機會, 請重新輸入 (4 ~ 8 位數, 10進制): </string>
 <string name="terminated_pin_code">使用者取消 PIN 碼驗證作業, 系統中止!</string>
 <string name="card_blocked">此張 USIM 卡已被鎖定, 系統中止!</string>
-<string name="auto_pin_verifing">找到 '%s' USIM 卡的 PIN 碼, 啟用自動驗證作業 ... </string>
 <string name="pass">成功</string>
 <string name="fail">失敗</string>
 <string name="input_adm_code">請輸入 ADM 碼 (16 位數, 16進制): </string>
 <string name="invalid_adm_code">ADM 碼格式錯誤, 請重新輸入 (16 位數, 16進制): </string>
-<string name="incorrect_adm_code">ADM 碼不正確, 剩餘 %d 次機會, 請重新輸入 (16 位數, 16進制): </string>
+<string name="incorrect_adm_code">ADM 碼不正確, 剩餘 {} 次機會, 請重新輸入 (16 位數, 16進制): </string>
 <string name="terminated_adm_code">使用者取消 ADM 碼驗證作業, 部份功能將受到限制!</string>
-<string name="auto_adm_verifing">找到 '%s' USIM 卡的 ADM 碼, 啟用自動驗證作業 ... </string>
 <string name="adm_blocked">注意, ADM 驗證次數已歸零, 部份功能將受到限制!</string>
 <string name="plugin_loading">正在載入 plugin 套件 ...</string>
-<string name="plugin_loaded">共載入 %d 個 plugin 套件 ...</string>
-<string name="plugin_head">{:14}    {:6}    {:^4}    {}</string>
-<string name="plugin_item">{:16}    {:8}    {:^6}    {}</string>
+<string name="plugin_loaded">共載入 {} 個 plugin 套件 ...</string>
+<string name="plugin_head">{:10}  {:6}  {:^4}  {:^4}    {}</string>
+<string name="plugin_item">{:12}  {:8}  {:^6}  {:^7}    {}</string>
 <string name="plugin_name">套件</string>
 <string name="plugin_version">版本</string>
-<string name="plugin_update">更新</string>
+<string name="plugin_update">可更新</string>
+<string name="plugin_autoexec">自動執行</string>
 <string name="plugin_summary">摘要</string>
-<string name="error_plugin_not_def_summary_res">錯誤! '%s' plugin 未定義 'summary' 字串資源, 將忽略此 plugin</string>
 <string name="help"><![CDATA[使用方式: 
   help: 顯示此求助訊息
   exit: 結束
   plugin: 顯示所有已載入的 plugin
   [plugin name] <參數>: 執行 plugin
   [plugin name] help: 顯示 plung 的求助訊息]]></string>
-<string name="plugin_help_header">'%s' 套件求助訊息</string>
+<string name="plugin_help_header">'{}' 套件求助訊息</string>
+<string name="yes">是</string>
+<string name="no">否</string>
+<string name="na">無</string>
 </resource>

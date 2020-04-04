@@ -23,7 +23,7 @@ Help info of 'send' plugin
 def layout(arg_format='', arg_name='', arg_help=''):
 
     ret_layout = os.linesep
-    ret_layout += arg_format % (arg_name) + os.linesep
+    ret_layout += arg_format.format(arg_name) + os.linesep
     ret_layout += os.linesep
 
     lst_string = arg_help.split(os.linesep)

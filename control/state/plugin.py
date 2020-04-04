@@ -39,7 +39,8 @@ class plugin():
                         plugin.append([name,
                                        instance_class.version(),
                                        instance_class.summary(),
-                                       instance_class.is_update_require_adm])
+                                       instance_class.is_update_require_adm,
+                                       instance_class.is_auto_exec])
 
                 except:
                     log.debug(self.__class__.__name__,
@@ -50,4 +51,4 @@ class plugin():
                                        arg_count=plugin_count)
         print(out_msg)
         log.debug(self.__class__.__name__, "EXIT")
-        return (STATE.HELP, None)
+        return (STATE.AUTO_EXEC, None)

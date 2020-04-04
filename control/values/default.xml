@@ -8,7 +8,6 @@
 <string name="app_name">USIM Modifier</string>
 <string name="version">Version</string>
 <string name="copyright">©Copyright 2019 Ming Hsu</string>
-<string name="class_not_found">Can't found %s class.</string>
 <string name="exception">
 <![CDATA[Exception, System terminated!!
 
@@ -19,38 +18,36 @@
 <string name="no_cardreader">Failed!! Can't found any PC/SC card reader!!</string>
 <string name="no_card">Failed!! Please insert the USIM card.</string>
 <string name="invalid_card">Failed!! Can't initial this USIM card.</string>
-<string name="reader_connected">The '%s' was connected.</string>
+<string name="reader_connected">The '{}' was connected.</string>
 <string name="input_pin_code">SIM PIN Enabled, please input PIN code (4 ~ 8 digits): </string>
 <string name="invalid_pin_code">Invalid PIN code, please try again (4 ~ 8 digits): </string>
-<string name="incorrect_pin_code">Incorrect PIN code, %d remaining attempts, please try again (4 ~ 8 digits): </string>
+<string name="incorrect_pin_code">Incorrect PIN code, {} remaining attempts, please try again (4 ~ 8 digits): </string>
 <string name="terminated_pin_code">User cancel PIN operation, system terminated!</string>
 <string name="card_blocked">The USIM card was blocked, system terminated!</string>
-<string name="auto_pin_verifing">Found the PIN of '%s' USIM card, auto verifing ... </string>
 <string name="pass">Pass</string>
 <string name="fail">Fail</string>
 <string name="input_adm_code">Please input ADM code (16 digits, Hexadecimal): </string>
 <string name="invalid_adm_code">Invalid ADM code, please try again (16 digits, Hexadecimal): </string>
-<string name="incorrect_adm_code">Incorrect ADM code, %d remaining attempts, please try again (16 digits, Hexadecimal): </string>
+<string name="incorrect_adm_code">Incorrect ADM code, {} remaining attempts, please try again (16 digits, Hexadecimal): </string>
 <string name="terminated_adm_code">User cancel ADM operation, some features will be limited!</string>
-<string name="auto_adm_verifing">Found the ADM of '%s' USIM card, auto verifing ... </string>
 <string name="adm_blocked">Note! The ADM verify count is ZERO, some features will be limited!!</string>
 <string name="plugin_loading">Loading the plugin ...</string>
-<string name="plugin_loaded">Found %d plugin ...</string>
-<string name="plugin_head">{:16}    {:^7}    {:^6}    {}</string>
-<string name="plugin_item">{:16}    {:^7}    {:^6}    {}</string>
+<string name="plugin_loaded">Found {} plugin ...</string>
+<string name="plugin_head">{:12}  {:^7}  {:^9}  {:^8}   {}</string>
+<string name="plugin_item">{:12}  {:^7}  {:^9}  {:^8}   {}</string>
 <string name="plugin_name">Name</string>
 <string name="plugin_version">Version</string>
-<string name="plugin_update">Update</string>
+<string name="plugin_update">Updatable</string>
+<string name="plugin_autoexec">AutoExec</string>
 <string name="plugin_summary">Summary</string>
-<string name="error_plugin_not_def_summary_res">Error! The '%s' plugin not defined 'summary' string resource, ignored.</string>
 <string name="help"><![CDATA[Usage: 
   help: show this help
   exit: exit the program
   plugin: show all available plugins
   [plugin name] <arguments>: execute the plugin
   [plugin name] help: show help msg of this plugin]]></string>
-<string name="plugin_help_header">Help info of '%s' plugin</string>
-
-Help info of 'send' plugin
-
+<string name="plugin_help_header">Help info of '{}' plugin</string>
+<string name="yes">Yes</string>
+<string name="no">No</string>
+<string name="na">N/A</string>
 </resource>

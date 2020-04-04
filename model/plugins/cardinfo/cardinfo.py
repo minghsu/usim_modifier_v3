@@ -14,6 +14,10 @@ class cardinfo(base_plugin):
         return "1.00"
 
     @property
+    def is_auto_exec(self):
+        return True
+
+    @property
     def is_update_require_adm(self):
         return True
 

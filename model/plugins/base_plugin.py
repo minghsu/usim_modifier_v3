@@ -38,6 +38,11 @@ class base_plugin(abc.ABC):
     def execute(self, arg_components: components, arg_arguments=''):
         return NotImplemented
 
+    # is auto exec during startup stage
+    @property
+    def is_auto_exec(self):
+        return False
+
     # is update content need ADM verified
     @property
     def is_update_require_adm(self):

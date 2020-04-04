@@ -20,6 +20,7 @@ class configuration:
         self.__localized = 1
         self.__pin = 1
         self.__adm = 1
+        self.__autoexec = 1
 
         root = etree.Element("usim_modifier")
         configuration = etree.SubElement(root, 'configuration')
@@ -32,11 +33,12 @@ class configuration:
         pin.text = str(self.__pin)
         adm = etree.SubElement(configuration, "adm")
         adm.text = str(self.__adm)
+        autoexec = etree.SubElement(configuration, "autoexec")
+        autoexec.text = str(self.__autoexec)
         self.__xml = etree.ElementTree(root)
 
     def save(self):
         bRet = True
-
         try:
             self.__xml.write(CONFIG_XML_FILE, pretty_print=True,
                              xml_declaration=True, encoding='utf-8')
@@ -126,6 +128,8 @@ class configuration:
             self.__pin = int(xml_node[0].text)
             xml_node = root.xpath("configuration//adm")
             self.__adm = int(xml_node[0].text)
+            xml_node = root.xpath("configuration//autoexec")
+            self.__autoexec = int(xml_node[0].text)
         except Exception as e:
             print(e)
             log.critical(self.__class__.__name__,
@@ -145,6 +149,15 @@ class configuration:
             self.__default()
 
         self.save()
+
+    @property
+    def autoexec(self):
+        return self.__autoexec
+
+    @autoexec.setter
+    def autoexec(self, autoexec):
+        self.__autoexec = autoexec
+        self.__update_configurations('autoexec', self.__autoexec)
 
     @property
     def log(self):

@@ -27,13 +27,22 @@ class plugin_list():
         # - None: No update feature
         # - True: update need adm verified
         # - False: update didn't need adm verified
+
+        str_yes = res.get_string("yes")
+        str_no = res.get_string("no")
+        str_na = res.get_string("na")
         for plugin in plugins:
             if plugin[3] == None:
-                plugin[3] = "N/A"
+                plugin[3] = str_na
             elif arg_components.modeler.uicc.adm_verified:
-                plugin[3] = "Yes"
+                plugin[3] = str_yes
             else:
-                plugin[3] = "Yes" if plugin[3] == arg_components.modeler.uicc.adm_verified else "No"
+                plugin[3] = str_yes if plugin[3] == arg_components.modeler.uicc.adm_verified else str_no
+
+            if plugin[4]:
+                plugin[4] = str_yes
+            else:
+                plugin[4] = str_no
 
         out_msg = layout_plugin_list.layout(arg_format=res.get_string('plugin_found'),
                                             arg_plugin=plugins)
