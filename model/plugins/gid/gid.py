@@ -43,7 +43,8 @@ class gid(base_plugin):
                 gid_working_list[i][1], arg_type=UICC_SELECT_TYPE.FROM_MF)
             read_resp = uicc.read_binary(uicc_resp)
             if read_resp != None:
-                print(self.get_res("original").format(gid_working_list[i][0], toHexString(read_resp)))
+                print(self.get_res("original").format(
+                    gid_working_list[i][0], toHexString(read_resp)))
 
                 if gid_working_list[i][2] != None and self.is_update_require_adm == uicc.adm_verified:
                     update_content = read_resp[:]
@@ -56,13 +57,15 @@ class gid(base_plugin):
                         update_content[j] = gid_working_list[i][2][j]
 
                     if uicc.update_binary(update_content) == ERROR.NONE:
-                        print(self.get_res("updated").format(gid_working_list[i][0],
-                               toHexString(update_content)))
+                        print(self.get_res("updated").format(
+                            toHexString(update_content)))
                     else:
-                        print(self.get_res("update_error").format(gid_working_list[i][0]))
+                        print(self.get_res("update_error").format(
+                            gid_working_list[i][0]))
             elif uicc_resp.sw1 == 0x6A and uicc_resp.sw1 == 0x82:
                 print(self.get_res("not_exist").format(gid_working_list[i][0]))
             else:
-                print(self.get_res("read_error").format(gid_working_list[i][0]))
+                print(self.get_res("read_error").format(
+                    gid_working_list[i][0]))
 
         log.debug(self.__class__.__name__, "EXIT")

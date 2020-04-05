@@ -8,17 +8,19 @@
   
   範例:
     - gid
-      原始 GID1: FF FF FF FF FF FF FF FF
-      原始 GID2: FF FF FF FF FF FF FF FF
+      GID1: FF FF FF FF FF FF FF FF
+
+      GID2: FF FF FF FF FF FF FF FF
     
     - gid1 gid1=12
-      原始 GID1: FF FF FF FF FF FF FF FF
-      更新 GID1: 12 FF FF FF FF FF FF FF
-      原始 GID2: FF FF FF FF FF FF FF FF]]></string>
+      GID1: FF FF FF FF FF FF FF FF
+      修改 GID1: 12 FF FF FF FF FF FF FF
+
+      GID2: FF FF FF FF FF FF FF FF]]></string>
 <string name="read_error">錯誤! 無法讀取 {}</string>
 <string name="update_error">錯誤! 無法更新 {}</string>
-<string name="original">原始 {}: {}</string>
-<string name="updated">更新 {}: {}</string>
+<string name="original">{}: {}</string>
+<string name="updated">>>>>> {}</string>
 <string name="not_exist">{} 不存在</string>
 
 </resource>

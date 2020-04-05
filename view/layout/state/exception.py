@@ -21,6 +21,6 @@ def layout(arg_string=''):
 
     for string in lst_string:
         ret_layout += layout_oneline.layout(
-            arg_string=string, arg_style=STYLE.BRIGHT, arg_fore=COLOR_FORE.RED, arg_padding=2) + os.linesep
+            arg_string=string, arg_style=STYLE.BRIGHT, arg_fore=COLOR_FORE.RED, arg_padding=4) + os.linesep
 
     return ret_layout

@@ -8,16 +8,18 @@
   
   Example:
     - gid
-      Original GID1: FF FF FF FF FF FF FF FF
-      Original GID2: FF FF FF FF FF FF FF FF
+      GID1: FF FF FF FF FF FF FF FF
+
+      GID2: FF FF FF FF FF FF FF FF
     
     - gid1 gid1=12
-      Original GID1: FF FF FF FF FF FF FF FF
-      Updated GID1: 12 FF FF FF FF FF FF FF
-      Original GID2: FF FF FF FF FF FF FF FF]]></string>
+      GID1: FF FF FF FF FF FF FF FF
+      >>>>: 12 FF FF FF FF FF FF FF
+
+      GID2: FF FF FF FF FF FF FF FF]]></string>
 <string name="read_error">Error! Can't read {} correctly</string>
 <string name="update_error">Error! Can't update {} successfully</string>
-<string name="original">Original {}: {}</string>
-<string name="updated">Updated {}: {}</string>
+<string name="original">{}: {}</string>
+<string name="updated">>>>>> {}</string>
 <string name="not_exist">The {} is not exist!</string>
 </resource>

@@ -8,15 +8,15 @@
 
   Example:
     - mccmnc
-      Original MCC/MNC: 466/92
+      MCC/MNC: 466/92
       
     - mccmnc mcc=320 mnc=310
-      Original MCC/MNC: 466/92
-      Updated MCC/MNC: 320/310]]></string>
+      MCC/MNC: 466/92
+      >>>>>>>> 320/310]]></string>
 <string name="read_error">Error! Can't read MCC/MNC correctly!</string>
 <string name="update_error">Error! Can't update MCC/MNC successfully!</string>
-<string name="original">Original MCC/MNC: {}/{}</string>
-<string name="updated">Updated MCC/MNC: {}/{}</string>
+<string name="original">MCC/MNC: {}/{}</string>
+<string name="updated">>>>>>>>> {}/{}</string>
 <string name="invalid_mcc">Invalid length of MCC!</string>
 <string name="invalid_mnc">Invalid length of MNC!</string>
 </resource>

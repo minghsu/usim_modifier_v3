@@ -17,10 +17,6 @@ class cardinfo(base_plugin):
     def is_auto_exec(self):
         return True
 
-    @property
-    def is_update_require_adm(self):
-        return True
-
     def execute(self, arg_components, arg_arguments=''):
         log.debug(self.__class__.__name__, "ENTER")
 

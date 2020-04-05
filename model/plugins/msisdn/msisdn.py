@@ -26,7 +26,6 @@ class msisdn(base_plugin):
         return False
 
     def show_record(self, arg_idx, arg_resp, arg_name_len):
-
         '''
         The length of the 'name' should not a fixed, so ...
         '''
@@ -37,7 +36,8 @@ class msisdn(base_plugin):
             arg_resp[arg_name_len+1:arg_name_len+1+11])
         num_str += " " * (21 - len(num_str))
 
-        print(self.get_res("record").format(arg_idx, name_str, arg_name_len, num_str, toHexString(arg_resp)))
+        print(self.get_res("record").format(arg_idx, name_str,
+                                            arg_name_len, num_str, toHexString(arg_resp)))
         print("")
 
     def execute(self, arg_components: components, arg_arguments=''):
@@ -72,7 +72,7 @@ class msisdn(base_plugin):
                     if resp != None:
                         self.show_record(i+1, resp, name_length)
 
-                if set_record_id != None:
+                if set_record_id != None and set_num_content != None and set_name_content != None:
                     update_apdu = uicc.read_record(set_record_id, uicc_resp)
 
                     if set_name_content != None:

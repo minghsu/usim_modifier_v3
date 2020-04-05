@@ -8,13 +8,13 @@
   
   範例:
     - imsi
-      原始 IMSI: 001010123456789 (08 09 10 10 10 32 54 76 98)
+      IMSI: 001010123456789 (08 09 10 10 10 32 54 76 98)
 
     - imsi set=466979876543210
-      原始 IMSI: 001010123456789 (08 09 10 10 10 32 54 76 98)
-      更新 IMSI: 466979876543210 (08 49 66 79 89 67 45 23 01)]]></string>
+      IMSI: 001010123456789 (08 09 10 10 10 32 54 76 98)
+      >>>>: 466979876543210 (08 49 66 79 89 67 45 23 01)]]></string>
 <string name="read_error">錯誤! 無法讀取 IMSI!</string>
 <string name="update_error">錯誤! 無法更新 IMSI!</string>
-<string name="original">原始 IMSI: {} ({})</string>
-<string name="updated">更新 IMSI: {} ({})</string>
+<string name="original">IMSI: {} ({})</string>
+<string name="updated">>>>>> {} ({})</string>
 </resource>

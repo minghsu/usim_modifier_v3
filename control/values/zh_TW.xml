@@ -7,12 +7,12 @@
 <string name="exception">
 <![CDATA[發生錯誤, 系統終止!!
 
-  檔案: {}
-  行數: {}
-  函數: {}
-  原因: {}
-  堆疊:
-  {}]]></string>
+檔案: {}
+行數: {}
+函數: {}
+原因: {}
+堆疊:
+{}]]></string>
 <string name="no_cardreader">錯誤!! 找不到 PC/SC 讀卡機 !!</string>
 <string name="no_card">錯誤!! 請插入 USIM 卡.</string>
 <string name="invalid_card">錯誤!! 無法初始化 USIM 卡.</string>

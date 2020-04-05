@@ -20,7 +20,7 @@ class auto_exec():
             for plugin in plugins:
                 if plugin[4]:
                     plugin_class = __import__("model.plugins.%s.%s" %
-                                            (plugin[0], plugin[0]), fromlist=[plugin[0]])
+                                              (plugin[0], plugin[0]), fromlist=[plugin[0]])
                     instance_class = getattr(plugin_class, plugin[0])()
                     instance_class.execute(arg_components, "")
 

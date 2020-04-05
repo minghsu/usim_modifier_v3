@@ -8,13 +8,13 @@
 
   Example:
     - imsi
-      Origianl IMSI: 001010123456789 (08 09 10 10 10 32 54 76 98)
+      IMSI: 001010123456789 (08 09 10 10 10 32 54 76 98)
 
     - imsi set=466979876543210
-      Origianl IMSI: 001010123456789 (08 09 10 10 10 32 54 76 98)
-      Updated IMSI: 466979876543210 (08 49 66 79 89 67 45 23 01)]]></string>
+      IMSI: 001010123456789 (08 09 10 10 10 32 54 76 98)
+      >>>>: 466979876543210 (08 49 66 79 89 67 45 23 01)]]></string>
 <string name="read_error">Error! Can't read IMSI correctly!</string>
 <string name="update_error">Error! Can't update IMSI successfully!</string>
-<string name="original">Original IMSI: {} ({})</string>
-<string name="updated">Updated IMSI: {} ({})</string>
+<string name="original">IMSI: {} ({})</string>
+<string name="updated">>>>>> {} ({})</string>
 </resource>
