@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <usim_modifier>
   <configuration>
-    <log>1</log>
+    <log>0</log>
     <localized>0</localized>
     <pin>1</pin>
     <adm>1</adm>
