@@ -62,7 +62,7 @@ git clone https://github.com/minghsu/usim_modifier_v3.git
 - pin: Enable/disable PIN1 and query the retry count of PIN1/ADM
 - cardinfo: Show the 'iccid', 'imsi', 'mccmnc', 'spn' & 'gid' info
 
-You can type 'plugin' command to get all plugin info, the 'Update' column mean is able to modify in current session or not.  
+You can type 'plugin' command to get all plugin info, the 'Updatable' column mean is able to modify in current session or not, and the 'AutoExec' mean the plugin will auto execute during startup stage or not.  
 
 ![plugin](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/plugin.png)
 
