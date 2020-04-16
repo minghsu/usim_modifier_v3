@@ -54,7 +54,7 @@ class pin(base_plugin):
                         'enable_ok') if ret_result == ERROR.NONE else self.get_res('enable_fail')
                 print(msg)
 
-            print(os.linesep)
+            print(os.linesep, end='')
 
         print(self.get_res("pin1").format(self.get_res("enable"),
                                           res.get_string("yes") if uicc.pin_enabled else res.get_string("no")))
