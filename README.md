@@ -71,10 +71,55 @@ You can type 'plugin' command to get all plugin info, the 'Update' column mean i
 On 'Linux/Mac' OS, just type './usim_modifier.py' command.  
 For 'Windows' OS, please type 'python3 usim_modifer.py' command.
 
-The 1st step, if the USIM enabled the PIN code, you must nput correct 'pin code' to verify for future operation.  
+The 1st step, if the USIM enabled the PIN code, you must input correct 'pin code' to verify for future operation.  
 For next step, you can type 'adm code' to verification 'adm', you can press 'ENTER' key to skip if you didn't have the 'adm code', but some 'plugin' may not updatable.  
 
-PS. If the 'pin' & 'adm' verify success, we will store the 'pin' & 'adm' code to 'usim_modifier.xml' file automatically(can disable by 'usim_modifier.xml' file), and auto verification from next operation.
+PS. If you have any suggestion, please raise the 'issues' or send mail to me directly.
 
 ![startup](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/startup.png)
+
+# Example of plugins
+
+All example are very simple, you can type 'help' argument to get more detail.
+
+## ATR
+
+![atr](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/atr.png)
+
+## ICCID
+
+![iccid](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/iccid.png)
+
+## IMSI
+
+![imsi](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/imsi.png)
+
+## MCC/MNC
+
+![mccmnc](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/mccmnc.png)
+
+## SPN
+
+![spn](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/spn.png)
+
+## GID
+
+![gid](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/gid.png)
+
+## MSISDN
+
+![msisdn](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/msisdn.png)
+
+## PIN
+
+![pin](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/pin.png)
+
+## SEND
+
+![send](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/send.png)
+
+## CARDINFO
+
+![cardinfo](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/cardinfo.png)
+
 
