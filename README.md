@@ -5,11 +5,11 @@ The 'usim midifier v3.0' is for modify your 'TEST USIM' card, you can modify the
 You can use this tool to do:
 - Modify iccid/imsi/mccmnc/gid/spn for specific test
 - Update msisdn to easy identify the USIM (Ex: Chunwau Telecom, FET NET, etc)
-- Implement new plugin for your specific test (Such as 'Orange' plugin, you can configure 'TEST USIM' for Orange test case)
+- Enable/disable the PIN1, and query the PIN1/ADM retry count
 
 # Requirement Packages
 
-- [python3](https://www.python.org/)
+- [python3](https://www.python.org/) (Minimum version is 3.6.x) 
 - [colorama](https://pypi.org/project/colorama/)
 - [pyscard](https://pyscard.sourceforge.io/)  
 - [lxml](https://lxml.de/)  
@@ -32,7 +32,8 @@ You can use this tool to do:
 
 ## Windows
 
-N/A (I lost the install sequence, but 'usim_modifier v3' can works property on Windows platform, just need to install 'colorama' & 'pyscard' packages).
+I lost the install sequence, but 'usim_modifier v3' can works property on Windows platform.  
+You need to install 'colorama', 'lxml' & 'pyscard' packages.
 
 # Install "USIM modifier"
 
@@ -51,30 +52,19 @@ git clone https://github.com/minghsu/usim_modifier_v3.git
 # Plugin supported features
 
 - gid: Query or modify the value of GID1/GID2.
-- mccmnc: Query or modify the value of MCC/MNC.
-- imsi: Query or modify the value of IMSI.
-- spn: Query or modify the value of SPN.
-- atr: Get and show the ATR value.
-- iccid: Query or modify the value of IMSI.
+- mccmnc: Query or modify the value of MCC/MNC
+- imsi: Query or modify the value of IMSI
+- spn: Query or modify the value of SPN
+- atr: Get and show the ATR value
+- iccid: Query or modify the value of IMSI
 - msisdn: Query or modify the value of MSISDN
 - send: Send the 'APDU' to USIM directly
+- pin: Enable/disable PIN1 and query the retry count of PIN1/ADM
+- cardinfo: Show the 'iccid', 'imsi', 'mccmnc', 'spn' & 'gid' info
 
 You can type 'plugin' command to get all plugin info, the 'Update' column mean is able to modify in current session or not.  
 
 ![plugin](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/plugin.png)
-
-# Configure XML file
-
-We can configure below items by 'usim_modifier.xml' file, you can use any text editor to enable/disable(1/0).
-
-- log: turn on or turn off the loggin mechanism
-- localized: force to use 'en_US' language resource
-- pin: enable/disable auto store the 'pin code' to config file
-- adm: enable/disable auto store the 'adm code' to config file
-
-If you enabled the 'pin' or 'adm' auto store feature, it will store to 'usim_modifier.xml' file by plain text and support mutliple ICCID.
-
-![config](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/config.png)
 
 # Start to using 'usim_modifier_v3'
 
@@ -87,3 +77,4 @@ For next step, you can type 'adm code' to verification 'adm', you can press 'ENT
 PS. If the 'pin' & 'adm' verify success, we will store the 'pin' & 'adm' code to 'usim_modifier.xml' file automatically(can disable by 'usim_modifier.xml' file), and auto verification from next operation.
 
 ![startup](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/startup.png)
+
