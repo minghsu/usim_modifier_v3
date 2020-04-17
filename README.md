@@ -7,6 +7,8 @@ You can use this tool to do:
 - Update msisdn to easy identify the USIM (Ex: Chunwau Telecom, FET NET, etc)
 - Enable/disable the PIN1, and query the PIN1/ADM retry count
 
+PS. If you have any suggestion, please raise the 'issues' or send mail to me directly.
+
 # Requirement Packages
 
 - [python3](https://www.python.org/) (Minimum version is 3.6.x) 
@@ -72,9 +74,7 @@ On 'Linux/Mac' OS, just type './usim_modifier.py' command.
 For 'Windows' OS, please type 'python3 usim_modifer.py' command.
 
 The 1st step, if the USIM enabled the PIN code, you must input correct 'pin code' to verify for future operation.  
-For next step, you can type 'adm code' to verification 'adm', you can press 'ENTER' key to skip if you didn't have the 'adm code', but some 'plugin' may not updatable.  
-
-PS. If you have any suggestion, please raise the 'issues' or send mail to me directly.
+For next step, you can type 'adm code' to verification 'adm', and we can press 'ENTER' key to skip if you didn't have the 'adm code', but some 'plugin' may not updatable.  
 
 ![startup](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/startup.png)
 
@@ -122,4 +122,7 @@ All example are very simple, you can type 'help' argument to get more detail.
 
 ![cardinfo](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/cardinfo.png)
 
+# Reference
 
+- ETSI TS 102 221 - Smart Cards; UICC-Terminal interface; Physical and logical characteristics
+- ETSI TS 131 102 - UMTS; LTE;Characteristics of the Universal Subscriber Identity Module (USIM) application
