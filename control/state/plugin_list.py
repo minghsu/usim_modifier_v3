@@ -26,7 +26,7 @@ class plugin_list():
         # is_update_require_adm:
         # - None: No update feature
         # - True: update need adm verified
-        # - False: update didn't need adm verified
+        # - False: Didn't need adm for update
 
         str_yes = res.get_string("yes")
         str_no = res.get_string("no")

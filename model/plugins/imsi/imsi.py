@@ -35,8 +35,7 @@ class imsi(base_plugin):
                 set_content = value
 
         # read EF_IMSI
-        uicc_resp = uicc.select(
-            UICC_FILE.IMSI, arg_type=UICC_SELECT_TYPE.FROM_MF)
+        uicc_resp = uicc.select(UICC_FILE.IMSI)
         read_resp = uicc.read_binary(uicc_resp)
         if read_resp == None:
             print(self.get_res("read_error"))

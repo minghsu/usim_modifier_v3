@@ -58,8 +58,7 @@ class msisdn(base_plugin):
             elif key == "num":
                 set_num_content = value
 
-        uicc_resp: uicc_sel_resp = uicc.select(
-            UICC_FILE.MSISDN, arg_type=UICC_SELECT_TYPE.FROM_MF)
+        uicc_resp: uicc_sel_resp = uicc.select(UICC_FILE.MSISDN)
 
         if uicc_resp.sw1 == 0x90:
             if set_record_id != None and (set_record_id <= 0 or set_record_id > uicc_resp.count):

@@ -21,7 +21,7 @@ class uicc:
         self.__adm_verified = False
         self.__pin_enabled = False
 
-        uicc_resp = self.select(UICC_FILE.MF)
+        uicc_resp = self.select(UICC_FILE.MF, arg_type=UICC_SELECT_TYPE.FILE_ID)
         self.__pin_enabled = uicc_resp.pin
 
         self.__iccid = None
@@ -96,7 +96,7 @@ class uicc:
     def send(self, arg_apdu_cmd):
         return self.__transmit(arg_apdu_cmd)
 
-    def select(self, arg_file_id, arg_type=UICC_SELECT_TYPE.FILE_ID):
+    def select(self, arg_file_id, arg_type=UICC_SELECT_TYPE.FROM_MF):
         resp = sw1 = sw2 = None
 
         apdu = select(arg_file_id, arg_type=arg_type)

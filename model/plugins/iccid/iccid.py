@@ -32,8 +32,7 @@ class iccid(base_plugin):
             if key == "set":
                 set_content = value
 
-        uicc_resp: uicc_sel_resp = uicc.select(
-            UICC_FILE.ICCID, arg_type=UICC_SELECT_TYPE.FROM_MF)
+        uicc_resp: uicc_sel_resp = uicc.select(UICC_FILE.ICCID)
         read_resp = uicc.read_binary(uicc_resp)
         if read_resp != None:
             print(self.get_res("original").format(convert_bcd_to_string(read_resp), toHexString(read_resp)))

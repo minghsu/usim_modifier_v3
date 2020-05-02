@@ -39,8 +39,7 @@ class gid(base_plugin):
                 gid_working_list[ID_GID2][2] = toBytes(value)
 
         for i in range(len(gid_working_list)):
-            uicc_resp: uicc_sel_resp = uicc.select(
-                gid_working_list[i][1], arg_type=UICC_SELECT_TYPE.FROM_MF)
+            uicc_resp: uicc_sel_resp = uicc.select(gid_working_list[i][1])
             read_resp = uicc.read_binary(uicc_resp)
             if read_resp != None:
                 print(self.get_res("original").format(

@@ -54,8 +54,7 @@ class mccmnc(base_plugin):
             return
 
         # read mnc length from EF_AD
-        uicc_resp = uicc.select(
-            UICC_FILE.AD, arg_type=UICC_SELECT_TYPE.FROM_MF)
+        uicc_resp = uicc.select(UICC_FILE.AD)
         read_resp = uicc.read_binary(uicc_resp)
         if read_resp == None:
             print(self.get_res("read_error"))
@@ -73,8 +72,7 @@ class mccmnc(base_plugin):
                 return
 
         # read EF_IMSI
-        uicc_resp = uicc.select(
-            UICC_FILE.IMSI, arg_type=UICC_SELECT_TYPE.FROM_MF)
+        uicc_resp = uicc.select(UICC_FILE.IMSI)
         read_resp = uicc.read_binary(uicc_resp)
         if read_resp == None:
             print(self.get_res("read_error"))

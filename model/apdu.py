@@ -6,7 +6,7 @@ from smartcard.util import toBytes
 from control.constants import ERROR, UICC_FILE, UICC_SELECT_TYPE
 
 
-def select(arg_field, arg_type=UICC_SELECT_TYPE.FILE_ID):
+def select(arg_field, arg_type=UICC_SELECT_TYPE.FROM_MF):
     if len(arg_field) % 2:
         return None
 

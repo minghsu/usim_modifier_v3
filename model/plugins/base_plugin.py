@@ -48,10 +48,6 @@ class base_plugin(abc.ABC):
     def is_update_require_adm(self):
         return True
 
-    @property
-    def sort_index(self):
-        return 0xFFFF
-
     def get_res(self, arg_resid):
         return res.get_string(arg_resid, self.__class__.__name__)
 
