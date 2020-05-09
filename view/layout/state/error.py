@@ -19,6 +19,6 @@ def layout(arg_string=''):
         arg_string=arg_string,
         arg_style=STYLE.BRIGHT,
         arg_fore=COLOR_FORE.RED,
-        arg_padding=2) + os.linesep
+        arg_padding=2)
 
     return ret_layout

@@ -52,4 +52,5 @@ Stack:
 <string name="yes">Yes</string>
 <string name="no">No</string>
 <string name="na">N/A</string>
+<string name="invalid_command">Invalid command!</string>
 </resource>

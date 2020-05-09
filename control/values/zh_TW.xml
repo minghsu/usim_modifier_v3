@@ -48,4 +48,5 @@
 <string name="yes">是</string>
 <string name="no">否</string>
 <string name="na">無</string>
+<string name="invalid_command">不正確的指令!</string>
 </resource>

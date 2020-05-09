@@ -13,7 +13,7 @@ class dispatch():
         pass
 
     def execute(self, arg_components: components, arg_arguments):
-        ret_state = STATE.CLI
+        ret_state = STATE.DISPATCH_ERROR
         ret_arguments = None
 
         log.debug(self.__class__.__name__, "ENTER")

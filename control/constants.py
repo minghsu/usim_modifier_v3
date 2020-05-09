@@ -38,6 +38,7 @@ class STATE:
     PLUGIN_LIST = 'plugin_list'
     EXECUTE = 'execute'
     DISPATCH = 'dispatch'
+    DISPATCH_ERROR = 'dispatch_error'
     PLUGIN_HELP = 'plugin_help'
     AUTO_EXEC = 'auto_exec'
 
