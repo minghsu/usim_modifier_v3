@@ -39,9 +39,7 @@ class spn(base_plugin):
             # 01 4D 49 4E 47 FF FF FF FF FF FF FF FF FF FF FF FF
             # First byte is 'display condition'
             # 2 to 17 is 'service provider name'
-            print(self.get_res("original").format(convert_alpha_to_string(read_resp[1:]),
-                                                    uicc_resp.length - 1,
-                                                    toHexString(read_resp)))
+            print(self.get_res("original").format(convert_alpha_to_string(read_resp[1:]), toHexString(read_resp), width=(uicc_resp.length - 1)))
 
             if set_content != None and self.is_update_require_adm == uicc.adm_verified:
                 update_len = len(set_content)
@@ -54,9 +52,7 @@ class spn(base_plugin):
                     update_content[i+1] = ord(set_content[i])
 
                 if uicc.update_binary(update_content) == ERROR.NONE:
-                    print(self.get_res("updated").format(convert_alpha_to_string(update_content[1:]),
-                                                            uicc_resp.length - 1,
-                                                            toHexString(update_content)))
+                    print(self.get_res("updated").format(convert_alpha_to_string(update_content[1:]), toHexString(update_content), width=(uicc_resp.length - 1)))
                 else:
                     print(self.get_res("update_error"))
 

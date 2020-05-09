@@ -8,14 +8,14 @@
   
   Example:
     - spn
-      SPN: MING, 16 bytes (01 4D 49 4E 47 FF FF FF FF FF FF FF FF FF FF FF FF)
+      SPN:             MING, 16 bytes (01 4D 49 4E 47 FF FF FF FF FF FF FF FF FF FF FF FF)
 
     - spn set=SIMCARD
-      SPN: MING, 16 bytes (01 4D 49 4E 47 FF FF FF FF FF FF FF FF FF FF FF FF)
-      >>>> SIMCARD, 16 bytes (01 53 49 4D 43 41 52 44 FF FF FF FF FF FF FF FF FF)]]></string>
+      SPN:             MING, 16 bytes (01 4D 49 4E 47 FF FF FF FF FF FF FF FF FF FF FF FF)
+      >>>>          SIMCARD, 16 bytes (01 53 49 4D 43 41 52 44 FF FF FF FF FF FF FF FF FF)]]></string>
 <string name="read_error">Error! Can't read SPN correctly</string>
 <string name="update_error">Error! Can't update SPN successfully</string>
-<string name="original">SPN: {}, {} bytes ({})</string>
-<string name="updated">>>>> {}, {} bytes ({})</string>
+<string name="original">SPN: {:>{width}}, {width} bytes ({})</string>
+<string name="updated">>>>> {:>{width}}, {width} bytes ({})</string>
 
 </resource>

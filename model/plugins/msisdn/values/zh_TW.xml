@@ -35,6 +35,6 @@
 <string name="original">MSISDN 資料:</string>
 <string name="updated">更新 MSISDN 記錄:</string>
 <string name="invalid_id">錯誤! 不正確的編號</string>
-<string name="record"><![CDATA[> #{:0>2d} 名稱: {} ({} 位元組), 號碼: {})
+<string name="record"><![CDATA[> #{:0>2d} 名稱: {:{width}} ({width} 位元組), 號碼: {})
   ({})]]></string>
 </resource>

@@ -33,7 +33,3 @@ class components:
     @property
     def config(self):
         return self.__config
-
-    @property
-    def log(self):
-        return self.__logging
