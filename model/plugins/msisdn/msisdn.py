@@ -69,7 +69,7 @@ class msisdn(base_plugin):
                     if resp != None:
                         self.show_record(i+1, resp, name_length)
 
-                if set_record_id != None and set_num_content != None and set_name_content != None:
+                if set_record_id != None and (set_num_content != None or set_name_content != None):
                     update_apdu = uicc.read_record(set_record_id, uicc_resp)
 
                     if set_name_content != None:
