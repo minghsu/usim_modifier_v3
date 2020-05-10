@@ -22,7 +22,7 @@ class adm_verify():
         ret_state = STATE.PLUGIN
         ret_arg = None
 
-        verify_result, remaings = arg_components.modeler.uicc.verify_pin(
+        verify_result, remainings = arg_components.modeler.uicc.verify_pin(
             PIN_TYPE.ADM1, toBytes(arg_arguments))
 
         # If enabled 'configuration.adm', store the adm code for auto verify
@@ -32,12 +32,12 @@ class adm_verify():
                 arg_components.config.update_adm_code(
                     arg_components.modeler.uicc.iccid, arg_arguments)
         else:
-            if remaings == 0:
+            if remainings == 0:
                 ret_state = STATE.ERROR
                 ret_arg = res.get_string("adm_blocked")
             else:
                 ret_state = STATE.ADM_CODE
-                ret_arg = res.get_string("incorrect_adm_code").format(remaings)
+                ret_arg = res.get_string("incorrect_adm_code").format(remainings)
 
         log.debug(self.__class__.__name__, "EXIT")
         return (ret_state, ret_arg)
