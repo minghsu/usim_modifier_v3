@@ -21,7 +21,7 @@ class pin_verify():
         ret_state = STATE.ADM_CODE
         ret_arg = None
 
-        verify_result, reamings = arg_components.modeler.uicc.verify_pin(
+        verify_result, remaings = arg_components.modeler.uicc.verify_pin(
             PIN_TYPE.PIN1, toASCIIBytes(arg_arguments))
 
         # If enabled 'configuration.pin', store the pin code for auto verify
@@ -31,12 +31,12 @@ class pin_verify():
                 arg_components.config.update_pin_code(
                     arg_components.modeler.uicc.iccid, arg_arguments)
         else:
-            if reamings == 0:
+            if remaings == 0:
                 ret_state = STATE.ERROR
                 ret_arg = res.get_string("card_blocked")
             else:
                 ret_state = STATE.PIN_CODE
-                ret_arg = res.get_string("incorrect_pin_code").format(reamings)
+                ret_arg = res.get_string("incorrect_pin_code").format(remaings)
 
         log.debug(self.__class__.__name__, "EXIT")
         return (ret_state, ret_arg)

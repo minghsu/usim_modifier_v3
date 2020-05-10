@@ -148,7 +148,7 @@ class uicc:
 
     def verify_pin(self, arg_type, arg_code):
         ret_result = ERROR.NONE
-        ret_reamings = None
+        ret_remaings = None
         apdu = verify_pin(arg_type, arg_code)
         resp, sw1, sw2 = self.__transmit(apdu)
 
@@ -159,44 +159,44 @@ class uicc:
                 self.__adm_verified = True
 
         if sw1 == 0x63:
-            ret_reamings = sw2 & 0x0F
-            if ret_reamings == 0:
+            ret_remaings = sw2 & 0x0F
+            if ret_remaings == 0:
                 ret_result = ERROR.UICC_BLOCKED
             else:
                 ret_result = ERROR.INCORRECT_PIN
 
-        return (ret_result, ret_reamings)
+        return (ret_result, ret_remaings)
 
     def enable_pin(self, arg_code):
         ret_result = ERROR.NONE
-        ret_reamings = None
+        ret_remaings = None
         apdu = enable_pin(arg_code)
         resp, sw1, sw2 = self.__transmit(apdu)
 
         if sw1 == 0x63:
-            ret_reamings = sw2 & 0x0F
-            if ret_reamings == 0:
+            ret_remaings = sw2 & 0x0F
+            if ret_remaings == 0:
                 ret_result = ERROR.UICC_BLOCKED
             else:
                 ret_result = ERROR.INCORRECT_PIN
         else:
             self.pin_enabled = True
 
-        return (ret_result, ret_reamings)
+        return (ret_result, ret_remaings)
 
     def disable_pin(self, arg_code):
         ret_result = ERROR.NONE
-        ret_reamings = None
+        ret_remaings = None
         apdu = disable_pin(arg_code)
         resp, sw1, sw2 = self.__transmit(apdu)
 
         if sw1 == 0x63:
-            ret_reamings = sw2 & 0x0F
-            if ret_reamings == 0:
+            ret_remaings = sw2 & 0x0F
+            if ret_remaings == 0:
                 ret_result = ERROR.UICC_BLOCKED
             else:
                 ret_result = ERROR.INCORRECT_PIN
         else:
             self.pin_enabled = False
 
-        return (ret_result, ret_reamings)
+        return (ret_result, ret_remaings)
