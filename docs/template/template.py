@@ -77,5 +77,6 @@ class template(base_plugin):
         
         super(template, self).execute_plugin(plugin_name, arg_components)
         '''
+        print(self.get_res("hello"))
 
         log.debug(self.__class__.__name__, "EXIT")

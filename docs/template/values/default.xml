@@ -7,7 +7,7 @@
   {}$ {} 
   
   Example:
-    - template plugin name
-      help message of template plugin]]></string>
-
+    - template
+      Hello, it a template plugin of usim_modifier_v3]]></string>
+<string name="hello">Hello, it a template plugin of usim_modifier_v3</string>
 </resource>
