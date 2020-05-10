@@ -122,6 +122,10 @@ All example are very simple, you can type 'help' argument to get more detail.
 
 ![cardinfo](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/cardinfo.png)
 
+# Tech Note
+
+Please refer [USIM Modifier V3 Tech Note](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/usim_modifier_v3_tech_note.pdf)
+
 # Reference
 
 - ETSI TS 102 221 - Smart Cards; UICC-Terminal interface; Physical and logical characteristics
