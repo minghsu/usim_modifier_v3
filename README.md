@@ -20,8 +20,8 @@ PS. If you have any suggestion, please raise the 'issues' or send mail to me dir
 
 ## Linux
 > linux@ubuntu:/$ pip3 install colorama  
-> linux@ubuntu:/$ sudo apt-get install swig  
-> linux@ubuntu:/$ sudo apt-get install libpcsclite-dev  
+> linux@ubuntu:/$ pip3 install lxml  
+> linux@ubuntu:/$ sudo apt-get install swig pcscd ibpcsclite-dev  
 > linux@ubuntu:/$ sudo pip3 install pyscard
 
 ## MAC OSX
