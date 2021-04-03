@@ -12,14 +12,15 @@ def is_valid_pin_code(arg_pincode):
 
     return True
 
+
 def is_valid_adm_code(arg_admcode):
 
-    if len(arg_admcode) != 16:
+    if len(arg_admcode) < 8 or len(arg_admcode) > 16:
         return False
-    
+
     admcode = arg_admcode.upper()
     for i in range(len(admcode)):
         if admcode[i] not in "0123456789ABCDEF":
             return False
 
-    return True    
+    return True

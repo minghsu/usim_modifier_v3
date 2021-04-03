@@ -24,9 +24,9 @@
 <string name="card_blocked">此張 USIM 卡已被鎖定, 系統中止!</string>
 <string name="pass">成功</string>
 <string name="fail">失敗</string>
-<string name="input_adm_code">請輸入 ADM 碼 (16 位數, 16進制): </string>
-<string name="invalid_adm_code">ADM 碼格式錯誤, 請重新輸入 (16 位數, 16進制): </string>
-<string name="incorrect_adm_code">ADM 碼不正確, 剩餘 {} 次機會, 請重新輸入 (16 位數, 16進制): </string>
+<string name="input_adm_code">請輸入 ADM 碼 (8 ~ 16 位數, 16進制): </string>
+<string name="invalid_adm_code">ADM 碼格式錯誤, 請重新輸入 (8 ~ 16 位數, 16進制): </string>
+<string name="incorrect_adm_code">ADM 碼不正確, 剩餘 {} 次機會, 請重新輸入 (8 ~ 16 位數, 16進制): </string>
 <string name="terminated_adm_code">使用者取消 ADM 碼驗證作業, 部份功能將受到限制!</string>
 <string name="adm_blocked">注意, ADM 驗證次數已歸零, 部份功能將受到限制!</string>
 <string name="plugin_loading">正在載入 plugin 套件 ...</string>
