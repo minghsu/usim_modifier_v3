@@ -54,6 +54,8 @@ class UICC_FILE:
     GID2 = "7FFF6F3F"
     MSISDN = "7FFF6F40"
     SPN = "7FFF6F46"
+    PNN = "7FFF6FC5"
+    UST = "7FFF6F38"
 
 
 class UICC_SELECT_TYPE:

@@ -109,3 +109,4 @@ venv.bak/
 # customization
 logs
 .DS_Store
+usim_modifier.xml
