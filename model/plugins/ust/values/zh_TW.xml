@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">查詢 USIM 服務清單</string>
+<string name="help"><![CDATA[使用方式:
+  
+  {}$ {}
+  
+  範例:
+    - ust
+      服務 n°1: Local Phone Book
+      服務 n°2: Fixed Dialling Numbers (FDN)
+      服務 n°3: Extension 2
+      服務 n°4: Service Dialling Numbers (SDN)
+      ...]]></string>
+<string name="read_error">錯誤! 無法讀取 UST</string>
+<string name="service">服務 n°{}: {}</string>
+<string name="original">UST 原始資料: {}</string>
+</resource>

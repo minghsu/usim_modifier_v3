@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">Query the USIM Service Table</string>
+<string name="help"><![CDATA[Usage:
+  
+  {}$ {}
+  
+  Example:
+    - ust
+      Service n°1: Local Phone Book
+      Service n°2: Fixed Dialling Numbers (FDN)
+      Service n°3: Extension 2
+      Service n°4: Service Dialling Numbers (SDN)
+      ...]]></string>
+<string name="read_error">Error! Can't read UST correctly</string>
+<string name="service">Service n°{}: {}</string>
+<string name="original">UST RAW data: {}</string>
+</resource>
