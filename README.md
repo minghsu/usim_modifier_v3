@@ -114,6 +114,10 @@ All example are very simple, you can type 'help' argument to get more detail.
 
 ![pin](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/pin.png)
 
+## UST (USIM Service Table)
+
+![ust](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/ust.png)
+
 ## SEND
 
 ![send](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/send.png)
