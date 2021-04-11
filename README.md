@@ -9,6 +9,12 @@ You can use this tool to do:
 
 PS. If you have any suggestion, please raise the 'issues' or send mail to me directly.
 
+# Update History
+
+## 2021-04-11
+- New 'ust' plugin to display the 'USIM Service Table'.
+- Modified the input condition of ADM key, it can accept 8 ~ 16 digits hexadecimal and auto fill 'FF' to 16-digit.
+
 # Requirement Packages
 
 - [python3](https://www.python.org/) (Minimum version is 3.6.x) 
