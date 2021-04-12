@@ -11,9 +11,17 @@ PS. If you have any suggestion, please raise the 'issues' or send mail to me dir
 
 # Update History
 
+## 2021-04-12
+
+- Fixed bug#4: Auto adm_verify did not stop when verify fail
+
 ## 2021-04-11
 - New 'ust' plugin to display the 'USIM Service Table'.
 - Modified the input condition of ADM key, it can accept 8 ~ 16 digits hexadecimal and auto fill 'FF' to 16-digit.
+
+# Todo
+
+- Bug#3: Provide option to configure the ADM input format (ascii or hex digit)
 
 # Requirement Packages
 
