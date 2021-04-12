@@ -21,11 +21,15 @@ class adm_code():
 
         ret_state = STATE.ADM_VERIFY
         ret_arg = None
+        adm_code = None
         out_msg = ''
 
-        # Auto ADM operation (read from usim_modifier.xml)
-        adm_code = arg_components.config.query_adm_code(
-            arg_components.modeler.uicc.iccid)
+        # if 'arg_arguments' exist, means may the auto verify fail
+        # so we can't read the adm code from .xml file
+        if arg_arguments == None:
+            # Auto ADM operation (read from usim_modifier.xml)
+            adm_code = arg_components.config.query_adm_code(
+                arg_components.modeler.uicc.iccid)
         if adm_code == None:
             if arg_arguments == None:
                 out_msg = res.get_string("input_adm_code")

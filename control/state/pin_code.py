@@ -21,12 +21,17 @@ class pin_code():
 
         ret_state = STATE.PIN_VERIFY
         ret_arg = None
+        pin_code = None
         out_msg = ''
 
         if arg_components.modeler.uicc.pin_enabled == True:
-            # Auto PIN operation (read from usim_modifier.xml)
-            pin_code = arg_components.config.query_pin_code(
+            # if 'arg_arguments' exist, means may the auto verify fail.
+            # so we can't read the pin code from .xml file
+            if arg_arguments == None:
+                # Auto PIN operation (read from usim_modifier.xml)
+                pin_code = arg_components.config.query_pin_code(
                 arg_components.modeler.uicc.iccid)
+            
             if pin_code == None:
                 if arg_arguments == None:
                     out_msg = res.get_string("input_pin_code")
