@@ -13,6 +13,7 @@ PS. If you have any suggestion, please raise the 'issues' or send mail to me dir
 
 ## 2021-05-15
 - Fixed bug#3: Add 'admhex' config item, value '1' is for hex, else are digits.
+- Only accept 8(digits) or 16(hex) key length of adm.
 - Enhance 'pin' plugin, will update the correct 'pin' code if auto save pin feature enabled.
 
 ## 2021-04-12
