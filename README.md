@@ -11,6 +11,10 @@ PS. If you have any suggestion, please raise the 'issues' or send mail to me dir
 
 # Update History
 
+## 2021-05-15
+- Fixed bug#3: Add 'admhex' config item, value '1' is for hex, else are digits.
+- Enhance 'pin' plugin, will update the correct 'pin' code if auto save pin feature enabled.
+
 ## 2021-04-12
 
 - Fixed bug#4: Auto adm_verify did not stop when verify fail
@@ -21,7 +25,7 @@ PS. If you have any suggestion, please raise the 'issues' or send mail to me dir
 
 # Todo
 
-- Bug#3: Provide option to configure the ADM input format (ascii or hex digit)
+- Add new plugin 'config' to check/edit the configurations.
 
 # Requirement Packages
 
