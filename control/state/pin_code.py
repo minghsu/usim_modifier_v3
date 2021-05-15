@@ -30,8 +30,8 @@ class pin_code():
             if arg_arguments == None:
                 # Auto PIN operation (read from usim_modifier.xml)
                 pin_code = arg_components.config.query_pin_code(
-                arg_components.modeler.uicc.iccid)
-            
+                    arg_components.modeler.uicc.iccid)
+
             if pin_code == None:
                 if arg_arguments == None:
                     out_msg = res.get_string("input_pin_code")

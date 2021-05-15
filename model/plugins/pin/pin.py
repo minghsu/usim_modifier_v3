@@ -19,7 +19,7 @@ class pin(base_plugin):
         pass
 
     def version(self):
-        return "1.00"
+        return "1.01"
 
     @property
     def is_update_require_adm(self):
@@ -42,6 +42,7 @@ class pin(base_plugin):
                 print(self.get_res("invalid_pin"))
             else:
                 msg = None
+                ret_result = None
                 if uicc.pin_enabled:
                     ret_result, ret_retries = uicc.disable_pin(
                         toASCIIBytes(change_pin1_state_key))
@@ -53,6 +54,9 @@ class pin(base_plugin):
                     msg = self.get_res(
                         'enable_ok') if ret_result == ERROR.NONE else self.get_res('enable_fail')
                 print(msg)
+                if ret_result == ERROR.NONE and arg_components.config.query_pin_code(arg_components.modeler.uicc.iccid) != change_pin1_state_key:
+                    arg_components.config.update_pin_code(
+                        arg_components.modeler.uicc.iccid, change_pin1_state_key)
 
             print(os.linesep, end='')
 

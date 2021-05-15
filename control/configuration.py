@@ -21,6 +21,7 @@ class configuration:
         self.__pin = 1
         self.__adm = 1
         self.__autoexec = 1
+        self.__admhex = 1
 
         root = etree.Element("usim_modifier")
         configuration = etree.SubElement(root, 'configuration')
@@ -35,6 +36,8 @@ class configuration:
         adm.text = str(self.__adm)
         autoexec = etree.SubElement(configuration, "autoexec")
         autoexec.text = str(self.__autoexec)
+        admhex = etree.SubElement(configuration, "admhex")
+        admhex.text = str(self.__admhex)
         self.__xml = etree.ElementTree(root)
 
     def save(self):
@@ -130,6 +133,8 @@ class configuration:
             self.__adm = int(xml_node[0].text)
             xml_node = root.xpath("configuration//autoexec")
             self.__autoexec = int(xml_node[0].text)
+            xml_node = root.xpath("configuration//admhex")
+            self.__admhex = int(xml_node[0].text)
         except Exception as e:
             print(e)
             log.critical(self.__class__.__name__,
@@ -175,7 +180,7 @@ class configuration:
     @localized.setter
     def localized(self, localized):
         self.__localized = localized
-        self.__update_configurations('localized', self.__log)
+        self.__update_configurations('localized', self.__localized)
 
     @property
     def pin(self):
@@ -184,7 +189,7 @@ class configuration:
     @pin.setter
     def pin(self, pin):
         self.__pin = pin
-        self.__update_configurations('pin', self.__log)
+        self.__update_configurations('pin', self.__pin)
 
     @property
     def adm(self):
@@ -193,4 +198,13 @@ class configuration:
     @adm.setter
     def adm(self, adm):
         self.__adm = adm
-        self.__update_configurations('adm', self.__log)
+        self.__update_configurations('adm', self.__adm)
+
+    @property
+    def admhex(self):
+        return self.__admhex
+
+    @admhex.setter
+    def admhex(self, admhex):
+        self.__admhex = admhex
+        self.__update_configurations('admhex', self.__admhex)

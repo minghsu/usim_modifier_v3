@@ -37,7 +37,10 @@ class adm_verify():
                 ret_arg = res.get_string("adm_blocked")
             else:
                 ret_state = STATE.ADM_CODE
-                ret_arg = res.get_string("incorrect_adm_code").format(remainings)
+                if arg_components.config.admhex == 1:
+                    ret_arg = res.get_string("incorrect_adm_code_hex").format(remainings)
+                else:
+                    ret_arg = res.get_string("incorrect_adm_code").format(remainings)
 
         log.debug(self.__class__.__name__, "EXIT")
         return (ret_state, ret_arg)

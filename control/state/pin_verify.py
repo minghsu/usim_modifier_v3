@@ -36,7 +36,8 @@ class pin_verify():
                 ret_arg = res.get_string("card_blocked")
             else:
                 ret_state = STATE.PIN_CODE
-                ret_arg = res.get_string("incorrect_pin_code").format(remainings)
+                ret_arg = res.get_string(
+                    "incorrect_pin_code").format(remainings)
 
         log.debug(self.__class__.__name__, "EXIT")
         return (ret_state, ret_arg)

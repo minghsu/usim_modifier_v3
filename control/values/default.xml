@@ -28,9 +28,12 @@ Stack:
 <string name="card_blocked">The USIM card was blocked, system terminated!</string>
 <string name="pass">Pass</string>
 <string name="fail">Fail</string>
-<string name="input_adm_code">Please input ADM code (8 ~ 16 digits, Hexadecimal): </string>
-<string name="invalid_adm_code">Invalid ADM code, please try again (8 ~ 16 digits, Hexadecimal): </string>
-<string name="incorrect_adm_code">Incorrect ADM code, {} remaining attempts, please try again (8 ~ 16 digits, Hexadecimal): </string>
+<string name="input_adm_code">Please input ADM code (8 digits): </string>
+<string name="input_adm_code_hex">Please input ADM code (16 digits, Hexadecimal): </string>
+<string name="invalid_adm_code">Invalid ADM code, please try again (8 digits): </string>
+<string name="invalid_adm_code_hex">Invalid ADM code, please try again (16 digits, Hexadecimal): </string>
+<string name="incorrect_adm_code">Incorrect ADM code, {} remaining attempts, please try again (8 digits): </string>
+<string name="incorrect_adm_code_hex">Incorrect ADM code, {} remaining attempts, please try again (16 digits, Hexadecimal): </string>
 <string name="terminated_adm_code">User cancel ADM operation, some features will be limited!</string>
 <string name="adm_blocked">Note! The ADM verify count is ZERO, some features will be limited!!</string>
 <string name="plugin_loading">Loading the plugin ...</string>
