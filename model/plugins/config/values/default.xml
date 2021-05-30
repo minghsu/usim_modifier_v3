@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">To configure the 'usim_modifier.xml' file</string>
+<string name="help"><![CDATA[Usage:
+  
+  {}$ {} [log=0|1] [localized=0|1] [pin=0|1] [adm=0|1] [autoexec=0|1] [admhex=0|1]
+  
+  Example:
+    - config
+      log: Yes
+      localized: Yes
+      pin: Yes
+      adm: Yes
+      autoexec: Yes
+      admhex: Yes
+    
+    - config log=0 autoexec=0
+      log: No
+      localized: Yes
+      pin: Yes
+      adm: Yes
+      autoexec: No
+      admhex: Yes
+      
+  options:
+    - log: Store the debug info into 'logs' folder
+    - localized: Force the language as default(en_US)
+    - pin: Auto store the pin code if verified pass
+    - adm: Auto store the adm code if verified pass
+    - autoexec: Autoexec plugins(when 'is_auto_exec' as TRUE) during startup stage
+    - admhex: Input format of ADM key, TRUE is hex mode, else is digit]]></string>
+<string name="log">log: {}</string>
+<string name="localized">localized: {}</string>
+<string name="pin">pin: {}</string>
+<string name="adm">adm: {}</string>
+<string name="autoexec">autoexec: {}</string>
+<string name="admhex">admhex: {}</string>
+</resource>

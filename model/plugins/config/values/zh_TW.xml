@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">設定 'usim_modifier.xml' 檔</string>
+<string name="help"><![CDATA[使用方式:
+  
+  {}$ {} [log=0|1] [localized=0|1] [pin=0|1] [adm=0|1] [autoexec=0|1] [admhex=0|1]
+  
+  Example:
+    - config
+      log: Yes
+      localized: Yes
+      pin: Yes
+      adm: Yes
+      autoexec: Yes
+      admhex: Yes
+    
+    - config log=0 autoexec=0
+      log: No
+      localized: Yes
+      pin: Yes
+      adm: Yes
+      autoexec: No
+      admhex: Yes
+      
+  options:
+    - log: 將偵錯訊息儲存到 'logs' 目錄
+    - localized: 強制使用預設語系 (en_US)
+    - pin: 當 PIN 驗證通過, 自動儲存 PIN 碼
+    - adm: 當 ADM 驗證通過, 自動儲存 ADM 碼
+    - autoexec: 啟動時, 自動執行 plugins (當 is_auto_exec 設為 TRUE 時)
+    - admhex: ADM 輸入格式, TRUE 為 16 進制, 其他為 10 進制]]></string>
+</resource>
