@@ -11,6 +11,10 @@ PS. If you have any suggestion, please raise the 'issues' or send mail to me dir
 
 # Update History
 
+## 2021-05-30
+
+- New: Add 'config' plugin to update 'usim_modifier.xml'
+
 ## 2021-05-15
 - Fixed bug#3: Add 'admhex' option, value '1' is for hex, else are digits.
 - Only accept 8(digits) or 16(hex) key length of adm.
@@ -26,7 +30,7 @@ PS. If you have any suggestion, please raise the 'issues' or send mail to me dir
 
 # Todo
 
-- Add new plugin 'config' to check/edit the configurations.
+- None
 
 # Requirement Packages
 
