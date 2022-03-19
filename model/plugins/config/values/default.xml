@@ -25,7 +25,7 @@
       
   options:
     - log: Store the debug info into 'logs' folder
-    - localized: Force the language as default(en_US)
+    - localized: Use the localized language (if supported)
     - pin: Auto store the pin code if verified pass
     - adm: Auto store the adm code if verified pass
     - autoexec: Autoexec plugins(when 'is_auto_exec' as TRUE) during startup stage

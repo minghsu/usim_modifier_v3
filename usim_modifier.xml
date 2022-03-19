@@ -8,4 +8,7 @@
     <autoexec>1</autoexec>
     <admhex>1</admhex>
   </configuration>
+  <uicc iccid="89860009191190000108">
+    <adm>5555555555555555</adm>
+  </uicc>
 </usim_modifier>

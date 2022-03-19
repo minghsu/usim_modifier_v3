@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">List all records of EF_ARR.</string>
+<string name="help"><![CDATA[Usage:
+  
+  {}$ {} 
+  
+  Example:
+    - arr
+      EF_ARR (2F06)
+      #1: 80 01 01 90 00 80 01 1A A4 06 83 01 0A 95 01 08 FF FF FF FF FF FF FF FF FF FF FF
+      #2: 80 01 01 90 00 80 01 02 A4 06 83 01 01 95 01 08 80 01 18 A4 06 83 01 0A 95 01 08
+
+      EF_ARR (7FFF6F06)
+      #1: 80 01 01 90 00 80 01 1A A4 06 83 01 0A 95 01 08 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+      #2: 80 01 01 A4 06 83 01 01 95 01 08 80 01 1A A4 06 83 01 0A 95 01 08 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF]]></string>
+<string name="read_error">Error! Can't read EF_ARR({}) correctly!</string>
+
+</resource>

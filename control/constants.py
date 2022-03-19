@@ -56,6 +56,8 @@ class UICC_FILE:
     SPN = "7FFF6F46"
     PNN = "7FFF6FC5"
     UST = "7FFF6F38"
+    MFARR = "2F06"
+    ADFARR = "7FFF6F06"
 
 
 class UICC_SELECT_TYPE:

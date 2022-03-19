@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource>
+
+<string name="summary">列出所有 EF_DIR 的記錄</string>
+<string name="help"><![CDATA[使用方式:
+  
+  {}$ {} 
+  
+  範例:
+    - arr
+      EF_ARR 2F06
+      #1: 80 01 01 90 00 80 01 1A A4 06 83 01 0A 95 01 08 FF FF FF FF FF FF FF FF FF FF FF
+      #2: 80 01 01 90 00 80 01 02 A4 06 83 01 01 95 01 08 80 01 18 A4 06 83 01 0A 95 01 08
+
+      EF_ARR 7FFF6F06
+      #1: 80 01 01 90 00 80 01 1A A4 06 83 01 0A 95 01 08 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+      #2: 80 01 01 A4 06 83 01 01 95 01 08 80 01 1A A4 06 83 01 0A 95 01 08 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF]]></string>
+<string name="read_error">錯誤! 無法讀取 EF_DIR 記錄!</string>
+
+</resource>

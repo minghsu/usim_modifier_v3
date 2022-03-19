@@ -25,7 +25,7 @@
       
   options:
     - log: 將偵錯訊息儲存到 'logs' 目錄
-    - localized: 強制使用預設語系 (en_US)
+    - localized: 使用地區語系 (若有支援)
     - pin: 當 PIN 驗證通過, 自動儲存 PIN 碼
     - adm: 當 ADM 驗證通過, 自動儲存 ADM 碼
     - autoexec: 啟動時, 自動執行 plugins (當 is_auto_exec 設為 TRUE 時)
