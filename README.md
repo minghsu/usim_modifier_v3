@@ -142,6 +142,14 @@ All example are very simple, you can type 'help' argument to get more detail.
 
 ![ust](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/ust.png)
 
+## ARR
+
+![arr](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/arr.png)
+
+## DIR
+
+![dir](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/dir.png)
+
 ## SEND
 
 ![send](https://github.com/minghsu/usim_modifier_v3/blob/master/docs/images/send.png)
