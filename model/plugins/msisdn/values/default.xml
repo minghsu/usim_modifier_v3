@@ -10,23 +10,23 @@
     - msisdn
       MSISDN records:
       > #1: Name: MING           (14 Bytes), Num: 0928000000
-        (4D 49 4E 47 FF FF FF FF FF FF FF FF FF FF 05 81 90 82 00 00 00 FF FF FF FF FF FF FF)
+        (4D 49 4E 47 FF FF FF FF FF FF FF FF FF FF 06 81 90 82 00 00 00 FF FF FF FF FF FF FF)
     
   Example 2: Update msisdn record #1 to 'Orange/+886900111222'
     - msisdn id=1 name=Orange num=+886919001122
       MSISDN records:
       > #1: Name: MING           (14 Bytes), Num: 0928000000
-        (4D 49 4E 47 FF FF FF FF FF FF FF FF FF FF 05 81 90 82 00 00 00 FF FF FF FF FF FF FF)
+        (4D 49 4E 47 FF FF FF FF FF FF FF FF FF FF 06 81 90 82 00 00 00 FF FF FF FF FF FF FF)
 
       Updated MSISDN record:
       > #1: Name: Orange         (14 Bytes), Num: +886900111222
-        (4F 72 61 6E 67 65 FF FF FF FF FF FF FF FF 08 91 88 96 00 11 21 22 FF FF FF FF FF FF)
+        (4F 72 61 6E 67 65 FF FF FF FF FF FF FF FF 07 91 88 96 00 11 21 22 FF FF FF FF FF FF)
 
   Example 3: Erase msisdn record #1 to empty
     - msisdn id=1 name="" num=""
       MSISDN records:
       > #1: Name: Orange         (14 Bytes), Num: +886900111222
-        (4F 72 61 6E 67 65 FF FF FF FF FF FF FF FF 08 91 88 96 00 11 21 22 FF FF FF FF FF FF)
+        (4F 72 61 6E 67 65 FF FF FF FF FF FF FF FF 07 91 88 96 00 11 21 22 FF FF FF FF FF FF)
 
       Updated MSISDN record:
       > #1: Name:                (14 Bytes), Num:

@@ -82,24 +82,19 @@ class msisdn(base_plugin):
                                 update_apdu[i] = 0xFF
 
                     if set_num_content != None:
-                        # Num Length
-                        if len(set_num_content) % 2 == 1:
-                            update_apdu[name_length] = int(
-                                len(set_num_content)/2) + 1
-                        else:
-                            update_apdu[name_length] = int(
-                                len(set_num_content)/2)
-
-                        # Num: BCD 10 (20 digits) + TON NPI
-                        if update_apdu[name_length] > 11:
-                            update_apdu[name_length] = 11
-
                         # '+' symbol
                         if len(set_num_content) > 0 and set_num_content[0] == "+":
                             update_apdu[name_length+1] = 0x91
                             set_num_content = set_num_content[1:]
                         else:
                             update_apdu[name_length+1] = 0x81
+
+                        # Num Length
+                        update_apdu[name_length] = 1 + (len(set_num_content) + 1) // 2
+
+                        # Num: BCD 10 (20 digits) + TON NPI
+                        if update_apdu[name_length] > 11:
+                            update_apdu[name_length] = 11
 
                         # Reset Number to 0xFF
                         for i in range(10):

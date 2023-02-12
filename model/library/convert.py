@@ -13,7 +13,10 @@ def convert_bcd_to_string(bytes=[]):
     ret_content = ""
 
     for i in range(0, len(bytes)):
-        ret_content += str(bytes[i] & 0x0F) + str(bytes[i] >> 4)
+        if bytes[i] & 0x0F != 0x0F:
+            ret_content += str(bytes[i] & 0x0F)
+        if bytes[i] & 0xF0 != 0xF0:
+            ret_content += str(bytes[i] >> 4)
 
     return ret_content
 
@@ -27,7 +30,7 @@ def convert_string_to_bcd(string=""):
     """
     ret_len = int(len(string)/2) if (len(string) %
                                      2) == 0 else int(len(string)/2+1)
-    ret_content = [0x00]*ret_len
+    ret_content = [0xFF]*ret_len
 
     for i in range(len(string)):
         tmp = string[i*2:i*2+2]
