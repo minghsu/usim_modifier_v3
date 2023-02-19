@@ -11,6 +11,10 @@ PS. If you have any suggestion, please raise the 'issues' or send mail to me dir
 
 # Update History
 
+## 2023-02-19
+
+- Fixed: Handle MSISDN numbers with an odd number of digits correctly (Thanks for [Simon Arlott](https://github.com/nomis))
+
 ## 2021-05-30
 
 - New: Add 'config' plugin to update 'usim_modifier.xml'
