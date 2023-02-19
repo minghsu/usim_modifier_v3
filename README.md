@@ -61,8 +61,9 @@ PS. If you have any suggestion, please raise the 'issues' or send mail to me dir
 
 ## Windows
 
-I lost the install sequence, but 'usim_modifier v3' can works property on Windows platform.  
-You need to install 'colorama', 'lxml' & 'pyscard' packages.
+When I installed python 3.10 from Microsoft Store directly (PIP included) on Windows 11 22H2 (build: 22621.1105), I can install colorama, lxml & pyscard packages directly and 'usim_modifier_v3' can works fine.
+
+PS. As my previous experience, we need to install some packages first for "pip install pyscard", if you encounter install fail at 'pyscard' package, please check the error message to install dependency package, then try again.
 
 # Install "USIM modifier"
 
