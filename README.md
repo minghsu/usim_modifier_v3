@@ -45,6 +45,11 @@ PS. If you have any suggestion, please raise the 'issues' or send mail to me dir
 
 # Prepare the environment
 
+## Ubuntu 24.04 (tested with WSL2 & python3.12)
+> linux@ubuntu:/$ sudo apt install python3-colorama   (PS. should be installed by default)
+> linux@ubuntu:/$ sudo apt install python3-lxml
+> linux@ubuntu:/$ sudo apt install python3-pyscard
+
 ## Linux
 > linux@ubuntu:/$ pip3 install colorama  
 > linux@ubuntu:/$ pip3 install lxml  
