@@ -98,9 +98,12 @@ git clone https://github.com/minghsu/usim_modifier_v3.git
 - iccid: Query or modify the value of IMSI
 - msisdn: Query or modify the value of MSISDN
 - send: Send the 'APDU' to USIM directly
-- pin: Enable/disable PIN1 and query the retry count of PIN1/ADM
-- ust: Display the 'USIM Service Table' features
-- cardinfo: Show the 'iccid', 'imsi', 'mccmnc', 'spn' & 'gid' info
+- pin: Enable/disable PIN1 and query the retry count of PIN1/ADM  
+- ust: Display the 'USIM Service Table' features  
+- cardinfo: Show the 'iccid', 'imsi', 'mccmnc', 'spn' & 'gid' info  
+- dir: list all records of EF_DIR (2F00)  
+- arr: List all records of EF_ARR(2F06 and 7FFF6F06)
+- config: To configure the "usim_modifier.xml" file
 
 You can type 'plugin' command to get all plugin info, the 'Updatable' column mean is able to modify in current session or not, and the 'AutoExec' mean the plugin will auto execute during startup stage or not.  
 
