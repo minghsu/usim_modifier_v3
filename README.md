@@ -11,6 +11,10 @@ PS. If you have any suggestion, please raise the 'issues' or send mail to me dir
 
 # Update History
 
+## 2025-04-27
+
+- Todo: Update the task to fetch the AID value from the USIM application
+
 ## 2023-02-19
 
 - Fixed: Handle MSISDN numbers with an odd number of digits correctly (Thanks for [Simon Arlott](https://github.com/nomis))
@@ -34,7 +38,7 @@ PS. If you have any suggestion, please raise the 'issues' or send mail to me dir
 
 # Todo
 
-- None
+- Update the task to fetch the AID value from the USIM applicationn (currently is query the 1st record from EF-DIR)
 
 # Requirement Packages
 
@@ -176,3 +180,4 @@ Please refer [USIM Modifier V3 Tech Note](https://github.com/minghsu/usim_modifi
 
 - ETSI TS 102 221 - Smart Cards; UICC-Terminal interface; Physical and logical characteristics
 - ETSI TS 131 102 - UMTS; LTE;Characteristics of the Universal Subscriber Identity Module (USIM) application
+- ETSI TS 101 220 - Smart Cards; ETSI numbering system for telecommunication application providers
