@@ -52,8 +52,8 @@ class uicc:
                 if (aid.startswith("A0000000871002")):
                     sel_aid_resp: uicc_sel_resp = self.select(
                         aid, arg_type=UICC_SELECT_TYPE.DF_NAME)
-                if sel_aid_resp.sw1 == 0x90:
-                        return aid
+                    if sel_aid_resp.sw1 == 0x90:
+                            return aid
 
         return None
 
