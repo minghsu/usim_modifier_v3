@@ -11,6 +11,10 @@ PS. If you have any suggestion, please raise the 'issues' or send mail to me dir
 
 # Update History
 
+## 2025-05-11
+
+- Update: modify the AID read mechanism, will select the PIX numbers startwith "A0000000871002" (means this project only support USIM APP)
+
 ## 2025-04-27
 
 - Todo: Update the task to fetch the AID value from the USIM application
