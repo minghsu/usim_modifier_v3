@@ -34,6 +34,8 @@ class uicc:
         # select AID for '7FFF'
         self.__aid = None
         self.__aid = self.__init_aid()
+        if self.__aid != None:
+            log.info(self.__class__.__name__, "AID: " + self.__aid)
 
         if self.__aid != None and self.__iccid != None:
             self.initialed = True
@@ -41,16 +43,17 @@ class uicc:
     def __init_aid(self):
         read_resp: uicc_sel_resp = self.select(UICC_FILE.DIR)
 
-        resp = self.read_record(1, read_resp)
-        if resp != None:
-            aid_content = search_fcp_content(
-                resp, TLV_TAG.APPLICATION_IDENTIFIER)
-            aid = toHexString(aid_content[2:], format=PACK)
-            sel_aid_resp: uicc_sel_resp = self.select(
-                aid, arg_type=UICC_SELECT_TYPE.DF_NAME)
-
-            if sel_aid_resp.sw1 == 0x90:
-                return aid
+        for i in range(read_resp.count):
+            resp = self.read_record(i+1, read_resp)
+            if resp != None:
+                aid_content = search_fcp_content(
+                    resp, TLV_TAG.APPLICATION_IDENTIFIER)
+                aid = toHexString(aid_content[2:], format=PACK)
+                if (aid.startswith("A0000000871002")):
+                    sel_aid_resp: uicc_sel_resp = self.select(
+                        aid, arg_type=UICC_SELECT_TYPE.DF_NAME)
+                if sel_aid_resp.sw1 == 0x90:
+                        return aid
 
         return None
 
