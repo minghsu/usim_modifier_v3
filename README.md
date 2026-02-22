@@ -11,6 +11,10 @@ PS. If you have any suggestion, please raise the 'issues' or send mail to me dir
 
 # Update History
 
+## 2026-02-22
+
+***I’m currently refactoring this project and found an issue with the EZ100PU smart card reader on my M3 MacBook Air. I’ve ordered an ACR39U-UF reader for additional testing. Once the tests are complete, I’ll create a new project: usim_modifier_v3.1.***
+
 ## 2025-05-11
 
 - Update: modify the AID read mechanism, will select the PIX numbers startwith "A0000000871002" (means this project only support USIM APP)
