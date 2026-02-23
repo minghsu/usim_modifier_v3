@@ -11,6 +11,10 @@ PS. If you have any suggestion, please raise the 'issues' or send mail to me dir
 
 # Update History
 
+## 2026-02-23
+
+- Add `Troubleshooting / Known Issues` chapter
+
 ## 2026-02-22
 
 ***I’m currently refactoring this project and found an issue with the EZ100PU smart card reader on my M3 MacBook Air. I’ve ordered an ACR39U-UF reader for additional testing. Once the tests are complete, I’ll create a new project: usim_modifier_v3.1.***
@@ -192,3 +196,17 @@ Please refer [USIM Modifier V3 Tech Note](https://github.com/minghsu/usim_modifi
 - ETSI TS 102 221 - Smart Cards; UICC-Terminal interface; Physical and logical characteristics
 - ETSI TS 131 102 - UMTS; LTE;Characteristics of the Universal Subscriber Identity Module (USIM) application
 - ETSI TS 101 220 - Smart Cards; ETSI numbering system for telecommunication application providers
+
+# Troubleshooting / Known Issues
+1. Unexpected keyword argument in toHexString()  
+- **Error**: TypeError: toHexString() got an unexpected keyword argument 'format'  
+- **Root Cause**: API changes in recent package versions no longer accept format as a keyword argument.  
+- **Fix Applied**: Updated the function call to use a positional argument. (Changed toHexString(aid_content[2:], format=PACK) to toHexString(aid_content[2:], PACK))  
+
+2. pyscard Import Error on macOS (Apple Silicon / M-series chips)  
+- **Error**: ImportError: dynamic module does not define module export function (PyInit__scard)  
+- **OS Platform**: macOS with Apple Silicon (e.g., MacBook Air M3).  
+- **Root Cause**: pip might incorrectly install the pre-compiled x86_64 binary of pyscard, which is incompatible with the arm64 architecture.  
+- **Solution**: You need to install swig and force pip to compile pyscard from the source:  
+  - brew install swig  
+  - python3 -m pip install --no-cache-dir --no-binary :all: pyscard
